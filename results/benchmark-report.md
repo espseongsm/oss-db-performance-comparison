@@ -36,7 +36,7 @@ baseline은 **보조 인덱스를 추가하지 않은 구성**이다. 엔진 자
 
 ### 2.2 평균과 표준편차를 함께 비교
 
-![Baseline과 Optimized 평균 및 표준편차 비교](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/charts/comparison.png)
+![Baseline과 Optimized 평균 및 표준편차 비교](charts/comparison.png)
 
 파란색은 baseline, 사선이 있는 황금색은 optimized다. **막대가 낮을수록 빠르다.** 검은 오차막대는 **평균 ± 1 표본 표준편차(SD)**다. 모든 패널은 동일한 로그 축이며 막대는 0.01 ms에서 시작한다. 막대 높이의 비율을 시간의 비율로 읽지 않는다. `평균−SD < 0.01 ms`인 하한은 생략하고 ▽로 표시했다. SD는 반복 간 변동성으로, 평균의 신뢰구간이나 최솟값·최댓값을 뜻하지 않는다.
 
@@ -75,7 +75,7 @@ baseline은 **보조 인덱스를 추가하지 않은 구성**이다. 엔진 자
 
 ### 2.4 최적화에는 저장 공간과 구축 비용이 따른다
 
-![Baseline과 Optimized 저장 크기 비교](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/charts/storage.png)
+![Baseline과 Optimized 저장 크기 비교](charts/storage.png)
 
 삭제 직전에 기록된 10억 행 실행의 저장 크기다. 선형 축은 0에서 시작하며 **작을수록 적은 공간**을 사용한다. GiB는 bytes / 2³⁰이다.
 
@@ -129,7 +129,7 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 
 ### 4.1 Baseline: DuckDB는 세 쿼리, ClickHouse는 전체 집계에서 최저 평균
 
-![Baseline 쿼리별 평균 응답 시간과 표준편차](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/charts/baseline.png)
+![Baseline 쿼리별 평균 응답 시간과 표준편차](charts/baseline.png)
 
 | 엔진 | small | medium | large | join |
 |---|---:|---:|---:|---:|
@@ -140,7 +140,7 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 
 ### 4.2 Optimized: 단건 조회와 분석 집계의 강점이 갈림
 
-![Optimized 쿼리별 평균 응답 시간과 표준편차](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/charts/optimized.png)
+![Optimized 쿼리별 평균 응답 시간과 표준편차](charts/optimized.png)
 
 | 엔진 | small | medium | large | join |
 |---|---:|---:|---:|---:|
@@ -167,7 +167,7 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 | 저장 크기 | 각 엔진 종료 후 volume 삭제 직전에 기록; 결과 파일은 호스트에 보존 |
 | 설정에 명시된 버전 | DuckDB 1.3.2, PostgreSQL 이미지 17.5, ClickHouse 이미지 25.3; SQLite는 Python 런타임 내장 버전 |
 
-설정 버전은 [requirements-runner.txt](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/requirements-runner.txt)와 [docker-compose.yml](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/docker-compose.yml)에 근거한다. 최신 버전 전체의 성능을 대표하지 않으며, SQLite 실제 버전과 이미지 digest까지 고정한 실행 환경 스냅샷은 별도로 보완해야 한다.
+설정 버전은 [requirements-runner.txt](../requirements-runner.txt)와 [docker-compose.yml](../docker-compose.yml)에 근거한다. 최신 버전 전체의 성능을 대표하지 않으며, SQLite 실제 버전과 이미지 digest까지 고정한 실행 환경 스냅샷은 별도로 보완해야 한다.
 
 | 쿼리 | 읽고 처리하는 범위 | 결과 행 수 |
 |---|---|---:|
@@ -210,7 +210,7 @@ SQLite optimized는 최초 조인 검증에는 성공했지만 **첫 timed join�
 
 ## 부록 A. 실제 실행 SQL
 
-아래는 [engine_worker.py](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/scripts/engine_worker.py)의 `query_specs()`에 대응하는 SQL이다. 금액·할인율은 부동소수점 합산 순서에 따른 checksum 차이를 막기 위해 정수 센트로 집계한다. 표기는 DuckDB·SQLite 형태이고, PostgreSQL은 `NUMERIC` 캐스팅을 추가하며 ClickHouse는 `toInt64(round(... * 100))`를 사용한다. 필터·조인·그룹화·정렬 조건은 동일하다.
+아래는 [engine_worker.py](../scripts/engine_worker.py)의 `query_specs()`에 대응하는 SQL이다. 금액·할인율은 부동소수점 합산 순서에 따른 checksum 차이를 막기 위해 정수 센트로 집계한다. 표기는 DuckDB·SQLite 형태이고, PostgreSQL은 `NUMERIC` 캐스팅을 추가하며 ClickHouse는 `toInt64(round(... * 100))`를 사용한다. 필터·조인·그룹화·정렬 조건은 동일하다.
 
 ### small
 
@@ -270,12 +270,12 @@ ORDER BY b.region_id, d.account_tier;
 
 | 목적 | 파일 |
 |---|---|
-| Baseline 원시 결과 | [ClickHouse](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/clickhouse/measurements.jsonl), [DuckDB](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/duckdb/measurements.jsonl), [PostgreSQL](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/postgres/measurements.jsonl), [SQLite](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/sqlite/measurements.jsonl) |
-| Optimized 원시 결과 | [ClickHouse](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/optimized/clickhouse/measurements.jsonl), [DuckDB](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/optimized/duckdb/measurements.jsonl), [PostgreSQL](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/optimized/postgres/measurements.jsonl), [SQLite 부분 결과](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/optimized/sqlite/measurements.jsonl) |
-| 실행·데이터·쿼리 정의 | [main.py](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/main.py), [engine_worker.py](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/scripts/engine_worker.py), [PRD](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/prd.md) |
-| 시각화 재생성 | [visualize_results.py](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/scripts/visualize_results.py) — 프로젝트 루트에서 `uv run scripts/visualize_results.py` |
-| 진행·실패 기록 | [daily-development-report.md](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/daily-development-report.md) |
-| LinkedIn 게시글 | [5개 핵심 불렛과 전체 게시글](/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/linkedin-post.md) |
+| Baseline 원시 결과 | [ClickHouse](clickhouse/measurements.jsonl), [DuckDB](duckdb/measurements.jsonl), [PostgreSQL](postgres/measurements.jsonl), [SQLite](sqlite/measurements.jsonl) |
+| Optimized 원시 결과 | [ClickHouse](optimized/clickhouse/measurements.jsonl), [DuckDB](optimized/duckdb/measurements.jsonl), [PostgreSQL](optimized/postgres/measurements.jsonl), [SQLite 부분 결과](optimized/sqlite/measurements.jsonl) |
+| 실행·데이터·쿼리 정의 | [main.py](../main.py), [engine_worker.py](../scripts/engine_worker.py), [PRD](../prd.md) |
+| 시각화 재생성 | [visualize_results.py](../scripts/visualize_results.py) — 프로젝트 루트에서 `uv run scripts/visualize_results.py` |
+| 진행·실패 기록 | [daily-development-report.md](../daily-development-report.md) |
+| LinkedIn 게시글 | [5개 핵심 불렛과 전체 게시글](linkedin-post.md) |
 
 각 엔진 디렉터리에는 데이터 크기와 검증·측정·저장 메타데이터가 함께 있다. SQLite optimized의 파일럿 요약은 5.2절의 제외 규칙을 적용한다. 외부 문서는 워크로드 추천의 근거이며 2026-09-07에 확인했다. 성능 수치는 이 저장소의 원시 측정에서만 가져왔다.
 
