@@ -174,7 +174,7 @@ DB 시작 → fact/dimension 생성 → 1회 검증 → 30회 측정
 - `results/optimized/<engine>/...`: optimized 프로파일의 동일 산출물
 - `results/optimized/<engine>/optimization.json`: 인덱스 생성 또는 물리 정렬 메타데이터
 - `results/benchmark-report.md`: DB 선택 판단, baseline·optimized 비교, DB별 추천 워크로드 중심의 전체 보고서
-- `results/linkedin-post.md`: 실험 범위와 5개 핵심 불렛을 포함한 LinkedIn 게시글 전문
+- LinkedIn 게시글: 실험 범위와 5개 핵심 불렛을 포함한 전문을 채팅으로 제공하며, 저장소에는 파일로 남기지 않음
 - `daily-development-report.md`: 개발 및 실험 진행 기록
 
 ## 7. 성공 기준
@@ -220,6 +220,6 @@ DB 시작 → fact/dimension 생성 → 1회 검증 → 30회 측정
 
 보고서는 DB 선택 판단 → baseline·optimized의 성능·변동성·저장 비용 비교 → DB별 추천 워크로드 순서로 구성한다. 실제 SQL, 평균·p50·p95, 검증·중단·파일럿 제외 근거와 재현 경로를 유지한다. 워크로드 추천은 실험에서 관측한 사실과 공식 문서에 근거한 판단을 구분하며, 단일 클라이언트 결과를 프로덕션 전체 성능으로 일반화하지 않는다. LinkedIn 글은 정확히 5개 핵심 불렛을 중심으로 도입·결론을 포함해 작성하고 게시 자체는 사용자가 수행한다.
 
-LinkedIn 글은 실험 중 눈에 띈 결과와 느낀 점을 자연스럽게 풀어 쓰는 경험 공유 문체로 작성한다. 짧은 문단과 쉬운 설명을 사용하고, 보고서식 표현을 줄이되 핵심 수치와 실험 범위는 유지한다.
+LinkedIn 글은 실험 중 눈에 띈 결과와 느낀 점을 자연스럽게 풀어 쓰는 경험 공유 문체로 작성한다. 짧은 문단과 쉬운 설명을 사용하고, 보고서식 표현을 줄이되 핵심 수치와 실험 범위는 유지한다. baseline과 optimized를 구분하고, 날짜 필터 집계(medium)·전체 집계(large)·조인 후 집계(join)의 우위를 각각 설명한다. 수정한 게시글 전문은 채팅에만 제공한다.
 
 저장소에 게시하는 Markdown의 이미지와 내부 문서 링크는 해당 Markdown 파일 기준의 상대 경로를 사용한다. 개인 컴퓨터의 절대 경로를 포함하지 않으며, 링크 대상이 Git에 포함되어 있는지 확인한다.

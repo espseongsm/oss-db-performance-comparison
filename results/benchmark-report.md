@@ -275,7 +275,6 @@ ORDER BY b.region_id, d.account_tier;
 | 실행·데이터·쿼리 정의 | [main.py](../main.py), [engine_worker.py](../scripts/engine_worker.py), [PRD](../prd.md) |
 | 시각화 재생성 | [visualize_results.py](../scripts/visualize_results.py) — 프로젝트 루트에서 `uv run scripts/visualize_results.py` |
 | 진행·실패 기록 | [daily-development-report.md](../daily-development-report.md) |
-| LinkedIn 게시글 | [5개 핵심 불렛과 전체 게시글](linkedin-post.md) |
 
 각 엔진 디렉터리에는 데이터 크기와 검증·측정·저장 메타데이터가 함께 있다. SQLite optimized의 파일럿 요약은 5.2절의 제외 규칙을 적용한다. 외부 문서는 워크로드 추천의 근거이며 2026-09-07에 확인했다. 성능 수치는 이 저장소의 원시 측정에서만 가져왔다.
 
@@ -286,5 +285,4 @@ flowchart LR
     C --> D[평균·SD·p50·p95 계산]
     D --> E[프로파일별 비교와 차트]
     E --> F[DB 선택 근거·워크로드 추천]
-    F --> G[보고서와 LinkedIn 게시글]
 ```
