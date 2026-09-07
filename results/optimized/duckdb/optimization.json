@@ -1,0 +1,8 @@
+{
+  "profile": "optimized",
+  "engine": "duckdb",
+  "sort_key": "(event_day, id)",
+  "data_skipping_index": "DuckDB zone maps (ordered load)",
+  "indexes": [],
+  "sort_elapsed_ms": 744736.4570459977
+}

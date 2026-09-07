@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-09-04T02:29:10.768833+00:00",
+  "rows": 1000000000,
+  "runs": 30,
+  "engines": [
+    "clickhouse"
+  ],
+  "sequential": true,
+  "purge_data_after_engine": true
+}

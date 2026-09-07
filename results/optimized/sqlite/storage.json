@@ -1,0 +1,11 @@
+{
+  "engine": "sqlite",
+  "rows": 10000,
+  "paths": {
+    "/data/sqlite": 27549696
+  },
+  "total_bytes": 27549696,
+  "total_gb": 0.027549696,
+  "total_gib": 0.02565765380859375,
+  "note": "Measured immediately before the engine volume is purged."
+}

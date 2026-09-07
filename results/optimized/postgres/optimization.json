@@ -1,0 +1,25 @@
+{
+  "profile": "optimized",
+  "engine": "postgres",
+  "sort_key": null,
+  "data_skipping_index": null,
+  "indexes": [
+    {
+      "name": "benchmark_id_idx",
+      "elapsed_ms": 516610.387277
+    },
+    {
+      "name": "benchmark_event_day_idx",
+      "elapsed_ms": 374199.2579600001
+    },
+    {
+      "name": "benchmark_account_id_idx",
+      "elapsed_ms": 344228.15015800006
+    },
+    {
+      "name": "account_dim_account_id_idx",
+      "elapsed_ms": 128.12216700012868
+    }
+  ],
+  "total_elapsed_ms": 1235166.042395
+}

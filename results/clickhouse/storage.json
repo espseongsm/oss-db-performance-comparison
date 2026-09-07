@@ -1,0 +1,12 @@
+{
+  "engine": "clickhouse",
+  "rows": 1000000000,
+  "paths": {
+    "/var/lib/clickhouse": 71889391616,
+    "/var/log/clickhouse-server": 14475264
+  },
+  "total_bytes": 71903866880,
+  "total_gb": 71.90386688,
+  "total_gib": 66.96569442749023,
+  "note": "Measured immediately before the engine volume is purged."
+}

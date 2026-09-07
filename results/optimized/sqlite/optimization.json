@@ -1,0 +1,25 @@
+{
+  "profile": "optimized",
+  "engine": "sqlite",
+  "sort_key": null,
+  "data_skipping_index": null,
+  "indexes": [
+    {
+      "name": "benchmark_id_idx",
+      "elapsed_ms": 285125.73675600014
+    },
+    {
+      "name": "benchmark_event_day_idx",
+      "elapsed_ms": 317946.99677100015
+    },
+    {
+      "name": "benchmark_account_id_idx",
+      "elapsed_ms": 315575.1690180005
+    },
+    {
+      "name": "account_dim_account_id_idx",
+      "elapsed_ms": 177.60524999994232
+    }
+  ],
+  "total_elapsed_ms": 918826.3455449997
+}

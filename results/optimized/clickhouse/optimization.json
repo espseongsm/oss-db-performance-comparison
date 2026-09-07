@@ -1,0 +1,8 @@
+{
+  "profile": "optimized",
+  "engine": "clickhouse",
+  "sort_key": "(event_day, id)",
+  "data_skipping_index": "id bloom_filter",
+  "indexes": [],
+  "total_elapsed_ms": 0.028667000151472166
+}
