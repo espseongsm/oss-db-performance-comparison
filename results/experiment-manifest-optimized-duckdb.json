@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-09-04T13:42:52.301848+00:00",
+  "rows": 1000000000,
+  "runs": 30,
+  "engines": [
+    "duckdb"
+  ],
+  "sequential": true,
+  "purge_data_after_engine": true
+}

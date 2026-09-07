@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-07T02:28:08.833407+00:00",
+  "settings": {
+    "sizes": [
+      100000,
+      1000000,
+      10000000
+    ],
+    "runs": 30,
+    "blocks": 6,
+    "threads": 4,
+    "memory_gb": 8,
+    "seed": 20260907,
+    "timeout_seconds": 1800,
+    "data_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark",
+    "output_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/pandas-duckdb",
+    "pilot": false
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.13.5 (main, Jul 11 2025, 22:26:07) [Clang 20.1.4 ]",
+  "cpu_logical_count": 14,
+  "cpu_physical_count": 14,
+  "physical_memory_bytes": 51539607552,
+  "versions": {
+    "pandas": "3.0.5",
+    "duckdb": "1.5.5",
+    "numpy": "2.5.3",
+    "pyarrow": "23.0.1",
+    "psutil": "7.2.2",
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "main.py": "28a881f4ce74c41ebb494399a537b4329296cb976819eb478cc0cda44cc95f96",
+    "uv.lock": "032bf3f94532adc5ab56c28d172fe0e3c360d0f529ee2a55805cc36c3e58d169",
+    "benchmarks/__init__.py": "13f6fec0e8819e0007704feaf1c3b8ad5603ce44a1e4cc4844865955026b92ee",
+    "benchmarks/frame_benchmark.py": "2accef2f43656f4ee752d38c22d170d9cb8ff28b7bd05a0886573052fdd21a3b",
+    "benchmarks/frame_charts.py": "df23c13e0a1ba10a682e205ae92231f3a5c899dd73593b4042817abc0dcbfe66",
+    "benchmarks/frame_statistics.py": "2488ce1fd685d0cccab5820465ec43b3813c93afff1de2ec12c6b4ceff04dd48",
+    "benchmarks/frame_worker.py": "e192c8591a7af42eb7c903410b07f5e9606e17bf9d3ce2c09ac5e958c82c4115",
+    "benchmarks/frame_workloads.py": "5f90b4be1ba1e97f52d320fa44bc1efaf574c542c9324fe26b4a176353a6c717"
+  },
+  "cache": "Warm filesystem cache; no OS cache purge; one warmup per block",
+  "timing": "Execute to fully materialized pandas result, including DuckDB .df()",
+  "excluded": "Imports, connection, memory-mode input preload/register, GC collection, validation",
+  "memory": "Separate fresh-process single execution; OS peak RSS includes imports and preload; before validation",
+  "uncertainty": "Mean: Student t over block means. Ratio: paired-block bootstrap, 10000 resamples. Exploratory, only 6 blocks by default.",
+  "parallelism": "One worker at a time; DuckDB/Arrow/native library thread ceilings configured; pandas vector operations need not use all threads",
+  "initial_system": {
+    "at": "2026-09-07T02:28:08.870152+00:00",
+    "system_cpu_pct": 9.8,
+    "load_average": [
+      4.89794921875,
+      5.396484375,
+      5.88916015625
+    ],
+    "available_memory_bytes": 9717252096,
+    "swap_used_bytes": 10488119296,
+    "swap_in_bytes": 567265411072,
+    "swap_out_bytes": 164718428160
+  },
+  "completed_at": "2026-09-07T02:33:16.932906+00:00",
+  "measurement_count": 1440,
+  "final_system": {
+    "at": "2026-09-07T02:33:16.932994+00:00",
+    "system_cpu_pct": 27.0,
+    "load_average": [
+      6.2666015625,
+      5.8349609375,
+      5.96337890625
+    ],
+    "available_memory_bytes": 13005733888,
+    "swap_used_bytes": 12551192576,
+    "swap_in_bytes": 569701892096,
+    "swap_out_bytes": 164754030592
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "rows": 1000000000,
+  "actual_rows": 1000000000,
+  "dimension_rows": 1000000,
+  "actual_dimension_rows": 1000000,
+  "schema_version": "v3"
+}

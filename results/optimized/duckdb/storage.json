@@ -1,0 +1,11 @@
+{
+  "engine": "duckdb",
+  "rows": 1000000000,
+  "paths": {
+    "/data/duckdb": 22094041088
+  },
+  "total_bytes": 22094041088,
+  "total_gb": 22.094041088,
+  "total_gib": 20.576679229736328,
+  "note": "Measured immediately before the engine volume is purged."
+}

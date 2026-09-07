@@ -1,0 +1,11 @@
+{
+  "engine": "postgres",
+  "rows": 1000000000,
+  "paths": {
+    "/var/lib/postgresql/data": 190832816128
+  },
+  "total_bytes": 190832816128,
+  "total_gb": 190.832816128,
+  "total_gib": 177.72690963745117,
+  "note": "Measured immediately before the engine volume is purged."
+}

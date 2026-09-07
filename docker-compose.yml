@@ -1,0 +1,76 @@
+name: db-performance-comparison
+
+services:
+  runner:
+    build:
+      context: .
+      dockerfile: docker/runner/Dockerfile
+    volumes:
+      - .:/bench:ro
+      - ./results:/results
+    networks:
+      - benchmark
+
+  duckdb:
+    build:
+      context: .
+      dockerfile: docker/runner/Dockerfile
+    volumes:
+      - .:/bench:ro
+      - ./results:/results
+      - duckdb_data:/data/duckdb
+    networks:
+      - benchmark
+
+  sqlite:
+    build:
+      context: .
+      dockerfile: docker/runner/Dockerfile
+    volumes:
+      - .:/bench:ro
+      - ./results:/results
+      - sqlite_data:/data/sqlite
+    networks:
+      - benchmark
+
+  postgres:
+    image: postgres:17.5
+    environment:
+      POSTGRES_USER: benchmark
+      POSTGRES_PASSWORD: benchmark
+      POSTGRES_DB: benchmark
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U benchmark -d benchmark"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks:
+      - benchmark
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.3
+    environment:
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: "1"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_logs:/var/log/clickhouse-server
+      - ./docker/clickhouse/benchmark-user.xml:/etc/clickhouse-server/users.d/benchmark-user.xml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "clickhouse-client --user benchmark --password benchmark --query 'SELECT 1'"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks:
+      - benchmark
+
+networks:
+  benchmark:
+
+volumes:
+  duckdb_data:
+  sqlite_data:
+  postgres_data:
+  clickhouse_data:
+  clickhouse_logs:

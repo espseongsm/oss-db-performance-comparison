@@ -1,0 +1,28 @@
+{
+  "assessment": "Share with caveats",
+  "measurements": 1440,
+  "complete_groups": 48,
+  "runs_per_group": 30,
+  "blocks_per_group": 6,
+  "direct_value_tests_passed": 12,
+  "independently_recomputed": [
+    "mean",
+    "sample_standard_deviation",
+    "median",
+    "minimum",
+    "maximum",
+    "mean_time_ratio"
+  ],
+  "all_measured_results_validated": true,
+  "measurement_source_hashes_verified": true,
+  "rendering_source_sha256": "666245a4e97202c3b7af9aa3393f426f924e7062de0a7cbebe4d29792f70dde5",
+  "rendering_change": "Only ratio-chart ticks and shared axis limits changed after measurement; original rendering source preserved in source/frame_charts.measured.py",
+  "visual_qa": "All three PNGs inspected; axes/units/legends visible; ratio panels share x limits; tick overlap fixed",
+  "caveats": [
+    "Numeric synthetic data; largest input 10 million rows, about 610 MiB logical size",
+    "Warm OS cache",
+    "Background applications and system-wide swap activity observed",
+    "Only six blocks for exploratory intervals",
+    "Memory peak is a separate single process execution per case"
+  ]
+}

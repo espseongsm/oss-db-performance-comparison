@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-09-04T02:22:14.184113+00:00",
+  "rows": 10000,
+  "runs": 1,
+  "engines": [
+    "postgres"
+  ],
+  "sequential": true,
+  "purge_data_after_engine": true
+}
