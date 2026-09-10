@@ -1,0 +1,207 @@
+{
+  "100000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 19886,
+    "sum_h": 17077682661784,
+    "sum_h2": 21126446159245
+  },
+  "100000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 100000,
+    "sum_h": 678572768515,
+    "sum_h2": 107163952100383
+  },
+  "100000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 52624636906,
+    "sum_h2": 58804609017
+  },
+  "100000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 236935997229,
+    "sum_h2": 204796617641
+  },
+  "1000000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 198279,
+    "sum_h": 212814763469482,
+    "sum_h2": 213096037940912
+  },
+  "1000000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 1000000,
+    "sum_h": 65735673851476,
+    "sum_h2": 1073884942621516
+  },
+  "1000000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 47860109659,
+    "sum_h2": 57547205775
+  },
+  "1000000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 183683875145,
+    "sum_h2": 208437175085
+  },
+  "10000000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 1980090,
+    "sum_h": 2124737574312902,
+    "sum_h2": 2125571779499619
+  },
+  "10000000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 10000000,
+    "sum_h": 6552355991502875,
+    "sum_h2": 10738979049450653
+  },
+  "10000000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 51434323742,
+    "sum_h2": 52302463088
+  },
+  "10000000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 208817467971,
+    "sum_h2": 211442617967
+  },
+  "100000000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 19798586,
+    "sum_h": 21257056540959870,
+    "sum_h2": 21256824342946745
+  },
+  "100000000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 100000000,
+    "sum_h": 105788420821245005,
+    "sum_h2": 107359488833063823
+  },
+  "100000000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 49071656126,
+    "sum_h2": 52363169114
+  },
+  "100000000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 219786898584,
+    "sum_h2": 221712973269
+  },
+  "1000000000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 197996556,
+    "sum_h": 212586052804514101,
+    "sum_h2": 212607838934890281
+  },
+  "1000000000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 1000000000,
+    "sum_h": 1073713834038410546,
+    "sum_h2": 1073693271566181231
+  },
+  "1000000000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 54595238338,
+    "sum_h2": 52068354354
+  },
+  "1000000000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 199854546642,
+    "sum_h2": 208847477940
+  }
+}

@@ -1,0 +1,5618 @@
+[
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f21f-0001-fe0c-0001-9ade000afec2",
+    "call_ms": 5018.620875000124,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434446336,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f21f-0001-fcf9-0001-9ade000b51e6",
+    "call_ms": 4572.620082999492,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430133248,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f21f-0001-fcf9-0001-9ade000b5216",
+    "call_ms": 4386.21037500161,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434163712,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f21f-0001-fe0c-0001-9ade000afef6",
+    "call_ms": 5566.982709000513,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434270208,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f21f-0001-fcf8-0001-9ade000aa982",
+    "call_ms": 10408.711207999659,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430870528,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f21f-0001-fcf9-0001-9ade000b524a",
+    "call_ms": 9116.60933299936,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433664000,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f220-0001-fe2b-0001-9ade000b8242",
+    "call_ms": 7430.372999999236,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434196480,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f220-0001-fe0c-0001-9ade000aff2a",
+    "call_ms": 16235.78608400021,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433266688,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f220-0001-fe0c-0001-9ade000aff5a",
+    "call_ms": 3772.527291001097,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 437526528,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f220-0001-fe0c-0001-9ade000aff8e",
+    "call_ms": 13971.96299999996,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432119808,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f220-0001-fcf9-0001-9ade000b529e",
+    "call_ms": 4681.487917001505,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429588480,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f220-0001-fcf9-0001-9ade000b52ce",
+    "call_ms": 7144.7587499988,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436293632,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f221-0001-fe0c-0001-9ade000affbe",
+    "call_ms": 3923.750291000033,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433569792,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f221-0001-fcf9-0001-9ade000b5302",
+    "call_ms": 13005.447208000987,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431943680,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f221-0001-fcf9-0001-9ade000b5332",
+    "call_ms": 17160.573000001023,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433799168,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f221-0001-fcf9-0001-9ade000b537a",
+    "call_ms": 6521.680125000785,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 426094592,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f221-0001-fe2b-0001-9ade000b829e",
+    "call_ms": 10420.778542000335,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429223936,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f221-0001-fe0c-0001-9ade000afff6",
+    "call_ms": 5230.577374999484,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431702016,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f222-0001-fe0c-0001-9ade000b9026",
+    "call_ms": 9122.299708000355,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430739456,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f222-0001-fcf9-0001-9ade000b53aa",
+    "call_ms": 6985.270625000339,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435007488,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f222-0001-fcf9-0001-9ade000b53da",
+    "call_ms": 7075.978875000146,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436604928,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f222-0001-fcf8-0001-9ade000aa9ca",
+    "call_ms": 20455.85625000058,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433967104,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f222-0001-fcf9-0001-9ade000b5426",
+    "call_ms": 4231.055834001381,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435822592,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f222-0001-fcf9-0001-9ade000b5456",
+    "call_ms": 5075.207416999547,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436654080,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f222-0001-fe0c-0001-9ade000b9072",
+    "call_ms": 6033.852583001135,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432586752,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f223-0001-fe2b-0001-9ade000b82de",
+    "call_ms": 5435.703332999765,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432750592,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f223-0001-fe0c-0001-9ade000b90a2",
+    "call_ms": 7439.607709000484,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428466176,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f223-0001-fcf8-0001-9ade000aaa06",
+    "call_ms": 22634.116875000473,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435294208,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f223-0001-fe0c-0001-9ade000b90d2",
+    "call_ms": 17206.638792000376,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436043776,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f223-0001-fe0c-0001-9ade000b9102",
+    "call_ms": 3907.714875000238,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433467392,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f224-0001-fe2b-0001-9ade000b8326",
+    "call_ms": 4350.013541999942,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436805632,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f224-0001-fcf9-0001-9ade000b548e",
+    "call_ms": 7264.334333000079,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434978816,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 1,
+    "call_id": "01c6f224-0001-fcf9-0001-9ade000b54be",
+    "call_ms": 5643.779166000968,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434057216,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f224-0001-fe2b-0001-9ade000b835a",
+    "call_ms": 9350.539832999857,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436310016,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 1,
+    "call_id": "01c6f224-0001-fe2b-0001-9ade000b838a",
+    "call_ms": 5504.93487499989,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436924416,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 1,
+    "call_id": "01c6f224-0001-fcf8-0001-9ade000aaa5a",
+    "call_ms": 5148.004042001048,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429436928,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f224-0001-fcf9-0001-9ade000b54f6",
+    "call_ms": 6274.404083000263,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 438128640,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f224-0001-fcf9-0001-9ade000b552a",
+    "call_ms": 3833.8053750012477,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 437239808,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f224-0001-fe2b-0001-9ade000b83be",
+    "call_ms": 7346.895000000586,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 424824832,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f225-0001-fcf8-0001-9ade000aaa8e",
+    "call_ms": 6272.111041000244,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 438231040,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f225-0001-fcf8-0001-9ade000aaac2",
+    "call_ms": 5232.313791999331,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432005120,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f225-0001-fcf9-0001-9ade000b555a",
+    "call_ms": 7145.937666000464,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431996928,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f225-0001-fe2b-0001-9ade000b83f2",
+    "call_ms": 4489.811542000098,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432001024,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f225-0001-fe2b-0001-9ade000b8422",
+    "call_ms": 5338.441916999727,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431157248,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f225-0001-fcf8-0001-9ade000aaaf6",
+    "call_ms": 7352.522541999861,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433233920,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f225-0001-fe2b-0001-9ade000b8456",
+    "call_ms": 7450.201333000223,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434515968,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f225-0001-fe0c-0001-9ade000b913e",
+    "call_ms": 8803.672666999773,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431370240,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f226-0001-fe0c-0001-9ade000b9186",
+    "call_ms": 5701.351249999789,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432599040,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f226-0001-fe0c-0001-9ade000b91b6",
+    "call_ms": 10213.502999999037,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431046656,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f226-0001-fcf9-0001-9ade000b55b2",
+    "call_ms": 4153.96758299903,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431972352,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f226-0001-fe0c-0001-9ade000b91e6",
+    "call_ms": 4836.236208999253,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431321088,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f226-0001-fcf8-0001-9ade000aab32",
+    "call_ms": 20414.364207999824,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433807360,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f226-0001-fcf9-0001-9ade000b55ea",
+    "call_ms": 9528.178832999401,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434372608,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f226-0001-fe0c-0001-9ade000b921a",
+    "call_ms": 18092.972250000457,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436305920,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f227-0001-fcf8-0001-9ade000aab7a",
+    "call_ms": 3677.798167000219,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428699648,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f227-0001-fcf8-0001-9ade000aabaa",
+    "call_ms": 4141.139917001055,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433479680,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f227-0001-fcf9-0001-9ade000b561e",
+    "call_ms": 16255.687625000064,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433430528,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f227-0001-fe0c-0001-9ade000b9252",
+    "call_ms": 12873.465041999225,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435556352,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f227-0001-fe2b-0001-9ade000b848e",
+    "call_ms": 5437.37020899971,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430264320,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f228-0001-fcf8-0001-9ade000aabda",
+    "call_ms": 3746.8345839988615,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436199424,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f228-0001-fcf9-0001-9ade000b566a",
+    "call_ms": 6280.448749999778,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429989888,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f228-0001-fe0c-0001-9ade000b928e",
+    "call_ms": 4365.786250000383,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429453312,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f228-0001-fcf8-0001-9ade000aac0e",
+    "call_ms": 4482.432916000107,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436367360,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f228-0001-fcf9-0001-9ade000b569a",
+    "call_ms": 4580.272125000192,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434786304,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f228-0001-fcf9-0001-9ade000b56ce",
+    "call_ms": 15036.696625000332,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429039616,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f228-0001-fe2b-0001-9ade000b84c6",
+    "call_ms": 5436.3573330010695,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434724864,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 2,
+    "call_id": "01c6f228-0001-fcf8-0001-9ade000aac46",
+    "call_ms": 4678.411124999911,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432574464,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f228-0001-fe2b-0001-9ade000b84f6",
+    "call_ms": 17044.29487500056,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432291840,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f229-0001-fe2b-0001-9ade000b852a",
+    "call_ms": 12213.377541000227,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433057792,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 2,
+    "call_id": "01c6f229-0001-fe2b-0001-9ade000b855e",
+    "call_ms": 7559.383041998444,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434274304,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f229-0001-fe2b-0001-9ade000b85a6",
+    "call_ms": 9301.472791999913,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431370240,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 2,
+    "call_id": "01c6f229-0001-fcf8-0001-9ade000aac76",
+    "call_ms": 10383.86195899875,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429789184,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f229-0001-fe0c-0001-9ade000b92c6",
+    "call_ms": 4541.554208000889,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430055424,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22a-0001-fcf8-0001-9ade000aacaa",
+    "call_ms": 9779.29254099945,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430931968,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22a-0001-fe2b-0001-9ade000b85f2",
+    "call_ms": 7691.295542001171,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430309376,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22a-0001-fe2b-0001-9ade000b8622",
+    "call_ms": 17337.59099999952,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433971200,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22a-0001-fcf9-0001-9ade000b5712",
+    "call_ms": 4401.219166000374,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 427294720,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22a-0001-fcf8-0001-9ade000aacde",
+    "call_ms": 20592.72054200119,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434622464,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22b-0001-fe0c-0001-9ade000b9302",
+    "call_ms": 14128.472000000329,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430735360,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22b-0001-fe2b-0001-9ade000b866e",
+    "call_ms": 3695.2971249993425,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431923200,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22b-0001-fcf9-0001-9ade000b574a",
+    "call_ms": 6894.036791998587,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430673920,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22b-0001-fe0c-0001-9ade000b9332",
+    "call_ms": 6814.064417001646,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433283072,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22b-0001-fcf8-0001-9ade000aad2a",
+    "call_ms": 5064.35620800039,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 425807872,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22b-0001-fcf9-0001-9ade000b5796",
+    "call_ms": 3536.814624998442,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 437309440,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22b-0001-fe2b-0001-9ade000b86a2",
+    "call_ms": 10390.48987499882,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432054272,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fe0c-0001-9ade000b936a",
+    "call_ms": 6439.473625001483,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431153152,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fe0c-0001-9ade000b939a",
+    "call_ms": 7091.748374999952,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434401280,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fe0c-0001-9ade000b93ca",
+    "call_ms": 14768.359583000347,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 437436416,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fcf8-0001-9ade000aad5e",
+    "call_ms": 4391.483667001012,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434462720,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fcf8-0001-9ade000aad8e",
+    "call_ms": 4613.577957999951,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434360320,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fcf9-0001-9ade000b57ca",
+    "call_ms": 4845.898125000531,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 426426368,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fcf9-0001-9ade000b57fe",
+    "call_ms": 5106.4032499998575,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 473890816,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22c-0001-fcf9-0001-9ade000b582e",
+    "call_ms": 6076.29179200012,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430379008,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22d-0001-fe2b-0001-9ade000b86d6",
+    "call_ms": 9515.69337500041,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429871104,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22d-0001-fe0c-0001-9ade000b940e",
+    "call_ms": 5382.732957999906,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429121536,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22d-0001-fcf8-0001-9ade000aadc2",
+    "call_ms": 5159.1545840001345,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431890432,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22d-0001-fcf8-0001-9ade000aadf2",
+    "call_ms": 3885.7033340009366,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432705536,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22d-0001-fcf8-0001-9ade000aae26",
+    "call_ms": 16021.191666999584,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435617792,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22d-0001-fcf8-0001-9ade000aae56",
+    "call_ms": 12218.053667000277,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429903872,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fcf9-0001-9ade000b585e",
+    "call_ms": 9632.59716599896,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432717824,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fe2b-0001-9ade000b8722",
+    "call_ms": 5495.715208000547,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431038464,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fcf8-0001-9ade000aae8a",
+    "call_ms": 4395.4876250008965,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431915008,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fe2b-0001-9ade000b875a",
+    "call_ms": 6887.067625000782,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433721344,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fcf9-0001-9ade000b588e",
+    "call_ms": 4682.185457999367,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436703232,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fcf9-0001-9ade000b58be",
+    "call_ms": 8706.069665999166,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430993408,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fe2b-0001-9ade000b87a6",
+    "call_ms": 6055.368749999616,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436289536,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fcf8-0001-9ade000aaebe",
+    "call_ms": 3516.611458000625,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435003392,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 3,
+    "call_id": "01c6f22e-0001-fe0c-0001-9ade000b9452",
+    "call_ms": 16906.659584001318,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429723648,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f22f-0001-fe0c-0001-9ade000b9486",
+    "call_ms": 16068.318999999974,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436588544,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f22f-0001-fe2b-0001-9ade000b87de",
+    "call_ms": 16519.58741600174,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430407680,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f22f-0001-fe2b-0001-9ade000b8826",
+    "call_ms": 5376.462208001612,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432427008,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f22f-0001-fcf9-0001-9ade000b590e",
+    "call_ms": 7416.283874999863,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 467718144,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f230-0001-fe0c-0001-9ade000b94b6",
+    "call_ms": 3521.8952920004085,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434642944,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f230-0001-fe0c-0001-9ade000b94ea",
+    "call_ms": 9496.589000000313,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431714304,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f230-0001-fe0c-0001-9ade000b951a",
+    "call_ms": 7839.999874999194,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 427696128,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f230-0001-fcf9-0001-9ade000b595a",
+    "call_ms": 4382.65925000087,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435097600,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f230-0001-fe2b-0001-9ade000b885a",
+    "call_ms": 9878.507333998641,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436142080,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f230-0001-fcf8-0001-9ade000aaf02",
+    "call_ms": 5813.903959000527,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436305920,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f230-0001-fcf8-0001-9ade000aaf36",
+    "call_ms": 4844.446917000823,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434462720,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f230-0001-fcf8-0001-9ade000aaf66",
+    "call_ms": 16837.56891700068,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430927872,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f231-0001-fcf8-0001-9ade000aaf96",
+    "call_ms": 4127.507750001314,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433483776,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f231-0001-fe2b-0001-9ade000b888e",
+    "call_ms": 3897.375958000339,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429629440,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f231-0001-fe0c-0001-9ade000b954e",
+    "call_ms": 6819.529374999547,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436785152,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f231-0001-fcf9-0001-9ade000b5996",
+    "call_ms": 8929.543082998862,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434757632,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f231-0001-fe2b-0001-9ade000b88be",
+    "call_ms": 9385.441333999552,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435138560,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f231-0001-fe0c-0001-9ade000b9582",
+    "call_ms": 4209.155708998878,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432685056,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f231-0001-fcf9-0001-9ade000b59de",
+    "call_ms": 12340.329624999868,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435978240,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f232-0001-fe2b-0001-9ade000b88f2",
+    "call_ms": 12688.323915999717,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433283072,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f232-0001-fe0c-0001-9ade000b95ba",
+    "call_ms": 4740.140249999968,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431251456,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f232-0001-fe2b-0001-9ade000b8922",
+    "call_ms": 4092.05720799946,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431640576,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f232-0001-fcf9-0001-9ade000b5a0e",
+    "call_ms": 14963.88666600069,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431079424,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f232-0001-fcf8-0001-9ade000aafd6",
+    "call_ms": 5371.700790999967,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436576256,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f232-0001-fcf9-0001-9ade000b5a42",
+    "call_ms": 6331.178541000554,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 425824256,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f233-0001-fe0c-0001-9ade000b95ee",
+    "call_ms": 6044.774541998777,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435179520,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f233-0001-fcf8-0001-9ade000ba006",
+    "call_ms": 4458.728583000266,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434880512,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f233-0001-fe2b-0001-9ade000b8962",
+    "call_ms": 7058.44475000049,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 425451520,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f233-0001-fe0c-0001-9ade000b9622",
+    "call_ms": 4685.134332999951,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435875840,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f233-0001-fcf9-0001-9ade000b5a72",
+    "call_ms": 8546.838832999128,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436264960,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f233-0001-fcf8-0001-9ade000ba03a",
+    "call_ms": 3315.0979580004787,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435879936,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 4,
+    "call_id": "01c6f233-0001-fcf9-0001-9ade000b5aba",
+    "call_ms": 5318.700334000823,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 427786240,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f233-0001-fe2b-0001-9ade000b899e",
+    "call_ms": 7160.106249999444,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435965952,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 4,
+    "call_id": "01c6f233-0001-fe0c-0001-9ade000b965a",
+    "call_ms": 19730.744417000096,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436207616,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f234-0001-fe0c-0001-9ade000b96a2",
+    "call_ms": 5169.324000000415,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432820224,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 4,
+    "call_id": "01c6f234-0001-fcf9-0001-9ade000b5af2",
+    "call_ms": 4813.349041998663,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431230976,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f234-0001-fe0c-0001-9ade000b96d2",
+    "call_ms": 15022.460750000391,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 425103360,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f234-0001-fcf9-0001-9ade000b5b26",
+    "call_ms": 12667.14570899967,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428912640,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f234-0001-fe2b-0001-9ade000b89f2",
+    "call_ms": 16345.803333000731,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 438276096,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f235-0001-fe0c-0001-9ade000b9702",
+    "call_ms": 5018.815707999238,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 437071872,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f235-0001-fe2b-0001-9ade000b8a22",
+    "call_ms": 4707.859124999231,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428212224,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f235-0001-fcf9-0001-9ade000b5b66",
+    "call_ms": 5210.0531670002965,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431280128,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f235-0001-fe2b-0001-9ade000b8a52",
+    "call_ms": 6159.390958000586,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430071808,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f235-0001-fe2b-0001-9ade000b8a82",
+    "call_ms": 9771.72658299969,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434225152,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f235-0001-fe0c-0001-9ade000b9732",
+    "call_ms": 8959.141166000336,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435355648,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f235-0001-fcf8-0001-9ade000ba07a",
+    "call_ms": 3466.1620000006224,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 426291200,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f236-0001-fe0c-0001-9ade000b9762",
+    "call_ms": 6989.271250000456,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431849472,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f236-0001-fcf9-0001-9ade000b5ba2",
+    "call_ms": 10329.3479999993,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435462144,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f236-0001-fcf8-0001-9ade000ba0b2",
+    "call_ms": 7213.73420800046,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429387776,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f236-0001-fcf9-0001-9ade000b5bda",
+    "call_ms": 5597.3760840006435,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436621312,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f236-0001-fe0c-0001-9ade000b9796",
+    "call_ms": 7978.469499999846,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433037312,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f236-0001-fcf9-0001-9ade000b5c0e",
+    "call_ms": 17406.3373329991,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430841856,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f237-0001-fcf9-0001-9ade000b5c42",
+    "call_ms": 3438.8452080002025,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432091136,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f237-0001-fcf9-0001-9ade000b5c72",
+    "call_ms": 3700.4662080016715,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436170752,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f237-0001-fe0c-0001-9ade000b97e6",
+    "call_ms": 4237.882624998747,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433856512,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f237-0001-fcf9-0001-9ade000b5ca6",
+    "call_ms": 4341.143374998865,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428244992,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f237-0001-fcf8-0001-9ade000ba0e6",
+    "call_ms": 4858.2113749998825,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 423841792,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f237-0001-fe0c-0001-9ade000b981a",
+    "call_ms": 22175.8022920003,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 476307456,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f237-0001-fcf9-0001-9ade000b5cd6",
+    "call_ms": 7536.769917000129,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433504256,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f238-0001-fe0c-0001-9ade000b9866",
+    "call_ms": 8825.805542001035,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 437018624,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f238-0001-fcf8-0001-9ade000ba126",
+    "call_ms": 12759.351917000458,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 427622400,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f238-0001-fcf8-0001-9ade000ba156",
+    "call_ms": 4560.219290999157,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432046080,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f238-0001-fcf8-0001-9ade000ba186",
+    "call_ms": 5359.637875000772,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430329856,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f238-0001-fcf9-0001-9ade000b5d0e",
+    "call_ms": 3992.953499999203,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433942528,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f238-0001-fcf9-0001-9ade000b5d42",
+    "call_ms": 9050.351957999737,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429727744,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f238-0001-fcf8-0001-9ade000ba1be",
+    "call_ms": 4952.506415998869,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429481984,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f238-0001-fe0c-0001-9ade000b98b2",
+    "call_ms": 5309.270332998494,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431439872,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f239-0001-fcf8-0001-9ade000ba1ee",
+    "call_ms": 6211.974791000102,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428011520,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 5,
+    "call_id": "01c6f239-0001-fe0c-0001-9ade000b98e2",
+    "call_ms": 4871.938165999381,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431988736,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f239-0001-fcf9-0001-9ade000b5d96",
+    "call_ms": 4866.380208000919,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432500736,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 5,
+    "call_id": "01c6f239-0001-fcf9-0001-9ade000b5dca",
+    "call_ms": 16227.31854199992,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 427335680,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 5,
+    "call_id": "01c6f239-0001-fe0c-0001-9ade000b9912",
+    "call_ms": 6507.738000000245,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433274880,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f239-0001-fcf9-0001-9ade000b5e16",
+    "call_ms": 4732.604790999176,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428433408,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f239-0001-fcf9-0001-9ade000b5e4a",
+    "call_ms": 14694.680500000686,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435449856,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fe0c-0001-9ade000b995e",
+    "call_ms": 4505.097041999761,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432656384,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fcf8-0001-9ade000ba22e",
+    "call_ms": 6114.0474999992875,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432123904,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fcf8-0001-9ade000ba262",
+    "call_ms": 4665.984833000039,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435867648,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fcf8-0001-9ade000ba296",
+    "call_ms": 6918.277332999423,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 438837248,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fe0c-0001-9ade000b998e",
+    "call_ms": 9788.396457999625,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431190016,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fcf8-0001-9ade000ba2e2",
+    "call_ms": 3842.661583001245,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429158400,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fcf8-0001-9ade000ba312",
+    "call_ms": 3603.6489580001216,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 431665152,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23a-0001-fe0c-0001-9ade000b99c2",
+    "call_ms": 15959.382540999286,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434159616,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23b-0001-fe0c-0001-9ade000b99f2",
+    "call_ms": 6803.5500410005625,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 426323968,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23b-0001-fcf8-0001-9ade000ba346",
+    "call_ms": 5924.78329199912,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434601984,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23b-0001-fcf9-0001-9ade000b5e8e",
+    "call_ms": 9546.07762500018,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 426455040,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23b-0001-fcf9-0001-9ade000b5ed6",
+    "call_ms": 9643.528124999648,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436740096,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23b-0001-fe0c-0001-9ade000b9a26",
+    "call_ms": 16906.48866600168,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429027328,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23c-0001-fcf9-0001-9ade000b5f0a",
+    "call_ms": 3454.0740419997746,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432861184,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23c-0001-fcf8-0001-9ade000ba37e",
+    "call_ms": 6726.959083000111,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429961216,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23c-0001-fcf9-0001-9ade000b5f3a",
+    "call_ms": 4511.991291001323,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434028544,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23c-0001-fcf8-0001-9ade000ba3c6",
+    "call_ms": 3527.719583998987,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433254400,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23c-0001-fe0c-0001-9ade000b9a76",
+    "call_ms": 16395.43966600104,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432693248,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23c-0001-fe0c-0001-9ade000b9aa6",
+    "call_ms": 12499.669208000341,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428748800,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "groupby",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23c-0001-fe0c-0001-9ade000b9ad6",
+    "call_ms": 3251.0173749997193,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436592640,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23d-0001-fe0c-0001-9ade000b9b06",
+    "call_ms": 3978.825334001158,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430563328,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "join_groupby",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23d-0001-fcf9-0001-9ade000b5f7e",
+    "call_ms": 8459.389458999794,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430944256,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23d-0001-fcf8-0001-9ade000ba3fa",
+    "call_ms": 5162.323124999602,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430149632,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "join_groupby",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23d-0001-fcf8-0001-9ade000ba42e",
+    "call_ms": 20057.740332998947,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 434302976,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23d-0001-fcf8-0001-9ade000ba47a",
+    "call_ms": 6135.937707998892,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 436637696,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23d-0001-fe0c-0001-9ade000b9b3a",
+    "call_ms": 6881.998957998803,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 429838336,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23d-0001-fcf9-0001-9ade000b5fc6",
+    "call_ms": 7199.964458000977,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 476213248,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23e-0001-fcf9-0001-9ade000b5ffa",
+    "call_ms": 9543.523915999685,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432979968,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 10000000,
+    "workload": "groupby",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23e-0001-fe0c-0001-9ade000b9b6a",
+    "call_ms": 11846.423999999388,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 428298240,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23e-0001-fe0c-0001-9ade000b9b9a",
+    "call_ms": 5176.391749999311,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 433807360,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23e-0001-fe0c-0001-9ade000b9bca",
+    "call_ms": 4671.067792000031,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430051328,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "filter_project",
+    "engine": "snowflake",
+    "block": 6,
+    "call_id": "01c6f23e-0001-fcf8-0001-9ade000ba4ba",
+    "call_ms": 4504.295374999856,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 435556352,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 100000,
+    "workload": "clean_derive",
+    "engine": "duckdb",
+    "block": 6,
+    "call_id": "01c6f23e-0001-fcf8-0001-9ade000ba4ea",
+    "call_ms": 4916.454374999375,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 430424064,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  },
+  {
+    "rows": 1000000,
+    "workload": "filter_project",
+    "engine": "pandas",
+    "block": 6,
+    "call_id": "01c6f23e-0001-fe0c-0001-9ade000b9bfa",
+    "call_ms": 5468.114040999353,
+    "runtime": {
+      "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+      "process_rss_bytes": 432349184,
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+      "resource_caveat": "Visible container resources do not establish equal per-engine CPU or RAM allocation.",
+      "use_cached_result": "false",
+      "versions": {
+        "duckdb": "1.5.5",
+        "numpy": "2.5.3",
+        "pandas": "2.3.3",
+        "psutil": "7.2.2",
+        "pyarrow": "23.0.1",
+        "snowflake-snowpark-python": "1.54.0"
+      },
+      "visible_cpu_count": 8,
+      "visible_memory_bytes": 12884901888,
+      "warehouse": "\"FRAME_BENCH_SMALL\""
+    }
+  }
+]

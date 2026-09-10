@@ -1,0 +1,1268 @@
+[
+  {
+    "path": "snowflake_medium",
+    "rows": 1000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 189,
+      "sum_h": 1699783413,
+      "sum_h2": 200509816905
+    },
+    "checksum_query_id": "01c6f2c1-0001-fe0c-0001-9ade000b9d52",
+    "warmup_query_id": "01c6f2c1-0001-fcf8-0001-9ade000ba652"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 10000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 58171572752,
+      "sum_h2": 46582674260
+    },
+    "checksum_query_id": "01c6f2c1-0001-fe0c-0001-9ade000b9d56",
+    "warmup_query_id": "01c6f2c1-0001-fe0c-0001-9ade000b9d5a"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 100000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 236935997229,
+      "sum_h2": 204796617641
+    },
+    "checksum_query_id": "01c6f2c1-0001-fe0c-0001-9ade000b9d62",
+    "warmup_query_id": "01c6f2c1-0001-fcf8-0001-9ade000ba66a"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 10000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 10000,
+      "sum_h": 8917433523,
+      "sum_h2": 10713395956780
+    },
+    "checksum_query_id": "01c6f2c1-0001-fe0c-0001-9ade000b9d6a",
+    "warmup_query_id": "01c6f2c1-0001-fcf8-0001-9ade000ba676"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 100000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 52624636906,
+      "sum_h2": 58804609017
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9d7a",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba67a"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 1000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 55903853533,
+      "sum_h2": 50136620375
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba67e",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba682"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 100000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 100000,
+      "sum_h": 678572768515,
+      "sum_h2": 107163952100383
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba68a",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9d92"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 1000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 17573891254,
+      "sum_h2": 214151948423
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9d9a",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9d9e"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 1000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 1000,
+      "sum_h": 305679745,
+      "sum_h2": 1028958459986
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9daa",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba69a"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 100000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 19886,
+      "sum_h": 17077682661784,
+      "sum_h2": 21126446159245
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6a2",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6a6"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 10000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 2004,
+      "sum_h": 172936622656,
+      "sum_h2": 2177608408402
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6ae",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6b2"
+  },
+  {
+    "path": "snowflake_medium",
+    "rows": 10000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 76655158193,
+      "sum_h2": 211010840050
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6ba",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9dc6"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 1000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 17573891254,
+      "sum_h2": 214151948423
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9dda",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6c6"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 100000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 236935997229,
+      "sum_h2": 204796617641
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9de6",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9dea"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 10000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 2004,
+      "sum_h": 172936622656,
+      "sum_h2": 2177608408402
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9df6",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9dfa"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 100000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 19886,
+      "sum_h": 17077682661784,
+      "sum_h2": 21126446159245
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e02",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6de"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 100000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 52624636906,
+      "sum_h2": 58804609017
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e0a",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6ea"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 100000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 100000,
+      "sum_h": 678572768515,
+      "sum_h2": 107163952100383
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e0e",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba6fa"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 1000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 1000,
+      "sum_h": 305679745,
+      "sum_h2": 1028958459986
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba702",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba706"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 10000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 58171572752,
+      "sum_h2": 46582674260
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e26",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba70a"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 10000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 76655158193,
+      "sum_h2": 211010840050
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba712",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e32"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 1000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 55903853533,
+      "sum_h2": 50136620375
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba71a",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e3e"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 10000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 10000,
+      "sum_h": 8917433523,
+      "sum_h2": 10713395956780
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba726",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e46"
+  },
+  {
+    "path": "snowflake_xsmall",
+    "rows": 1000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 189,
+      "sum_h": 1699783413,
+      "sum_h2": 200509816905
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba732",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e4e"
+  },
+  {
+    "path": "pandas",
+    "rows": 10000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 2004,
+      "sum_h": 172936622656,
+      "sum_h2": 2177608408402
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 1000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 55903853533,
+      "sum_h2": 50136620375
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 100000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 19886,
+      "sum_h": 17077682661784,
+      "sum_h2": 21126446159245
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 100000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 100000,
+      "sum_h": 678572768515,
+      "sum_h2": 107163952100383
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 10000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 76655158193,
+      "sum_h2": 211010840050
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 10000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 58171572752,
+      "sum_h2": 46582674260
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 10000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 10000,
+      "sum_h": 8917433523,
+      "sum_h2": 10713395956780
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 100000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 52624636906,
+      "sum_h2": 58804609017
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 1000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 17573891254,
+      "sum_h2": 214151948423
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 100000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 236935997229,
+      "sum_h2": 204796617641
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 1000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 189,
+      "sum_h": 1699783413,
+      "sum_h2": 200509816905
+    }
+  },
+  {
+    "path": "pandas",
+    "rows": 1000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 1000,
+      "sum_h": 305679745,
+      "sum_h2": 1028958459986
+    }
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 1000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 17573891254,
+      "sum_h2": 214151948423
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba746",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba74a"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 10000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 10000,
+      "sum_h": 8917433523,
+      "sum_h2": 10713395956780
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba752",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e62"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 1000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 55903853533,
+      "sum_h2": 50136620375
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e6a",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba75e"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 100000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 52624636906,
+      "sum_h2": 58804609017
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba76a",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e76"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 1000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 189,
+      "sum_h": 1699783413,
+      "sum_h2": 200509816905
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba772",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e82"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 100000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 236935997229,
+      "sum_h2": 204796617641
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e8a",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba77e"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 10000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 76655158193,
+      "sum_h2": 211010840050
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e9a",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9e9e"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 10000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 2004,
+      "sum_h": 172936622656,
+      "sum_h2": 2177608408402
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba786",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9eaa"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 10000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 58171572752,
+      "sum_h2": 46582674260
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba792",
+    "warmup_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba796"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 100000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 100000,
+      "sum_h": 678572768515,
+      "sum_h2": 107163952100383
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9eb6",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9eba"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 100000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 19886,
+      "sum_h": 17077682661784,
+      "sum_h2": 21126446159245
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9ec6",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9eca"
+  },
+  {
+    "path": "snowflake_small",
+    "rows": 1000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 1000,
+      "sum_h": 305679745,
+      "sum_h2": 1028958459986
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba7ae",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9ed2"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 10000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 10000,
+      "sum_h": 8917433523,
+      "sum_h2": 10713395956780
+    },
+    "checksum_query_id": "01c6f2c2-0001-fcf8-0001-9ade000ba7c2",
+    "warmup_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9ede"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 1000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 1000,
+      "sum_h": 305679745,
+      "sum_h2": 1028958459986
+    },
+    "checksum_query_id": "01c6f2c2-0001-fe0c-0001-9ade000b9ee2",
+    "warmup_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9ee6"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 10000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 58171572752,
+      "sum_h2": 46582674260
+    },
+    "checksum_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba7da",
+    "warmup_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba7de"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 10000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 2004,
+      "sum_h": 172936622656,
+      "sum_h2": 2177608408402
+    },
+    "checksum_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9ef6",
+    "warmup_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba7e6"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 100000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 19886,
+      "sum_h": 17077682661784,
+      "sum_h2": 21126446159245
+    },
+    "checksum_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba7f2",
+    "warmup_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9efe"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 1000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 189,
+      "sum_h": 1699783413,
+      "sum_h2": 200509816905
+    },
+    "checksum_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f0e",
+    "warmup_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f12"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 1000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 17573891254,
+      "sum_h2": 214151948423
+    },
+    "checksum_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba7fe",
+    "warmup_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f1a"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 100000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 236935997229,
+      "sum_h2": 204796617641
+    },
+    "checksum_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba80a",
+    "warmup_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f22"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 100000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 100000,
+      "sum_h": 678572768515,
+      "sum_h2": 107163952100383
+    },
+    "checksum_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f2a",
+    "warmup_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba816"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 100000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 52624636906,
+      "sum_h2": 58804609017
+    },
+    "checksum_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f36",
+    "warmup_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f3a"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 1000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 55903853533,
+      "sum_h2": 50136620375
+    },
+    "checksum_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba82a",
+    "warmup_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba82e"
+  },
+  {
+    "path": "snowflake_large",
+    "rows": 10000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 76655158193,
+      "sum_h2": 211010840050
+    },
+    "checksum_query_id": "01c6f2c3-0001-fe0c-0001-9ade000b9f46",
+    "warmup_query_id": "01c6f2c3-0001-fcf8-0001-9ade000ba83a"
+  },
+  {
+    "path": "duckdb",
+    "rows": 100000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 100000,
+      "sum_h": 678572768515,
+      "sum_h2": 107163952100383
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 1000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 55903853533,
+      "sum_h2": 50136620375
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 100000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 19886,
+      "sum_h": 17077682661784,
+      "sum_h2": 21126446159245
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 10000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 58171572752,
+      "sum_h2": 46582674260
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 1000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 17573891254,
+      "sum_h2": 214151948423
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 100000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 236935997229,
+      "sum_h2": 204796617641
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 10000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 2004,
+      "sum_h": 172936622656,
+      "sum_h2": 2177608408402
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 10000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 10000,
+      "sum_h": 8917433523,
+      "sum_h2": 10713395956780
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 100000,
+    "workload": "groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "total_cents",
+        "total_quantity",
+        "row_count"
+      ],
+      "rows": 50,
+      "sum_h": 52624636906,
+      "sum_h2": 58804609017
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 1000,
+    "workload": "clean_derive",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "net_cents"
+      ],
+      "rows": 1000,
+      "sum_h": 305679745,
+      "sum_h2": 1028958459986
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 10000,
+    "workload": "join_groupby",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "region_id",
+        "tier",
+        "total_cents",
+        "row_count"
+      ],
+      "rows": 200,
+      "sum_h": 76655158193,
+      "sum_h2": 211010840050
+    }
+  },
+  {
+    "path": "duckdb",
+    "rows": 1000,
+    "workload": "filter_project",
+    "block": 1,
+    "checksum": {
+      "columns": [
+        "id",
+        "region_id",
+        "gross_cents"
+      ],
+      "rows": 189,
+      "sum_h": 1699783413,
+      "sum_h2": 200509816905
+    }
+  }
+]

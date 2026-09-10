@@ -1,0 +1,83 @@
+{
+  "audience": "technical: experimental measurement and validation",
+  "delivery": "Existing Markdown report and its static figures, as requested; no alternate report surface created.",
+  "structure": {
+    "technical_summary": "집계는 DuckDB, 메모리의 단순 가공은 pandas가 유리했다",
+    "key_findings": "세 엔진의 평균과 표준편차; 로컬 입력 방식에 따른 평균 실행 시간",
+    "scope_and_metrics": "무엇을 같은 기준으로 측정했는가",
+    "methodology": "측정 범위와 해석; 원자료 검증과 후속 판단",
+    "limitations": "Snowflake의 큰 SD와 시스템 활동을 함께 고려해야 한다",
+    "next_steps_and_questions": "원자료 검증과 후속 판단의 마지막 문단으로 통합"
+  },
+  "charts": [
+    {
+      "file": "timing-three-engines.png",
+      "family": "grouped dot and sample-SD intervals, four workload facets",
+      "data": "three-engine-comparison.csv: 36 means and sample SDs, each n=30",
+      "question": "How does complete-result latency compare across three engines and three row counts?",
+      "palette": "blue pandas, orange DuckDB, olive Snowflake; circles/squares/triangles",
+      "scope": "Local Parquet vs preloaded remote warehouse; log y, distinct facet ranges; one mean-SD lower bound is negative and clipped with down marker",
+      "qa": "Inspected: labels, legends, units, n, error bars and clipped-bound marker visible"
+    },
+    {
+      "file": "timing-parquet.png",
+      "family": "grouped boxplots",
+      "data": "measurements.csv: local parquet 720 samples",
+      "question": "What is the median and within-case spread for file input?",
+      "palette": "blue filled pandas; orange open DuckDB",
+      "qa": "Inspected: full category labels, log y, IQR/median/outliers and legend visible"
+    },
+    {
+      "file": "timing-memory.png",
+      "family": "grouped boxplots",
+      "data": "measurements.csv: local memory 720 samples",
+      "question": "Does preloaded input change the local comparison?",
+      "palette": "blue filled pandas; orange open DuckDB",
+      "qa": "Inspected: full category labels, log y, IQR/median/outliers and legend visible"
+    },
+    {
+      "file": "speedup.png",
+      "family": "horizontal dot and confidence intervals",
+      "data": "comparison.csv: 24 ratios and paired-block bootstrap intervals",
+      "question": "How large is the local relative difference and its six-block uncertainty?",
+      "palette": "single blue root and neutral reference at 1",
+      "qa": "Inspected: ratio direction, log x, labels and 95% interval definition visible"
+    },
+    {
+      "file": "mean-sd-100000.png",
+      "family": "zero-based vertical bars with sample SD, four workload facets",
+      "data": "summary.csv: 20 paths for 100000 rows, each n=30",
+      "question": "Compare mean and variation in the previous experiment visual style",
+      "palette": "blue pandas, orange hatched DuckDB, olive dotted Snowflake; direct path labels",
+      "scope": "Different local/cloud input paths, linear y with different ranges by workload; negative SD lower bounds clipped at zero with * and down marker",
+      "qa": "Inspected all three exported PNGs: Korean labels, values, axis origins, hatching, SD bounds and footnotes readable",
+      "renderer": "source/mean-sd/main.py"
+    },
+    {
+      "file": "mean-sd-1000000.png",
+      "family": "zero-based vertical bars with sample SD, four workload facets",
+      "data": "summary.csv: 20 paths for 1000000 rows, each n=30",
+      "question": "Compare mean and variation in the previous experiment visual style",
+      "palette": "blue pandas, orange hatched DuckDB, olive dotted Snowflake; direct path labels",
+      "scope": "Different local/cloud input paths, linear y with different ranges by workload; negative SD lower bounds clipped at zero with * and down marker",
+      "qa": "Inspected all three exported PNGs: Korean labels, values, axis origins, hatching, SD bounds and footnotes readable",
+      "renderer": "source/mean-sd/main.py"
+    },
+    {
+      "file": "mean-sd-10000000.png",
+      "family": "zero-based vertical bars with sample SD, four workload facets",
+      "data": "summary.csv: 20 paths for 10000000 rows, each n=30",
+      "question": "Compare mean and variation in the previous experiment visual style",
+      "palette": "blue pandas, orange hatched DuckDB, olive dotted Snowflake; direct path labels",
+      "scope": "Different local/cloud input paths, linear y with different ranges by workload; negative SD lower bounds clipped at zero with * and down marker",
+      "qa": "Inspected all three exported PNGs: Korean labels, values, axis origins, hatching, SD bounds and footnotes readable",
+      "renderer": "source/mean-sd/main.py"
+    }
+  ],
+  "omissions": [
+    "Server execution overlaps client SQL roundtrip; use exact component table instead of an additive chart that could double count.",
+    "Upload/COPY each measured once; no mean or SD inferred.",
+    "No new performance experiment or remote query was launched for report QA."
+  ],
+  "figure_reuse": "Existing four figures preserved; three per-size mean-SD vertical bar figures added on user request."
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000/accounts.parquet",
+    "table": "FRAME_BENCH_2916C1EAE3DD4666BF51B7B7D36B1DD8_ACCOUNTS",
+    "rows": 100000,
+    "upload_ms": 647.1019580021675,
+    "copy_ms": 1432.312875000207,
+    "copy_query_id": "01c6f2c0-0001-fcf8-0001-9ade000ba5e2",
+    "put_result": [
+      [
+        "accounts.parquet",
+        "accounts.parquet",
+        606596,
+        606608,
+        "PARQUET",
+        "PARQUET",
+        "UPLOADED",
+        ""
+      ]
+    ],
+    "copy_result": [
+      [
+        "frame_bench_2916c1eae3dd4666bf51b7b7d36b1dd8_stage/accounts/accounts.parquet",
+        "LOADED",
+        100000,
+        100000,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  {
+    "file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000/sales.parquet",
+    "table": "FRAME_BENCH_2916C1EAE3DD4666BF51B7B7D36B1DD8_SALES_1000",
+    "rows": 1000,
+    "upload_ms": 180.96745900038513,
+    "copy_ms": 1018.4219590009889,
+    "copy_query_id": "01c6f2c0-0001-fe0c-0001-9ade000b9cfa",
+    "put_result": [
+      [
+        "sales.parquet",
+        "sales.parquet",
+        27215,
+        27216,
+        "PARQUET",
+        "PARQUET",
+        "UPLOADED",
+        ""
+      ]
+    ],
+    "copy_result": [
+      [
+        "frame_bench_2916c1eae3dd4666bf51b7b7d36b1dd8_stage/sales_1000/sales.parquet",
+        "LOADED",
+        1000,
+        1000,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  {
+    "file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows10000/sales.parquet",
+    "table": "FRAME_BENCH_2916C1EAE3DD4666BF51B7B7D36B1DD8_SALES_10000",
+    "rows": 10000,
+    "upload_ms": 177.7442919992609,
+    "copy_ms": 661.5244579988939,
+    "copy_query_id": "01c6f2c0-0001-fcf8-0001-9ade000ba5f2",
+    "put_result": [
+      [
+        "sales.parquet",
+        "sales.parquet",
+        219082,
+        219088,
+        "PARQUET",
+        "PARQUET",
+        "UPLOADED",
+        ""
+      ]
+    ],
+    "copy_result": [
+      [
+        "frame_bench_2916c1eae3dd4666bf51b7b7d36b1dd8_stage/sales_10000/sales.parquet",
+        "LOADED",
+        10000,
+        10000,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  {
+    "file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000/sales.parquet",
+    "table": "FRAME_BENCH_2916C1EAE3DD4666BF51B7B7D36B1DD8_SALES_100000",
+    "rows": 100000,
+    "upload_ms": 223.30016699925181,
+    "copy_ms": 1011.558750000404,
+    "copy_query_id": "01c6f2c0-0001-fcf8-0001-9ade000ba5fa",
+    "put_result": [
+      [
+        "sales.parquet",
+        "sales.parquet",
+        1912365,
+        1912368,
+        "PARQUET",
+        "PARQUET",
+        "UPLOADED",
+        ""
+      ]
+    ],
+    "copy_result": [
+      [
+        "frame_bench_2916c1eae3dd4666bf51b7b7d36b1dd8_stage/sales_100000/sales.parquet",
+        "LOADED",
+        100000,
+        100000,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  }
+]

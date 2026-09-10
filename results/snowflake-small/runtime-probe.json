@@ -1,0 +1,29 @@
+{
+  "cgroup_limits": {},
+  "cpu_count": 8,
+  "duckdb_settings": [
+    [
+      "memory_limit",
+      "1.8 GiB"
+    ],
+    [
+      "threads",
+      "4"
+    ]
+  ],
+  "memory_total": 12884901888,
+  "platform": "Linux-4.4.0-aarch64-with-glibc2.35",
+  "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:41:49) [GCC 14.3.0]",
+  "result": 28,
+  "rss": 454381568,
+  "versions": {
+    "duckdb": "1.5.5",
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "psutil": "7.2.2",
+    "pyarrow": "23.0.1",
+    "snowflake-snowpark-python": "1.54.0"
+  },
+  "warehouse": "\"FRAME_BENCH_SMALL\"",
+  "probe_query_id": "01c6f210-0001-fcf8-0001-9ade000aa7c2"
+}
