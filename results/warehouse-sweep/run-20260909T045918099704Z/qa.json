@@ -7,7 +7,7 @@
   "visual_review": "passed",
   "metric_boundaries": "Local Parquet to all output batches; Snowflake platform total query time. Full remote result download excluded.",
   "report_review": "passed",
-  "reviewed_at_utc": "2026-09-09T23:54:39.724777+00:00",
+  "reviewed_at_utc": "2026-09-10T00:37:15.301953+00:00",
   "assessment": "Validated for the stated processing-path comparison; preserve metric-boundary and variability caveats.",
   "independent_audit": "independent-audit.json",
   "input_source_audit": "provenance-audit.json",
@@ -70,9 +70,11 @@
     "independent-audit.json": "b8dfc0b2bdae73721c01f4a616ac910c2b21edb2841d128801cf957ac4fdabc5",
     "provenance-audit.json": "3ff8d9a60b3aaf482cc3be58aff16cd4486ba366ff523c14799b0b71870aa2a6",
     "visual-review.json": "4a33aecbbb5b4e5d1a45ebb40d35f22003285e811acee3c0d005b7ff1122ca58",
-    "report-audit.json": "89d1029d27b097428fccaf97b85edf284bcf8388751bb40c4be59ffe1aa844ba",
+    "report-audit.json": "c75a53948aa38b828b55f7816d0bdd364fe62db9796a2193b84a3905bbb33605",
     "verify_results.py": "6c892a14978fa91444b728f89073383ecff474df4e4bd6b28409dc932195eecd",
     "verify_provenance.py": "c13977cbe0b855e35dcdd5305f2600db9ef74c1bcf47cb6a440457e4f53cb381",
-    "verify_report.py": "c028305f8d83e7d9bd4c3fd1e084f4fb190251c73b0f20f7361195da1b90ecc1"
-  }
+    "verify_report.py": "eb8af0decc277d1be9b508a72b9618985e03491d8ec2afa4b3d451db621faa0f"
+  },
+  "measured_code_snippets_verified": 14,
+  "workload_code_review": "Four pandas bodies and eight DuckDB/Snowflake SQL queries plus two shared batch functions match immutable measured source; presentation wrappers and relative local paths disclosed."
 }

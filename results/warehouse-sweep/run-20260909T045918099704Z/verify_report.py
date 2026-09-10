@@ -1,5 +1,6 @@
 """Check final report numbers, local links and stated comparison conclusions."""
 
+import ast
 import csv
 import hashlib
 import json
@@ -26,8 +27,92 @@ LABELS = {
 }
 
 
+def verify_workload_code(report):
+    """Compare displayed snippets with the immutable measured source and inputs."""
+    names = ["frame_workloads.py", "sweep_workloads.py", "frame_snowflake.py"]
+    manifest = json.loads((FOLDER / "manifest.json").read_text())
+    sources = {}
+    for name in names:
+        path = "benchmarks/" + name
+        content = (FOLDER / "source" / path).read_bytes()
+        assert hashlib.sha256(content).hexdigest() == manifest["source_sha256"][path]
+        sources[name] = content.decode()
+
+    def function(file, name):
+        return next(
+            node
+            for node in ast.parse(sources[file]).body
+            if isinstance(node, ast.FunctionDef) and node.name == name
+        )
+
+    transform = function("frame_workloads.py", "pandas_transform")
+    branches = {
+        node.test.comparators[0].value: node.body
+        for node in transform.body
+        if isinstance(node, ast.If)
+    }
+    queries = ast.literal_eval(
+        function("frame_workloads.py", "sql_query").body[0].value
+    )
+    snowflake = function("frame_snowflake.py", "snowflake_query")
+    clean_if = next(node for node in snowflake.body if isinstance(node, ast.If))
+    snow_clean = ast.literal_eval(clean_if.body[0].value)
+    dataset = next(
+        row
+        for row in json.loads((FOLDER / "datasets.json").read_text())
+        if row["rows"] == 10**9
+    )
+    local = {
+        key: "data/frame-benchmark/"
+        + Path(dataset[key]).parent.name
+        + "/"
+        + Path(dataset[key]).name
+        for key in ["fact", "dimension"]
+    }
+    loads = json.loads((FOLDER / "snowflake-setup.json").read_text())
+    fact = next(row["table"] for row in loads if row["rows"] == 10**9)
+    dimension = loads[0]["table"]
+    snippets = re.findall(
+        r"<!-- measured-code:(\w+):(\w+) -->\n```(?:python|sql)\n(.*?)\n```",
+        report,
+        re.S,
+    )
+    displayed = {(engine, work): code for engine, work, code in snippets}
+    expected_keys = {
+        (engine, work)
+        for engine in ["pandas", "duckdb", "snowflake"]
+        for work in branches
+    }
+    expected_keys |= {
+        ("shared", name) for name in ["pandas_batches", "combine_aggregates"]
+    }
+    assert len(snippets) == len(displayed) == 14 and set(displayed) == expected_keys
+    for work in branches:
+        node = ast.parse(displayed["pandas", work]).body[0]
+        assert isinstance(node, ast.FunctionDef) and node.name == work
+        assert [ast.dump(n) for n in node.body] == [ast.dump(n) for n in branches[work]]
+        duck = (
+            queries[work]
+            .replace("FROM sales", f"FROM read_parquet('{local['fact']}')")
+            .replace("JOIN accounts", f"JOIN read_parquet('{local['dimension']}')")
+        )
+        snow = (
+            (snow_clean if work == "clean_derive" else queries[work])
+            .replace("FROM sales", f"FROM {fact}")
+            .replace("JOIN accounts", f"JOIN {dimension}")
+        )
+        for engine, expected in [("duckdb", duck), ("snowflake", snow)]:
+            assert displayed[engine, work].split() == expected.split(), (engine, work)
+    for name in ["pandas_batches", "combine_aggregates"]:
+        assert displayed["shared", name] == ast.get_source_segment(
+            sources["sweep_workloads.py"], function("sweep_workloads.py", name)
+        )
+    return len(displayed)
+
+
 def main():
     report = (FOLDER / "report.md").read_text()
+    code_snippets = verify_workload_code(report)
     with (FOLDER / "summary.csv").open() as handle:
         summary = {
             (int(r["rows"]), r["workload"], r["path"]): r
@@ -127,6 +212,7 @@ def main():
         "report_mean_sd_pairs": len(seen),
         "warehouse_ratio_values": scale_pairs,
         "png_references": len(images),
+        "measured_code_snippets_verified": code_snippets,
         "existing_local_links_checked": links,
         "billion_large_winner_in_each_workload_and_block": 24,
         "billion_duckdb_join_slower_than_xsmall_blocks": reversals,

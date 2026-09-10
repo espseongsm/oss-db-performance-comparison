@@ -14,6 +14,8 @@
 
 모든 크기에 배치 처리 기준을 적용해 큰 결과 전체를 메모리에 누적하지 않는다. pandas는 Parquet 배치별 변환 후 집계의 부분 합을 합치며, DuckDB는 Parquet 직접 SQL 결과를 Arrow reader로 읽는다. 결과 행 수와 모든 컬럼을 사용하는 두 모듈러 체크섬은 각 묶음 예열에서 확인하고, 시간 측정 반복은 결과 행 수를 확인한다. 체크섬·예열·최초 적재는 주 측정 밖이다. 체크섬은 비암호화 검증이며 완전한 원격 결과 본문은 보관하지 않는다.
 
+**작업별 코드·SQL:** [결측치 처리 · 파생 컬럼](#workload-clean-derive) · [필터 · 파생 컬럼](#workload-filter-project) · [지역별 집계](#workload-groupby) · [조인 후 집계](#workload-join-groupby)
+
 ## 행 수별 평균 ± 표본 표준편차
 
 표와 그림의 시간 단위는 **밀리초(ms)**이며 낮을수록 빠르다. 각 막대는 30회 평균, 오차막대는 **표본 SD(ddof=1)**다. SD는 반복 변동성이며 신뢰구간이 아니다. 모든 축은 0에서 시작하며 패널별 범위가 다르다. 평균−SD가 0보다 작은 경우 하한을 0에서 자르고 ▼로 표시한다. 6개 묶음의 연속 반복이므로 30개 표본을 서로 완전히 독립인 실험으로 가정하지 않는다.
@@ -147,6 +149,249 @@ flowchart LR
   Q --> R
 ```
 
+<a id="workloads-detail"></a>
+
+## 네 작업에서 실제로 실행한 코드와 SQL
+
+아래는 **이번 6개 경로 본 실험의 측정 소스 사본**에서 가져온 작업별 구현이다. 입력은 10억 행을 예로 들었으며, 다른 크기에서는 해당 크기의 파일·테이블을 사용한다. 네 작업은 서로의 결과를 이어받지 않고 각각 같은 원본에서 시작한다. Snowflake X-Small·Small·Medium·Large는 **같은 SQL·같은 테이블**을 사용하며 `USE WAREHOUSE`로 실행 warehouse만 선택한다.
+
+pandas 코드는 실제 `pandas_transform(frame, accounts, workload)`의 해당 분기 본문을 읽기 쉽게 독립 함수로 감싼 것이다. 표시용 함수 이름만 작업명으로 바꾸었고 연산 본문은 보존했다. `frame`은 파일 전체가 아닌 **최대 250,000행의 입력 배치를 pandas로 변환한 것**이다. 집계 두 작업에서는 아래 함수의 배치별 결과를 다시 합치는 과정도 측정 시간에 포함한다.
+
+DuckDB SQL의 파일 경로는 측정 당시 절대 경로를 **프로젝트 기준 상대 경로**로 줄여 표시했다. Snowflake SQL에는 [적재 기록](snowflake-setup.json)에 남은 **당시 실제 임시 테이블 이름**을 사용했다. 이 테이블들은 실험 세션에 속했으므로 아래 과거 이름이 현재도 존재한다고 가정하지 않는다. 새 실행은 같은 스키마의 임시 테이블을 새로 만든다.
+
+| 경로 | 이번 예시의 입력 |
+|---|---|
+| pandas·DuckDB | `data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet` 및 같은 폴더의 `accounts.parquet` |
+| Snowflake | 아래 SQL의 10억 행 `SALES` 임시 테이블 및 공통 `ACCOUNTS` 임시 테이블 |
+
+Snowflake의 공통 계정 테이블은 10만 행 데이터 폴더의 계정 파일에서 한 번 적재했다. 로컬 10억 행 작업은 10억 행 폴더의 계정 파일을 읽는다. [입력 검증](provenance-audit.json)에서 모든 크기의 계정 파일이 `account_id=0..99999`, `tier=account_id%4`로 같은 내용을 담는 것을 확인했다.
+
+<a id="workload-clean-derive"></a>
+
+### 1. 결측치 처리 · 파생 컬럼 — `clean_derive`
+
+할인율의 결측값을 0으로 채운 뒤 할인 적용 금액을 정수 센트로 계산한다. 모든 입력 행을 보존하며 `id`, `net_cents` 두 컬럼을 반환한다. 이번 데이터는 금액·수량이 음수가 아니고 할인율이 정수이므로, 아래 `// 100`과 `FLOOR(... / 100)`으로 같은 결과를 얻었다.
+
+**pandas · 배치별 변환 본문**
+
+<!-- measured-code:pandas:clean_derive -->
+```python
+def clean_derive(frame, accounts=None):
+    discount = frame.discount_pct.fillna(0).astype("int64")
+    return pd.DataFrame(
+        {
+            "id": frame.id,
+            "net_cents": frame.amount_cents
+            * frame.quantity
+            * (100 - discount)
+            // 100,
+        }
+    )
+```
+
+**DuckDB · 로컬 Parquet 직접 SQL**
+
+<!-- measured-code:duckdb:clean_derive -->
+```sql
+SELECT id, amount_cents * quantity *
+    (100 - CAST(COALESCE(discount_pct, 0) AS BIGINT)) // 100 AS net_cents
+FROM read_parquet('data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet')
+```
+
+**Snowflake · 네 warehouse 공통 SQL**
+
+<!-- measured-code:snowflake:clean_derive -->
+```sql
+SELECT id, CAST(FLOOR(amount_cents * quantity *
+    (100 - COALESCE(discount_pct, 0)) / 100) AS BIGINT) AS net_cents
+FROM FRAME_BENCH_935A598FBFCA48399FD3380664021004_SALES_1000000000
+```
+
+<a id="workload-filter-project"></a>
+
+### 2. 필터 · 파생 컬럼 — `filter_project`
+
+`region_id < 10`이면서 `amount_cents >= 1000`인 행만 선택해 금액×수량을 계산한다. `id`, `region_id`, `gross_cents`를 반환한다. pandas 경로는 Arrow 스캔 단계에서도 같은 조건을 적용하고, 아래 pandas 분기에서 조건을 다시 확인한다.
+
+**pandas · 배치별 변환 본문**
+
+<!-- measured-code:pandas:filter_project -->
+```python
+def filter_project(frame, accounts=None):
+    selected = frame.loc[(frame.region_id < 10) & (frame.amount_cents >= 1000)]
+    return pd.DataFrame(
+        {
+            "id": selected.id,
+            "region_id": selected.region_id,
+            "gross_cents": selected.amount_cents * selected.quantity,
+        }
+    ).reset_index(drop=True)
+```
+
+**DuckDB · 로컬 Parquet 직접 SQL**
+
+<!-- measured-code:duckdb:filter_project -->
+```sql
+SELECT id, region_id, amount_cents * quantity AS gross_cents
+FROM read_parquet('data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet')
+WHERE region_id < 10 AND amount_cents >= 1000
+```
+
+**Snowflake · 네 warehouse 공통 SQL**
+
+<!-- measured-code:snowflake:filter_project -->
+```sql
+SELECT id, region_id, amount_cents * quantity AS gross_cents
+FROM FRAME_BENCH_935A598FBFCA48399FD3380664021004_SALES_1000000000
+WHERE region_id < 10 AND amount_cents >= 1000
+```
+
+<a id="workload-groupby"></a>
+
+### 3. 지역별 집계 — `groupby`
+
+지역별로 **원본 `amount_cents`의 합**, `quantity`의 합, 행 수를 계산한다. 앞 작업에서 계산한 `net_cents`나 `gross_cents`를 사용하는 후속 단계가 아니다. 각 작업은 공통 원본에서 독립적으로 시작하며 10억 행 입력의 결과는 50행이다.
+
+**pandas · 배치별 변환 본문**
+
+<!-- measured-code:pandas:groupby -->
+```python
+def groupby(frame, accounts=None):
+    return frame.groupby("region_id", sort=False, as_index=False).agg(
+        total_cents=("amount_cents", "sum"),
+        total_quantity=("quantity", "sum"),
+        row_count=("amount_cents", "size"),
+    )
+```
+
+**DuckDB · 로컬 Parquet 직접 SQL**
+
+<!-- measured-code:duckdb:groupby -->
+```sql
+SELECT region_id, CAST(SUM(amount_cents) AS BIGINT) AS total_cents,
+    CAST(SUM(quantity) AS BIGINT) AS total_quantity, COUNT(*) AS row_count
+FROM read_parquet('data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet')
+GROUP BY region_id
+```
+
+**Snowflake · 네 warehouse 공통 SQL**
+
+<!-- measured-code:snowflake:groupby -->
+```sql
+SELECT region_id, CAST(SUM(amount_cents) AS BIGINT) AS total_cents,
+    CAST(SUM(quantity) AS BIGINT) AS total_quantity, COUNT(*) AS row_count
+FROM FRAME_BENCH_935A598FBFCA48399FD3380664021004_SALES_1000000000
+GROUP BY region_id
+```
+
+<a id="workload-join-groupby"></a>
+
+### 4. 조인 후 집계 — `join_groupby`
+
+계정 10만 행과 `account_id`로 내부 조인한 뒤 `region_id`, `tier`별로 **원본 `amount_cents`의 합**과 행 수를 계산한다. `tier = account_id % 4`이며 10억 행 입력의 결과는 200행이다.
+
+**pandas · 배치별 변환 본문**
+
+<!-- measured-code:pandas:join_groupby -->
+```python
+def join_groupby(frame, accounts=None):
+    joined = frame.merge(accounts, on="account_id", how="inner", sort=False)
+    return joined.groupby(["region_id", "tier"], sort=False, as_index=False).agg(
+        total_cents=("amount_cents", "sum"),
+        row_count=("amount_cents", "size"),
+    )
+```
+
+**DuckDB · 로컬 Parquet 직접 SQL**
+
+<!-- measured-code:duckdb:join_groupby -->
+```sql
+SELECT region_id, tier, CAST(SUM(amount_cents) AS BIGINT) AS total_cents,
+    COUNT(*) AS row_count
+FROM read_parquet('data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet')
+JOIN read_parquet('data/frame-benchmark/v1-seed20260907-rows1000000000/accounts.parquet')
+USING (account_id)
+GROUP BY region_id, tier
+```
+
+**Snowflake · 네 warehouse 공통 SQL**
+
+<!-- measured-code:snowflake:join_groupby -->
+```sql
+SELECT region_id, tier, CAST(SUM(amount_cents) AS BIGINT) AS total_cents,
+    COUNT(*) AS row_count
+FROM FRAME_BENCH_935A598FBFCA48399FD3380664021004_SALES_1000000000
+JOIN FRAME_BENCH_935A598FBFCA48399FD3380664021004_ACCOUNTS
+USING (account_id)
+GROUP BY region_id, tier
+```
+
+### 배치 실행과 결과 생성도 시간에 포함했다
+
+pandas는 필요한 입력 컬럼만 Arrow scanner로 읽어 배치마다 위 변환을 호출했다. 필터 작업은 scanner에도 조건을 전달한다. 조인 작업의 계정 파일 읽기는 각 로컬 실행 안에서 한 번 수행하므로 측정에 포함된다. 아래는 실제 공통 배치 함수와 부분 집계 병합 함수다. `pd`, `ds`, `time`은 각각 pandas, pyarrow.dataset, Python time 모듈이며, `WORKLOADS`와 `OUTPUTS`는 보존된 소스의 입력·출력 컬럼 목록이다. `input_ms`는 읽기 구간을 보조적으로 기록한 값이며 차트의 주 지표는 전체 경로의 `elapsed_ms`다.
+
+<!-- measured-code:shared:pandas_batches -->
+```python
+def pandas_batches(config, timings):
+    work = config["workload"]
+    started = time.perf_counter_ns()
+    accounts = pd.read_parquet(config["dimension"]) if work == "join_groupby" else None
+    condition = (
+        (ds.field("region_id") < 10) & (ds.field("amount_cents") >= 1000)
+        if work == "filter_project"
+        else None
+    )
+    scanner = ds.dataset(config["fact"], format="parquet").scanner(
+        columns=WORKLOADS[work],
+        filter=condition,
+        batch_size=config["batch_rows"],
+        batch_readahead=1,
+        fragment_readahead=1,
+        use_threads=True,
+    )
+    batches = iter(scanner.to_batches())
+    timings["input_ms"] += (time.perf_counter_ns() - started) / 1e6
+    aggregate = None
+    while True:
+        started = time.perf_counter_ns()
+        batch = next(batches, None)
+        if batch is None:
+            timings["input_ms"] += (time.perf_counter_ns() - started) / 1e6
+            break
+        frame = batch.to_pandas()
+        timings["input_ms"] += (time.perf_counter_ns() - started) / 1e6
+        output = pandas_transform(frame, accounts, work)
+        if work in ("groupby", "join_groupby"):
+            aggregate = combine_aggregates(aggregate, output, work)
+        else:
+            yield output
+    if work in ("groupby", "join_groupby"):
+        yield (
+            aggregate
+            if aggregate is not None
+            else pd.DataFrame({c: pd.Series(dtype="int64") for c in OUTPUTS[work]})
+        )
+```
+
+<!-- measured-code:shared:combine_aggregates -->
+```python
+def combine_aggregates(previous, current, work):
+    if previous is None:
+        return current
+    keys = ["region_id"] if work == "groupby" else ["region_id", "tier"]
+    return (
+        pd.concat([previous, current], ignore_index=True)
+        .groupby(keys, sort=False, as_index=False)
+        .sum()[OUTPUTS[work]]
+    )
+```
+
+DuckDB는 위 SQL의 결과를 `connection.sql(query).to_arrow_reader(config["batch_rows"])`로 순차 읽고, 각 배치에 `batch.to_pandas()`를 적용했다. 두 로컬 경로 모두 출력 컬럼 순서를 맞추고 `int64`로 정규화한 모든 결과 배치를 소비한 뒤 시간을 종료했다. 결과 전체를 메모리에 쌓지는 않는다.
+
+Snowflake는 각 묶음에서 별도 체크섬 쿼리와 실제 SQL 예열을 수행한 다음, 같은 작업 SQL을 5회 실행했다. 각 반복은 `cursor.execute(query)` 후 출력 행 수를 확인하고 query ID의 `server_total_ms`를 `elapsed_ms`로 기록했다. 이 경로에서는 `fetch_pandas_all()`로 전체 결과를 내려받지 않는다. 모든 SQL에는 `ORDER BY`가 없고 결과의 행 순서는 비교 조건이 아니다.
+
+출처: [pandas 변환·DuckDB SQL 원본](source/benchmarks/frame_workloads.py#L106) · [배치 실행·부분 집계·로컬 타이머](source/benchmarks/sweep_workloads.py#L47) · [Snowflake SQL 변환](source/benchmarks/frame_snowflake.py#L37) · [warehouse 선택·원격 반복 측정](source/benchmarks/sweep_snowflake.py#L53).
+
 ## 이번 결과를 적용할 때
 
 로컬에 Parquet가 있고 출력도 pandas 배치로 사용할 목적이라면, 이번 관측에서는 단순 가공의 pandas와 집계의 DuckDB가 후보가 된다. Snowflake에 데이터가 이미 있고 결과를 플랫폼에서 사용할 목적이라면, 10억 행 작업의 지연을 줄이는 데 Large가 효과적이었다. 실제 warehouse 선택에는 허용 지연과 credit 사용량을 함께 확인해야 하지만, 이번 실험은 비용을 측정하지 않았다.
@@ -161,7 +406,7 @@ flowchart LR
 
 전체 출력의 행 수와 두 체크섬은 **720개 묶음 예열**을 공통 기준값 20개에 대조한다. 시간 측정 3,600회는 **출력 행 수**를 대조한다. 체크섬은 모든 결과 컬럼으로 만든 행 해시와 제곱 해시의 합이며 비암호화 검증이므로 충돌 가능성이 있다. 이 범위를 넘어 모든 반복의 전체 값 일치를 증명했다고 해석하지 않는다.
 
-저장된 수치만 재검증: `uv run --no-sync python results/warehouse-sweep/run-20260909T045918099704Z/verify_results.py`. 입력 해시 재검증은 같은 폴더의 `verify_provenance.py`로 실행하며 약 40GB 이상을 다시 읽는다. [본문 검증기](verify_report.py)는 표의 평균/SD·배율·링크와 핵심 순위를 확인한다. 이 검증기들은 Snowflake 측정을 다시 수행하지 않는다.
+저장된 수치만 재검증: `uv run --no-sync python results/warehouse-sweep/run-20260909T045918099704Z/verify_results.py`. 입력 해시 재검증은 같은 폴더의 `verify_provenance.py`로 실행하며 약 40GB 이상을 다시 읽는다. [본문 검증기](verify_report.py)는 표의 평균/SD·배율·링크와 핵심 순위, 작업별 코드·SQL 및 공통 배치 함수 14개 발췌와 측정 소스의 일치를 확인한다. 이 검증기들은 Snowflake 측정을 다시 수행하지 않는다.
 
 새 측정 재현: `uv run --no-sync python main.py warehouse-sweep` (`--pilot`은 기능 검증). 키체인 인증을 재사용한다. 원자료와 측정 소스 사본은 이 실행 폴더에 보존한다.
 
