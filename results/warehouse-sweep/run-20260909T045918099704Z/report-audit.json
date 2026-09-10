@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-09T23:54:39.690855+00:00",
+  "report_mean_sd_pairs": 120,
+  "warehouse_ratio_values": 12,
+  "png_references": 5,
+  "existing_local_links_checked": 32,
+  "billion_large_winner_in_each_workload_and_block": 24,
+  "billion_duckdb_join_slower_than_xsmall_blocks": 2,
+  "warehouse_name_size_mapping": "passed against saved manifest",
+  "sha256": {
+    "report.md": "a78acfa95b223be98c185f81a160348312666ea976a9334890879a23af995848",
+    "mean-sd-100000.png": "190225547439da82e56a00a407d28eae152bac1624b0263a36e545e1ce1f4fe7",
+    "mean-sd-1000000.png": "55b7e89d16841474a81a21369cc37c9334ed18c94ab714d597ac09cf6fad6e4b",
+    "mean-sd-10000000.png": "b69de314b335c286aa420108cd6e3d1c1bfaf15c8ac4e36a1c521d9c8941e044",
+    "mean-sd-100000000.png": "5df010d3c9e136d680215a542268f3b3347ea9d50d355f44782c99c6c0567255",
+    "mean-sd-1000000000.png": "b170682e4bb40be121c3981f2846fadcaf87d86806713b99e8fbf595af1e1ea3",
+    "independent-audit.json": "b8dfc0b2bdae73721c01f4a616ac910c2b21edb2841d128801cf957ac4fdabc5",
+    "provenance-audit.json": "3ff8d9a60b3aaf482cc3be58aff16cd4486ba366ff523c14799b0b71870aa2a6",
+    "visual-review.json": "4a33aecbbb5b4e5d1a45ebb40d35f22003285e811acee3c0d005b7ff1122ca58"
+  },
+  "limits": "Checks saved evidence and Markdown links/numbers; visual PNG inspection is recorded separately. No new Snowflake queries or measurements."
+}

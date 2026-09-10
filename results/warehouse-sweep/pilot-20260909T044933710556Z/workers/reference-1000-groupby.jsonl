@@ -1,0 +1,1 @@
+{"type": "warmup", "elapsed_ms": 4.147541, "cpu_ms": 4.096, "input_ms": 1.459542, "output_rows": 50, "output_bytes": 1600, "output_batches": 1, "checksum": {"columns": ["region_id", "total_cents", "total_quantity", "row_count"], "rows": 50, "sum_h": 55903853533, "sum_h2": 50136620375}}

@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-09-09T02:05:24.322652+00:00",
+  "run": "run-20260909T004556934215Z",
+  "measurements": 1800,
+  "groups": 60,
+  "runs_per_group": 30,
+  "blocks_per_group": 6,
+  "samples_per_block": 5,
+  "engine_counts": {
+    "pandas": 720,
+    "duckdb": 720,
+    "snowflake": 360
+  },
+  "duplicates": 0,
+  "missing_combinations": 0,
+  "all_validated": true,
+  "raw_csv_matches_jsonl": true,
+  "statistics": {
+    "method": "Python statistics, sample stdev (ddof=1)",
+    "max_absolute_error_ms": {
+      "mean_ms": 2.2737367544323206e-13,
+      "std_ms": 2.842170943040401e-14,
+      "median_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0
+    }
+  },
+  "local_mean_ratios_checked": 24,
+  "snowflake": {
+    "unique_queries": 360,
+    "history_errors": [],
+    "missing_server_values": 0,
+    "component_statistics_checked": 576,
+    "client_time_components_sum": true,
+    "setup_tables_verified": 4
+  },
+  "source_hashes_matched": [
+    "main.py",
+    "uv.lock",
+    "benchmarks/__init__.py",
+    "benchmarks/frame_benchmark.py",
+    "benchmarks/frame_charts.py",
+    "benchmarks/frame_keychain.py",
+    "benchmarks/frame_snowflake.py",
+    "benchmarks/frame_snowflake_report.py",
+    "benchmarks/frame_statistics.py",
+    "benchmarks/frame_worker.py",
+    "benchmarks/frame_workloads.py"
+  ],
+  "input_hashes_matched": [
+    "data/frame-benchmark/v1-seed20260907-rows100000/sales.parquet",
+    "data/frame-benchmark/v1-seed20260907-rows100000/accounts.parquet",
+    "data/frame-benchmark/v1-seed20260907-rows1000000/sales.parquet",
+    "data/frame-benchmark/v1-seed20260907-rows1000000/accounts.parquet",
+    "data/frame-benchmark/v1-seed20260907-rows10000000/sales.parquet",
+    "data/frame-benchmark/v1-seed20260907-rows10000000/accounts.parquet"
+  ],
+  "fresh_local_fingerprints_matched": [
+    "100000/filter_project",
+    "100000/clean_derive",
+    "100000/groupby",
+    "100000/join_groupby",
+    "1000000/filter_project",
+    "1000000/clean_derive",
+    "1000000/groupby",
+    "1000000/join_groupby",
+    "10000000/filter_project",
+    "10000000/clean_derive",
+    "10000000/groupby",
+    "10000000/join_groupby"
+  ],
+  "validation_limit": "Remote result bodies and per-run fingerprints are not persisted. Their equality is supported by runtime validation, recorded flags, and unchanged source hashes. Fresh offline pandas results match all 12 saved references; Snowflake queries were not rerun.",
+  "interpretation": "Share with caveats: different local/cloud paths and resources, six blocks, warm caches, external system activity, no causal network attribution or server-memory comparison.",
+  "source_snapshot": "source/measured; exact copies verified against original manifest before new benchmark edits",
+  "presentation": {
+    "markdown_internal_links_checked": 14,
+    "mean_sd_cells_checked": 84,
+    "figures_inspected": 7,
+    "review_notes": "review-notes.json",
+    "bar_chart_mean_sd_pairs_checked": 60,
+    "bar_chart_source": "source/mean-sd/main.py",
+    "bar_chart_orientation": "vertical",
+    "bar_chart_visual_qa": "All three vertical PNGs inspected; zero-based linear axes, numeric mean and sample SD, negative lower bound clipped with down marker"
+  }
+}

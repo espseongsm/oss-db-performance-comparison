@@ -1,0 +1,188 @@
+{
+  "100000/groupby": {
+    "rows": 50,
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "5148165510768826946",
+    "hash_xor": "7876665366988197046"
+  },
+  "10000000/join_groupby": {
+    "rows": 200,
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "17973786493157141569",
+    "hash_xor": "18413190608798210925"
+  },
+  "100000/filter_project": {
+    "rows": 19886,
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "6934637738391437775",
+    "hash_xor": "13010755706745315299"
+  },
+  "100000/clean_derive": {
+    "rows": 100000,
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "dtypes": [
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "6278141268544677052",
+    "hash_xor": "11755483584262095886"
+  },
+  "10000000/clean_derive": {
+    "rows": 10000000,
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "dtypes": [
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "14285702759883698828",
+    "hash_xor": "425970959959544156"
+  },
+  "1000000/groupby": {
+    "rows": 50,
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "3129039791569495086",
+    "hash_xor": "14932865647023855810"
+  },
+  "1000000/clean_derive": {
+    "rows": 1000000,
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "dtypes": [
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "16902620082194219032",
+    "hash_xor": "7441825716312922670"
+  },
+  "10000000/filter_project": {
+    "rows": 1980090,
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "9297358661400020835",
+    "hash_xor": "11916629792613770293"
+  },
+  "1000000/join_groupby": {
+    "rows": 200,
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "13023197678645621665",
+    "hash_xor": "8219731451453916309"
+  },
+  "10000000/groupby": {
+    "rows": 50,
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "3404719191165042972",
+    "hash_xor": "2526757767072946434"
+  },
+  "1000000/filter_project": {
+    "rows": 198279,
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "11356744842689536210",
+    "hash_xor": "4329941149679941164"
+  },
+  "100000/join_groupby": {
+    "rows": 200,
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "dtypes": [
+      "int64",
+      "int64",
+      "int64",
+      "int64"
+    ],
+    "hash_sum": "15482229778153811636",
+    "hash_xor": "14299020784962879478"
+  }
+}

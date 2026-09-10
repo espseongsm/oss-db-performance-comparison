@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "measurements": 1080,
+  "conditions": 36,
+  "history_expected": 1260,
+  "history_found": 1260,
+  "history_missing": 0,
+  "statistics": "Mean and sample SD independently cross-checked using statistics and pandas",
+  "fingerprints": "All measured results match common full-result reference fingerprints",
+  "visual_review": "Passed: all three exported PNGs inspected; Korean labels, mean and sample SD, engine order/hatching, zero-based axes and path caveats readable; all lower SD bounds positive",
+  "independent_audit": {
+    "checked_at_utc": "2026-09-09T02:46:12.241856+00:00",
+    "status": "passed",
+    "method": "Python standard-library csv/json/statistics.stdev (n-1); no Snowflake query or benchmark rerun",
+    "raw_csv_equals_jsonl": true,
+    "measurements": 1080,
+    "engine_counts": {
+      "pandas": 360,
+      "snowflake": 360,
+      "duckdb": 360
+    },
+    "conditions": 36,
+    "runs_per_condition": 30,
+    "blocks_per_condition": 6,
+    "calls_checked": 216,
+    "unique_child_queries": 1260,
+    "source_hashes_checked": 14,
+    "input_hashes_checked": 6,
+    "max_absolute_statistic_error_ms": {
+      "mean_ms": 0.0,
+      "std_ms": 0.0,
+      "median_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0,
+      "setup_mean_ms": 0.0,
+      "compute_mean_ms": 0.0,
+      "input_mean_ms": 0.0
+    },
+    "validation_limit": "Per-sample full-result fingerprints are persisted and match common references; complete result bodies are not retained."
+  },
+  "component_mean_sd_pairs_checked": 24,
+  "figure_review": {
+    "figures": 3,
+    "mean_sd_pairs": 36,
+    "all_n": 30,
+    "zero_based_linear_y": true,
+    "facet_ranges_differ": true,
+    "lower_bounds_clipped": 0
+  },
+  "presentation_validation": {
+    "report_mean_sd_cells_checked": 36,
+    "component_mean_sd_pairs_checked": 24,
+    "internal_links_checked": {
+      "results/snowflake-small/run-20260909T020641284282Z/report.md": 11,
+      "README.md": 4,
+      "results/pandas-duckdb/run-20260909T004556934215Z/report.md": 14
+    },
+    "markdown_table_columns_consistent": true
+  },
+  "report_sha256": "2af027225184afcbf7efe1363ce86ec719a3c8940fb2f5fe976432753d81e292"
+}

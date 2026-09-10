@@ -1,0 +1,106 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-08T23:59:54.571191+00:00",
+  "settings": {
+    "sizes": [
+      1000,
+      10000,
+      100000
+    ],
+    "runs": 2,
+    "blocks": 1,
+    "threads": 4,
+    "memory_gb": 8,
+    "seed": 20260907,
+    "timeout_seconds": 1800,
+    "data_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark",
+    "output_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/pandas-duckdb",
+    "pilot": true,
+    "snowflake_connection": "benchmark",
+    "snowflake_password_prompt": true
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.13.5 (main, Jul 11 2025, 22:26:07) [Clang 20.1.4 ]",
+  "cpu_logical_count": 14,
+  "cpu_physical_count": 14,
+  "physical_memory_bytes": 51539607552,
+  "versions": {
+    "pandas": "2.3.3",
+    "duckdb": "1.5.5",
+    "numpy": "2.5.3",
+    "pyarrow": "23.0.1",
+    "psutil": "7.2.2",
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "main.py": "28a881f4ce74c41ebb494399a537b4329296cb976819eb478cc0cda44cc95f96",
+    "uv.lock": "ef8c7af30c950b0b4e043613a48df5706ad27705245052bda1b12b2bd0ccce47",
+    "benchmarks/__init__.py": "13f6fec0e8819e0007704feaf1c3b8ad5603ce44a1e4cc4844865955026b92ee",
+    "benchmarks/frame_benchmark.py": "7819dddc306a219ca456c4f76e98752dbc4ff24c62db6a220f2e1a48048fcaab",
+    "benchmarks/frame_charts.py": "c50c214b3fb0c7e748407399c8d97108052837429ba00bd70a290ff873528434",
+    "benchmarks/frame_snowflake.py": "e6151db044262f3a5445293b9f25f09b911ae08fd5e2e57ed4e5b32e191c7a8f",
+    "benchmarks/frame_snowflake_report.py": "98901bd82560a350fe4c35de54450c7c4dae8fe0732c79eb989f21e355ec7102",
+    "benchmarks/frame_statistics.py": "2488ce1fd685d0cccab5820465ec43b3813c93afff1de2ec12c6b4ceff04dd48",
+    "benchmarks/frame_worker.py": "e192c8591a7af42eb7c903410b07f5e9606e17bf9d3ce2c09ac5e958c82c4115",
+    "benchmarks/frame_workloads.py": "5f90b4be1ba1e97f52d320fa44bc1efaf574c542c9324fe26b4a176353a6c717"
+  },
+  "cache": "Warm filesystem cache; no OS cache purge; one warmup per block",
+  "timing": "Execute to fully materialized pandas result, including DuckDB .df()",
+  "excluded": "Imports, connection, memory-mode input preload/register, GC collection, validation",
+  "memory": "Separate fresh-process single execution; OS peak RSS includes imports and preload; before validation",
+  "uncertainty": "Mean: Student t over block means. Ratio: paired-block bootstrap, 10000 resamples. Exploratory, only 6 blocks by default.",
+  "parallelism": "One worker at a time; DuckDB/Arrow/native library thread ceilings configured; pandas vector operations need not use all threads",
+  "initial_system": {
+    "at": "2026-09-08T23:59:54.600957+00:00",
+    "system_cpu_pct": 10.2,
+    "load_average": [
+      7.11865234375,
+      6.00927734375,
+      6.50439453125
+    ],
+    "available_memory_bytes": 23294443520,
+    "swap_used_bytes": 0,
+    "swap_in_bytes": 25592381440,
+    "swap_out_bytes": 158662656
+  },
+  "snowflake": {
+    "account": "XN15248",
+    "region": "AWS_AP_NORTHEAST_2",
+    "role": "ACCOUNTADMIN",
+    "warehouse": "COMPUTE_WH",
+    "database": "USER$ESPSEONGSM",
+    "schema": "PUBLIC",
+    "version": "10.32.102",
+    "warehouse_settings": {
+      "size": "X-Small",
+      "type": "STANDARD",
+      "auto_suspend": 300,
+      "auto_resume": "true",
+      "min_cluster_count": 1,
+      "max_cluster_count": 1,
+      "scaling_policy": "STANDARD",
+      "resource_monitor": "null"
+    },
+    "use_cached_result": false,
+    "connector_version": "4.7.3",
+    "client_memory_is_not_server_memory": true
+  },
+  "snowflake_scope": "Preloaded remote tables -> SQL -> fetch_pandas_all -> int64 DataFrame. Upload/COPY separately timed; result reuse disabled; warehouse data cache uncontrolled. Persistent remote session; memory and cpu_ms never represent server memory/CPU.",
+  "snowflake_history_errors": [],
+  "completed_at": "2026-09-09T00:02:24.247086+00:00",
+  "measurement_count": 120,
+  "final_system": {
+    "at": "2026-09-09T00:02:24.247166+00:00",
+    "system_cpu_pct": 41.4,
+    "load_average": [
+      10.94091796875,
+      7.13720703125,
+      6.8232421875
+    ],
+    "available_memory_bytes": 23031922688,
+    "swap_used_bytes": 0,
+    "swap_in_bytes": 26186235904,
+    "swap_out_bytes": 169902080
+  }
+}

@@ -1,0 +1,893 @@
+{
+  "status": "pass",
+  "reviewed_at_utc": "2026-09-09T23:50:07.595683+00:00",
+  "reviewer": "independent visual-review subagent",
+  "skill": "data-analytics:visualize-data",
+  "scope": "Five exported standalone PNGs; no benchmark reruns, remote queries, or large input hashes.",
+  "method": "Opened every PNG with view_image, visually checked all panels and annotations, manually transcribed all 120 mean/SD label pairs, and compared to summary.csv formatted to two decimal places.",
+  "source": "summary.csv",
+  "total_charts": 5,
+  "total_bars": 120,
+  "total_numeric_values": 240,
+  "issues": [],
+  "limitations": [
+    "Review applies to standalone PNGs at rendered inspection size, not their embedding in the final report.",
+    "Per-panel linear ranges intentionally differ and are explicitly disclosed.",
+    "Very small local bars at low row counts are visually compressed by honest zero-baseline scales, but exact labels remain readable.",
+    "The compact chart boundary text says all result batches; the report should retain the more explicit read + compute + pandas-batch materialization definition."
+  ],
+  "files": [
+    {
+      "file": "mean-sd-100000.png",
+      "status": "pass",
+      "opened_with": "view_image",
+      "native_dimensions": [
+        3040,
+        2000
+      ],
+      "inspection_dimensions": [
+        1946,
+        1280
+      ],
+      "panels": 4,
+      "vertical_bars": 24,
+      "labels_checked": 24,
+      "numeric_checks": [
+        {
+          "workload": "clean_derive",
+          "path": "pandas",
+          "observed_mean_sd": "2.14/0.17",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "duckdb",
+          "observed_mean_sd": "3.20/0.28",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "245.47/72.84",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_small",
+          "observed_mean_sd": "242.07/132.88",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "250.30/51.60",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_large",
+          "observed_mean_sd": "239.07/70.05",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "pandas",
+          "observed_mean_sd": "2.43/0.18",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "duckdb",
+          "observed_mean_sd": "2.47/0.18",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "171.53/44.62",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_small",
+          "observed_mean_sd": "154.73/22.66",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "171.97/78.29",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_large",
+          "observed_mean_sd": "162.60/22.75",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "pandas",
+          "observed_mean_sd": "3.15/0.46",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "1.92/0.13",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "64.27/30.42",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "84.13/139.41",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "62.27/18.94",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "56.20/5.97",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "pandas",
+          "observed_mean_sd": "7.71/0.54",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "4.68/0.27",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "89.87/41.28",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "94.53/24.26",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "108.57/18.20",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "99.87/15.65",
+          "matches_summary": true
+        }
+      ],
+      "linear_zero_axes": "pass",
+      "unit": "ms",
+      "repeats": 30,
+      "date": "2026-09-09",
+      "different_panel_scales_disclosed": true,
+      "category_identification": "Direct x-axis labels for all six categories; separate legend unnecessary.",
+      "color_and_hatch": "Consistent blue pandas solid, orange DuckDB diagonal hatch, olive Snowflake tones with dots/diagonal/cross/grid hatches; labels provide non-color identification.",
+      "margins_clipping_overlap": "No clipped or colliding text, caps, ticks, panel titles, or footnotes observed.",
+      "error_bars": "Mean plus/minus sample SD with caps; caption explicitly says not confidence intervals.",
+      "negative_sd_lower_bound_markers": [
+        {
+          "workload": "groupby",
+          "path": "snowflake_small",
+          "mean_minus_sd_ms": -55.2737197048168,
+          "zero_triangle_visible": true
+        }
+      ],
+      "measurement_boundary": "Header distinguishes local Parquet to all result batches versus loaded Snowflake table to server total query time. Two visible footer lines exclude full remote result download and initial upload/load, identify sequential batch creation/release, and state this is not a same-hardware engine comparison."
+    },
+    {
+      "file": "mean-sd-1000000.png",
+      "status": "pass",
+      "opened_with": "view_image",
+      "native_dimensions": [
+        3040,
+        2000
+      ],
+      "inspection_dimensions": [
+        1946,
+        1280
+      ],
+      "panels": 4,
+      "vertical_bars": 24,
+      "labels_checked": 24,
+      "numeric_checks": [
+        {
+          "workload": "clean_derive",
+          "path": "pandas",
+          "observed_mean_sd": "11.19/0.82",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "duckdb",
+          "observed_mean_sd": "20.90/1.12",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "451.13/29.75",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_small",
+          "observed_mean_sd": "449.37/20.15",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "452.80/24.14",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_large",
+          "observed_mean_sd": "460.97/62.79",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "pandas",
+          "observed_mean_sd": "8.76/0.31",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "duckdb",
+          "observed_mean_sd": "12.88/0.63",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "269.53/23.94",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_small",
+          "observed_mean_sd": "261.90/20.96",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "290.60/48.61",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_large",
+          "observed_mean_sd": "266.43/16.50",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "pandas",
+          "observed_mean_sd": "20.66/1.58",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "4.35/0.24",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "76.80/22.07",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "91.13/66.64",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "78.37/22.34",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "73.80/7.51",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "pandas",
+          "observed_mean_sd": "61.08/4.39",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "8.14/0.36",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "150.23/74.86",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "139.03/9.55",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "145.10/22.62",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "153.17/53.11",
+          "matches_summary": true
+        }
+      ],
+      "linear_zero_axes": "pass",
+      "unit": "ms",
+      "repeats": 30,
+      "date": "2026-09-09",
+      "different_panel_scales_disclosed": true,
+      "category_identification": "Direct x-axis labels for all six categories; separate legend unnecessary.",
+      "color_and_hatch": "Consistent blue pandas solid, orange DuckDB diagonal hatch, olive Snowflake tones with dots/diagonal/cross/grid hatches; labels provide non-color identification.",
+      "margins_clipping_overlap": "No clipped or colliding text, caps, ticks, panel titles, or footnotes observed.",
+      "error_bars": "Mean plus/minus sample SD with caps; caption explicitly says not confidence intervals.",
+      "negative_sd_lower_bound_markers": [],
+      "measurement_boundary": "Header distinguishes local Parquet to all result batches versus loaded Snowflake table to server total query time. Two visible footer lines exclude full remote result download and initial upload/load, identify sequential batch creation/release, and state this is not a same-hardware engine comparison."
+    },
+    {
+      "file": "mean-sd-10000000.png",
+      "status": "pass",
+      "opened_with": "view_image",
+      "native_dimensions": [
+        3040,
+        2000
+      ],
+      "inspection_dimensions": [
+        1946,
+        1280
+      ],
+      "panels": 4,
+      "vertical_bars": 24,
+      "labels_checked": 24,
+      "numeric_checks": [
+        {
+          "workload": "clean_derive",
+          "path": "pandas",
+          "observed_mean_sd": "91.82/4.47",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "duckdb",
+          "observed_mean_sd": "226.16/9.76",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "636.93/47.67",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_small",
+          "observed_mean_sd": "516.70/63.33",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "506.47/77.80",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_large",
+          "observed_mean_sd": "476.17/46.19",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "pandas",
+          "observed_mean_sd": "73.61/3.87",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "duckdb",
+          "observed_mean_sd": "144.19/6.74",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "331.87/117.78",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_small",
+          "observed_mean_sd": "283.53/23.78",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "321.50/105.23",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_large",
+          "observed_mean_sd": "279.10/39.92",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "pandas",
+          "observed_mean_sd": "194.15/11.35",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "29.28/1.02",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "100.30/25.87",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "96.83/9.67",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "93.23/13.95",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "100.57/54.18",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "pandas",
+          "observed_mean_sd": "597.54/42.35",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "44.93/1.05",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "147.67/16.74",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "149.53/19.64",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "160.97/56.20",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "133.77/12.19",
+          "matches_summary": true
+        }
+      ],
+      "linear_zero_axes": "pass",
+      "unit": "ms",
+      "repeats": 30,
+      "date": "2026-09-09",
+      "different_panel_scales_disclosed": true,
+      "category_identification": "Direct x-axis labels for all six categories; separate legend unnecessary.",
+      "color_and_hatch": "Consistent blue pandas solid, orange DuckDB diagonal hatch, olive Snowflake tones with dots/diagonal/cross/grid hatches; labels provide non-color identification.",
+      "margins_clipping_overlap": "No clipped or colliding text, caps, ticks, panel titles, or footnotes observed.",
+      "error_bars": "Mean plus/minus sample SD with caps; caption explicitly says not confidence intervals.",
+      "negative_sd_lower_bound_markers": [],
+      "measurement_boundary": "Header distinguishes local Parquet to all result batches versus loaded Snowflake table to server total query time. Two visible footer lines exclude full remote result download and initial upload/load, identify sequential batch creation/release, and state this is not a same-hardware engine comparison."
+    },
+    {
+      "file": "mean-sd-100000000.png",
+      "status": "pass",
+      "opened_with": "view_image",
+      "native_dimensions": [
+        3040,
+        2000
+      ],
+      "inspection_dimensions": [
+        1946,
+        1280
+      ],
+      "panels": 4,
+      "vertical_bars": 24,
+      "labels_checked": 24,
+      "numeric_checks": [
+        {
+          "workload": "clean_derive",
+          "path": "pandas",
+          "observed_mean_sd": "935.69/46.94",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "duckdb",
+          "observed_mean_sd": "2239.68/112.69",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "4292.93/165.74",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_small",
+          "observed_mean_sd": "2707.50/48.85",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "1473.27/88.74",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_large",
+          "observed_mean_sd": "1455.87/112.89",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "pandas",
+          "observed_mean_sd": "700.04/19.12",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "duckdb",
+          "observed_mean_sd": "1434.90/63.82",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "994.07/40.47",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_small",
+          "observed_mean_sd": "718.70/47.89",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "508.33/31.48",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_large",
+          "observed_mean_sd": "505.67/65.50",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "pandas",
+          "observed_mean_sd": "1865.93/96.45",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "279.10/7.55",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "337.77/26.28",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "237.13/12.75",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "179.63/41.54",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "233.37/229.51",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "pandas",
+          "observed_mean_sd": "5784.97/394.96",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "413.16/9.67",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "719.20/53.67",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "478.10/43.34",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "330.73/99.65",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "288.17/60.99",
+          "matches_summary": true
+        }
+      ],
+      "linear_zero_axes": "pass",
+      "unit": "ms",
+      "repeats": 30,
+      "date": "2026-09-09",
+      "different_panel_scales_disclosed": true,
+      "category_identification": "Direct x-axis labels for all six categories; separate legend unnecessary.",
+      "color_and_hatch": "Consistent blue pandas solid, orange DuckDB diagonal hatch, olive Snowflake tones with dots/diagonal/cross/grid hatches; labels provide non-color identification.",
+      "margins_clipping_overlap": "No clipped or colliding text, caps, ticks, panel titles, or footnotes observed.",
+      "error_bars": "Mean plus/minus sample SD with caps; caption explicitly says not confidence intervals.",
+      "negative_sd_lower_bound_markers": [],
+      "measurement_boundary": "Header distinguishes local Parquet to all result batches versus loaded Snowflake table to server total query time. Two visible footer lines exclude full remote result download and initial upload/load, identify sequential batch creation/release, and state this is not a same-hardware engine comparison."
+    },
+    {
+      "file": "mean-sd-1000000000.png",
+      "status": "pass",
+      "opened_with": "view_image",
+      "native_dimensions": [
+        3040,
+        2000
+      ],
+      "inspection_dimensions": [
+        1946,
+        1280
+      ],
+      "panels": 4,
+      "vertical_bars": 24,
+      "labels_checked": 24,
+      "numeric_checks": [
+        {
+          "workload": "clean_derive",
+          "path": "pandas",
+          "observed_mean_sd": "9862.02/536.32",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "duckdb",
+          "observed_mean_sd": "22731.59/1138.74",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "34392.43/229.36",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_small",
+          "observed_mean_sd": "18015.40/211.35",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "10015.93/146.98",
+          "matches_summary": true
+        },
+        {
+          "workload": "clean_derive",
+          "path": "snowflake_large",
+          "observed_mean_sd": "5326.97/156.76",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "pandas",
+          "observed_mean_sd": "7745.86/441.18",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "duckdb",
+          "observed_mean_sd": "14806.66/488.08",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "6521.47/79.32",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_small",
+          "observed_mean_sd": "3646.90/148.17",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "2164.53/133.14",
+          "matches_summary": true
+        },
+        {
+          "workload": "filter_project",
+          "path": "snowflake_large",
+          "observed_mean_sd": "1275.20/100.94",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "pandas",
+          "observed_mean_sd": "18910.99/995.27",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "2824.65/54.50",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "2268.03/101.99",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "1227.73/68.71",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "727.90/40.41",
+          "matches_summary": true
+        },
+        {
+          "workload": "groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "433.10/18.55",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "pandas",
+          "observed_mean_sd": "57745.15/3594.88",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "duckdb",
+          "observed_mean_sd": "4821.43/1044.30",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_xsmall",
+          "observed_mean_sd": "5283.03/259.38",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_small",
+          "observed_mean_sd": "2838.53/109.64",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_medium",
+          "observed_mean_sd": "1624.67/103.46",
+          "matches_summary": true
+        },
+        {
+          "workload": "join_groupby",
+          "path": "snowflake_large",
+          "observed_mean_sd": "945.80/45.23",
+          "matches_summary": true
+        }
+      ],
+      "linear_zero_axes": "pass",
+      "unit": "ms",
+      "repeats": 30,
+      "date": "2026-09-09",
+      "different_panel_scales_disclosed": true,
+      "category_identification": "Direct x-axis labels for all six categories; separate legend unnecessary.",
+      "color_and_hatch": "Consistent blue pandas solid, orange DuckDB diagonal hatch, olive Snowflake tones with dots/diagonal/cross/grid hatches; labels provide non-color identification.",
+      "margins_clipping_overlap": "No clipped or colliding text, caps, ticks, panel titles, or footnotes observed.",
+      "error_bars": "Mean plus/minus sample SD with caps; caption explicitly says not confidence intervals.",
+      "negative_sd_lower_bound_markers": [],
+      "measurement_boundary": "Header distinguishes local Parquet to all result batches versus loaded Snowflake table to server total query time. Two visible footer lines exclude full remote result download and initial upload/load, identify sequential batch creation/release, and state this is not a same-hardware engine comparison."
+    }
+  ]
+}

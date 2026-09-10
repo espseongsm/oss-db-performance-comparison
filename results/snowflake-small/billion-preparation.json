@@ -1,0 +1,39 @@
+{
+  "status": "ready",
+  "rows": 1000000000,
+  "seed": 20260907,
+  "started_at": "2026-09-09T02:17:42.136588+00:00",
+  "purpose": "Common input for user-requested one-billion-row follow-up; benchmark protocol awaiting clarification",
+  "free_disk_bytes_before": 422956167168,
+  "completed_at": "2026-09-09T02:20:06.126853+00:00",
+  "dataset": {
+    "version": 1,
+    "seed": 20260907,
+    "rows": 1000000000,
+    "columns": 8,
+    "logical_fact_bytes": 64000000000,
+    "parquet_fact_bytes": 19083998521,
+    "dimension_rows": 100000,
+    "fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet",
+    "dimension": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/accounts.parquet",
+    "sha256": {
+      "sales.parquet": "af4cb072a8b59ac8f7c814027f48be258e2931761339469de4cfd48e9571e19e",
+      "accounts.parquet": "c7c5178dfc1b690131230f69e706596d819bae8cfcb202bbb123e9d34f912b52"
+    },
+    "compression": "snappy",
+    "row_group_size": 100000,
+    "distribution": "Independent uniform numeric columns; 5% missing discounts"
+  },
+  "free_disk_bytes_after": 403868475392,
+  "footer_validation": {
+    "status": "passed",
+    "rows": 1000000000,
+    "columns": 8,
+    "row_groups": 10000,
+    "id_range": [
+      0,
+      999999999
+    ],
+    "dimension_rows": 100000
+  }
+}
