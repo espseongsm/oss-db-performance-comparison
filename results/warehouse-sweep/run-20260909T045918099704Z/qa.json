@@ -7,7 +7,7 @@
   "visual_review": "passed",
   "metric_boundaries": "Local Parquet to all output batches; Snowflake platform total query time. Full remote result download excluded.",
   "report_review": "passed",
-  "reviewed_at_utc": "2026-09-10T00:37:15.301953+00:00",
+  "reviewed_at_utc": "2026-09-10T00:42:05.996250+00:00",
   "assessment": "Validated for the stated processing-path comparison; preserve metric-boundary and variability caveats.",
   "independent_audit": "independent-audit.json",
   "input_source_audit": "provenance-audit.json",
@@ -70,11 +70,11 @@
     "independent-audit.json": "b8dfc0b2bdae73721c01f4a616ac910c2b21edb2841d128801cf957ac4fdabc5",
     "provenance-audit.json": "3ff8d9a60b3aaf482cc3be58aff16cd4486ba366ff523c14799b0b71870aa2a6",
     "visual-review.json": "4a33aecbbb5b4e5d1a45ebb40d35f22003285e811acee3c0d005b7ff1122ca58",
-    "report-audit.json": "c75a53948aa38b828b55f7816d0bdd364fe62db9796a2193b84a3905bbb33605",
+    "report-audit.json": "8b8c65404ff05a8a8cbfb1a6031e75f4b581b97e2d7ae6647dc2ab46c110a718",
     "verify_results.py": "6c892a14978fa91444b728f89073383ecff474df4e4bd6b28409dc932195eecd",
     "verify_provenance.py": "c13977cbe0b855e35dcdd5305f2600db9ef74c1bcf47cb6a440457e4f53cb381",
-    "verify_report.py": "eb8af0decc277d1be9b508a72b9618985e03491d8ec2afa4b3d451db621faa0f"
+    "verify_report.py": "9363b410cc3a26208c40bf03173e4ac2bad2a7e81487590ae3c72431623da2e2"
   },
-  "measured_code_snippets_verified": 14,
-  "workload_code_review": "Four pandas bodies and eight DuckDB/Snowflake SQL queries plus two shared batch functions match immutable measured source; presentation wrappers and relative local paths disclosed."
+  "recommendation_cells_verified": 20,
+  "recommendation_review": "20 size/workload cells include the measured lowest-mean path. Multiple candidates and narrative independently reviewed against mean, sample SD and block behavior; local/Snowflake input-output boundaries and unmeasured costs disclosed. SD overlap is not a significance test. Inline Python and SQL removed."
 }
