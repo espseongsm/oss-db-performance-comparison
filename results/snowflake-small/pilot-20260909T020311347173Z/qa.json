@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "measurements": 72,
+  "conditions": 36,
+  "history_expected": 84,
+  "history_found": 84,
+  "history_missing": 0,
+  "statistics": "Mean and sample SD independently cross-checked using statistics and pandas",
+  "fingerprints": "All measured results match common full-result reference fingerprints",
+  "visual_review": "Passed: all three PNGs inspected; Korean labels, exact means and sample SD, zero-based vertical axes, hatching and measurement boundaries readable"
+}

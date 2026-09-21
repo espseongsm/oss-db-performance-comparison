@@ -1,0 +1,125 @@
+{
+  "1000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 189,
+    "sum_h": 1699783413,
+    "sum_h2": 200509816905
+  },
+  "1000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 1000,
+    "sum_h": 305679745,
+    "sum_h2": 1028958459986
+  },
+  "1000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 55903853533,
+    "sum_h2": 50136620375
+  },
+  "1000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 17573891254,
+    "sum_h2": 214151948423
+  },
+  "10000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 2004,
+    "sum_h": 172936622656,
+    "sum_h2": 2177608408402
+  },
+  "10000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 10000,
+    "sum_h": 8917433523,
+    "sum_h2": 10713395956780
+  },
+  "10000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 58171572752,
+    "sum_h2": 46582674260
+  },
+  "10000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 76655158193,
+    "sum_h2": 211010840050
+  },
+  "100000/filter_project": {
+    "columns": [
+      "id",
+      "region_id",
+      "gross_cents"
+    ],
+    "rows": 19886,
+    "sum_h": 17077682661784,
+    "sum_h2": 21126446159245
+  },
+  "100000/clean_derive": {
+    "columns": [
+      "id",
+      "net_cents"
+    ],
+    "rows": 100000,
+    "sum_h": 678572768515,
+    "sum_h2": 107163952100383
+  },
+  "100000/groupby": {
+    "columns": [
+      "region_id",
+      "total_cents",
+      "total_quantity",
+      "row_count"
+    ],
+    "rows": 50,
+    "sum_h": 52624636906,
+    "sum_h2": 58804609017
+  },
+  "100000/join_groupby": {
+    "columns": [
+      "region_id",
+      "tier",
+      "total_cents",
+      "row_count"
+    ],
+    "rows": 200,
+    "sum_h": 236935997229,
+    "sum_h2": 204796617641
+  }
+}

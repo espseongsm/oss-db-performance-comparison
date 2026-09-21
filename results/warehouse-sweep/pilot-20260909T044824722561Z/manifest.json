@@ -1,0 +1,142 @@
+{
+  "status": "failed",
+  "started_at": "2026-09-09T04:48:24.722943+00:00",
+  "settings": {
+    "sizes": [
+      1000,
+      10000,
+      100000
+    ],
+    "runs": 2,
+    "blocks": 1,
+    "batch_rows": 250000,
+    "threads": 4,
+    "memory_gb": 8,
+    "seed": 20260907,
+    "timeout_seconds": 3600,
+    "snowflake_connection": "benchmark",
+    "pilot": true
+  },
+  "paths": [
+    "pandas",
+    "duckdb",
+    "snowflake_xsmall",
+    "snowflake_small",
+    "snowflake_medium",
+    "snowflake_large"
+  ],
+  "metric_contract": {
+    "pandas": "Local Parquet read, batched pandas transform and all output batches materialized; no warmup checksum time",
+    "duckdb": "Local Parquet SQL, all output Arrow batches converted to pandas; no warmup checksum time",
+    "snowflake": "QUERY_HISTORY total_elapsed_time: server compile, queues, execution and result generation; no full result download to Mac"
+  },
+  "validation_contract": "Full two-moment modular checksum in every block warmup; every measured run validates output row count. SQL checksum query and actual-query warmup are both excluded. No claim of per-run full checksum equality.",
+  "source_sha256": {
+    "main.py": "73d420cade2598c7f8d67636fef6ee0dabc32c719d9bac7301c821bbb1d16baa",
+    "uv.lock": "7f11fb195a734394becda02d5823edb785e14e4032b93fadf493d62eb84463ad",
+    "benchmarks/__init__.py": "13f6fec0e8819e0007704feaf1c3b8ad5603ce44a1e4cc4844865955026b92ee",
+    "benchmarks/frame_benchmark.py": "49fa60b2e996e7948c16d7bf80d682535183c700af3bc4a310e02bbf933d05b9",
+    "benchmarks/frame_charts.py": "c50c214b3fb0c7e748407399c8d97108052837429ba00bd70a290ff873528434",
+    "benchmarks/frame_keychain.py": "962367122dd9ced24df035208b5930fc0cd1759b205d5cff76d3b3d85eb03069",
+    "benchmarks/frame_snowflake.py": "68099bd64ee89eac32202eac88d61fb88e7f13df48431c77ae0967c74267def9",
+    "benchmarks/frame_snowflake_report.py": "98901bd82560a350fe4c35de54450c7c4dae8fe0732c79eb989f21e355ec7102",
+    "benchmarks/frame_statistics.py": "2488ce1fd685d0cccab5820465ec43b3813c93afff1de2ec12c6b4ceff04dd48",
+    "benchmarks/frame_worker.py": "e192c8591a7af42eb7c903410b07f5e9606e17bf9d3ce2c09ac5e958c82c4115",
+    "benchmarks/frame_workloads.py": "5f90b4be1ba1e97f52d320fa44bc1efaf574c542c9324fe26b4a176353a6c717",
+    "benchmarks/sweep_benchmark.py": "f1fdb57e30a022d5f70a50e2e0322d5c186fbf429fb6d41525c52e076ebef582",
+    "benchmarks/sweep_data.py": "3084b9d4f9ff793a10684c1f5ad6bc1a777ed4b09ae997c5ef50af23c8a6bb9e",
+    "benchmarks/sweep_report.py": "7c831b5a09725e97d95b264e0811cc9ccaf4e9f574c34230b9a7fa9f39022e5b",
+    "benchmarks/sweep_snowflake.py": "8e08b509ffa4d8d533338244f0c1c42a3ecf7b7fef940cbd7a7ef60e78421c31",
+    "benchmarks/sweep_worker.py": "e0b28ad6c3d56956b0b800be7d200cf48a3017fe2e952d1beab85b9fabc51307",
+    "benchmarks/sweep_workloads.py": "7b50d32ebe74bb57adbbbc9daa7aa68664eb63a0dc552b83859ab536a83884a1",
+    "benchmarks/warehouse_benchmark.py": "bd93b0f6c3e11c7171efb9a0ec7b32fbcb52df8ea01a6ea2b58fcbe4de99cfa8",
+    "benchmarks/warehouse_handler.py": "d2c47891dfbd76e2640d1bb7221a69d01f9d3693e0357376900dbd23287b09d8",
+    "benchmarks/warehouse_report.py": "1232cf120b3070438c1c43311bb94d57aea067a8abda679061069a2e8e64ecfe"
+  },
+  "measurement_count": 0,
+  "history_errors": [],
+  "local_environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.5 (main, Jul 11 2025, 22:26:07) [Clang 20.1.4 ]",
+    "cpu_logical": 14,
+    "ram_bytes": 51539607552,
+    "versions": {
+      "pandas": "2.3.3",
+      "duckdb": "1.5.5",
+      "pyarrow": "23.0.1",
+      "numpy": "2.5.3",
+      "snowflake-connector-python": "4.7.3"
+    }
+  },
+  "warehouses": {
+    "snowflake_xsmall": {
+      "name": "FRAME_SWEEP_XSMALL",
+      "size": "X-Small",
+      "type": "STANDARD",
+      "generation": "2",
+      "min_cluster_count": 1,
+      "max_cluster_count": 1,
+      "auto_suspend": 60,
+      "auto_resume": "true"
+    },
+    "snowflake_small": {
+      "name": "FRAME_SWEEP_SMALL",
+      "size": "Small",
+      "type": "STANDARD",
+      "generation": "2",
+      "min_cluster_count": 1,
+      "max_cluster_count": 1,
+      "auto_suspend": 60,
+      "auto_resume": "true"
+    },
+    "snowflake_medium": {
+      "name": "FRAME_SWEEP_MEDIUM",
+      "size": "Medium",
+      "type": "STANDARD",
+      "generation": "2",
+      "min_cluster_count": 1,
+      "max_cluster_count": 1,
+      "auto_suspend": 60,
+      "auto_resume": "true"
+    },
+    "snowflake_large": {
+      "name": "FRAME_SWEEP_LARGE",
+      "size": "Large",
+      "type": "STANDARD",
+      "generation": "2",
+      "min_cluster_count": 1,
+      "max_cluster_count": 1,
+      "auto_suspend": 60,
+      "auto_resume": "true"
+    }
+  },
+  "snowflake_session": {
+    "account": "XN15248",
+    "region": "AWS_AP_NORTHEAST_2",
+    "role": "ACCOUNTADMIN",
+    "warehouse": "FRAME_BENCH_SMALL",
+    "database": "USER$ESPSEONGSM",
+    "schema": "PUBLIC",
+    "version": "10.32.102",
+    "warehouse_settings": {
+      "size": "Small",
+      "type": "STANDARD",
+      "auto_suspend": 60,
+      "auto_resume": "true",
+      "min_cluster_count": 1,
+      "max_cluster_count": 1,
+      "scaling_policy": "STANDARD",
+      "resource_monitor": "null"
+    },
+    "use_cached_result": false,
+    "connector_version": "4.7.3",
+    "client_memory_is_not_server_memory": true
+  },
+  "current_case": {
+    "path": "snowflake_medium",
+    "rows": 1000,
+    "workload": "filter_project",
+    "block": 1
+  },
+  "error": "Traceback (most recent call last):\n  File \"/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/sweep_benchmark.py\", line 229, in main\n    result = sweep_snowflake.block(\n        backend,\n    ...<4 lines>...\n        expected,\n    )\n  File \"/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/sweep_snowflake.py\", line 71, in block\n    cursor.execute(checksum_sql(query, work))\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/.venv/lib/python3.13/site-packages/snowflake/connector/cursor.py\", line 1142, in execute\n    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/.venv/lib/python3.13/site-packages/snowflake/connector/errors.py\", line 298, in errorhandler_wrapper\n    handed_over = Error.hand_to_other_handler(\n        connection,\n    ...<2 lines>...\n        error_value,\n    )\n  File \"/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/.venv/lib/python3.13/site-packages/snowflake/connector/errors.py\", line 354, in hand_to_other_handler\n    cursor.errorhandler(connection, cursor, error_class, error_value)\n    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/.venv/lib/python3.13/site-packages/snowflake/connector/errors.py\", line 229, in default_errorhandler\n    raise error_class(\n    ...<10 lines>...\n    )\nsnowflake.connector.errors.ProgrammingError: 001003 (42000): SQL compilation error:\nsyntax error line 1 at position 19 unexpected 'rows'.\n"
+}

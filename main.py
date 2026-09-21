@@ -230,6 +230,14 @@ def main() -> int:
         from benchmarks.financebench import main as financebench_main
 
         return financebench_main(sys.argv[2:])
+    if len(sys.argv) > 1 and sys.argv[1] == "warehouse-sweep":
+        from benchmarks.sweep_benchmark import main as sweep_main
+
+        return sweep_main(sys.argv[2:])
+    if len(sys.argv) > 1 and sys.argv[1] == "warehouse-frames":
+        from benchmarks.warehouse_benchmark import main as warehouse_main
+
+        return warehouse_main(sys.argv[2:])
     if len(sys.argv) > 1 and sys.argv[1] == "frames":
         from benchmarks.frame_benchmark import main as frames_main
 

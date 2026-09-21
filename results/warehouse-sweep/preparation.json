@@ -1,0 +1,19 @@
+{
+  "status": "ready",
+  "started_at": "2026-09-09T04:48:25.319302+00:00",
+  "sizes": [
+    100000000,
+    1000000000
+  ],
+  "100000000": {
+    "fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/sales.parquet",
+    "load_fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts",
+    "parts": 10
+  },
+  "1000000000": {
+    "fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet",
+    "load_fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts",
+    "parts": 100
+  },
+  "completed_at": "2026-09-09T04:51:13.812620+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "measurements": 144,
+  "conditions": 72,
+  "block_full_checksums": 72,
+  "every_run": "Output row count checked; full checksums verified per block, not per measured run",
+  "visual_review": "passed: all 3 PNGs reviewed; six vertical bars per workload; mean/sample SD labels; zero axes; clipped negative SD lower bound marked; pilot labelled",
+  "metric_boundaries": "Local Parquet to all output batches; Snowflake platform total query time. Full remote result download excluded.",
+  "independent_statistics": "All 72 mean/sample SD pairs verified with stdlib statistics",
+  "snowflake_unique_measurement_queries": 96,
+  "server_metric_missing": 0,
+  "source_snapshots_verified": 20
+}

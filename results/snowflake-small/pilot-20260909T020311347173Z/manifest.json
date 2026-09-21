@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "started_at": "2026-09-09T02:03:11.349233+00:00",
+  "settings": {
+    "snowflake_connection": "benchmark",
+    "warehouse": "FRAME_BENCH_SMALL",
+    "sizes": [
+      1000,
+      10000,
+      100000
+    ],
+    "runs": 2,
+    "blocks": 1,
+    "threads": 4,
+    "memory_gb": 8,
+    "seed": 20260907,
+    "timeout_seconds": 1800,
+    "pilot": true
+  },
+  "packages": {
+    "snowflake-snowpark-python": "1.54.0",
+    "pandas": "2.3.3",
+    "duckdb": "1.5.5",
+    "pyarrow": "23.0.1",
+    "numpy": "2.5.3",
+    "psutil": "7.2.2"
+  },
+  "timing": "Same Snowflake tables to a complete pandas DataFrame inside the Python stored procedure; Mac receives metrics only. SQL scan/compute is fused; input_ms is null for native SQL.",
+  "excluded": "Connection, upload/COPY, procedure startup and CALL transport, warmup, GC, fingerprints, query-history lookup, connection cleanup.",
+  "measurement_count": 72,
+  "history_errors": [],
+  "source_sha256": {
+    "main.py": "d1403e1982793b7096c7f300e1389514fb2af0cfbf4b66c155b8ac49ae9c3c77",
+    "uv.lock": "7f11fb195a734394becda02d5823edb785e14e4032b93fadf493d62eb84463ad",
+    "benchmarks/__init__.py": "13f6fec0e8819e0007704feaf1c3b8ad5603ce44a1e4cc4844865955026b92ee",
+    "benchmarks/frame_benchmark.py": "49fa60b2e996e7948c16d7bf80d682535183c700af3bc4a310e02bbf933d05b9",
+    "benchmarks/frame_charts.py": "c50c214b3fb0c7e748407399c8d97108052837429ba00bd70a290ff873528434",
+    "benchmarks/frame_keychain.py": "962367122dd9ced24df035208b5930fc0cd1759b205d5cff76d3b3d85eb03069",
+    "benchmarks/frame_snowflake.py": "7c263d03c5e61c93d09b35dd54b4f9dafaa227f7ae28866a60a5c1d3fdb88aa2",
+    "benchmarks/frame_snowflake_report.py": "98901bd82560a350fe4c35de54450c7c4dae8fe0732c79eb989f21e355ec7102",
+    "benchmarks/frame_statistics.py": "2488ce1fd685d0cccab5820465ec43b3813c93afff1de2ec12c6b4ceff04dd48",
+    "benchmarks/frame_worker.py": "e192c8591a7af42eb7c903410b07f5e9606e17bf9d3ce2c09ac5e958c82c4115",
+    "benchmarks/frame_workloads.py": "5f90b4be1ba1e97f52d320fa44bc1efaf574c542c9324fe26b4a176353a6c717",
+    "benchmarks/warehouse_benchmark.py": "bd93b0f6c3e11c7171efb9a0ec7b32fbcb52df8ea01a6ea2b58fcbe4de99cfa8",
+    "benchmarks/warehouse_handler.py": "d2c47891dfbd76e2640d1bb7221a69d01f9d3693e0357376900dbd23287b09d8",
+    "benchmarks/warehouse_report.py": "43b0137c8d71244ed918bc3d286a4c81c0bd524296b2f0b88bc0fbdc691eba1f"
+  },
+  "snowflake": {
+    "account": "XN15248",
+    "region": "AWS_AP_NORTHEAST_2",
+    "role": "ACCOUNTADMIN",
+    "warehouse": "FRAME_BENCH_SMALL",
+    "database": "USER$ESPSEONGSM",
+    "schema": "PUBLIC",
+    "version": "10.32.102",
+    "warehouse_settings": {
+      "size": "Small",
+      "type": "STANDARD",
+      "auto_suspend": 60,
+      "auto_resume": "true",
+      "min_cluster_count": 1,
+      "max_cluster_count": 1,
+      "scaling_policy": "STANDARD",
+      "resource_monitor": "null"
+    },
+    "use_cached_result": false,
+    "connector_version": "4.7.3",
+    "client_memory_is_not_server_memory": true
+  },
+  "completed_at": "2026-09-09T02:06:06.445628+00:00"
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "version": 1,
+    "seed": 20260907,
+    "rows": 100000,
+    "columns": 8,
+    "logical_fact_bytes": 6400000,
+    "parquet_fact_bytes": 1912365,
+    "dimension_rows": 100000,
+    "fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000/sales.parquet",
+    "dimension": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000/accounts.parquet",
+    "sha256": {
+      "sales.parquet": "ec7e8d5d4c51860e19eda0159aa42576eb055b07cd68e237af32fcd747ed782a",
+      "accounts.parquet": "6e0f6dd522cb358824a3be325c8a68546f1023aad17164b0f781ccbce162d715"
+    },
+    "compression": "snappy",
+    "row_group_size": 100000,
+    "distribution": "Independent uniform numeric columns; 5% missing discounts"
+  },
+  {
+    "version": 1,
+    "seed": 20260907,
+    "rows": 1000000,
+    "columns": 8,
+    "logical_fact_bytes": 64000000,
+    "parquet_fact_bytes": 19086111,
+    "dimension_rows": 100000,
+    "fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000/sales.parquet",
+    "dimension": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000/accounts.parquet",
+    "sha256": {
+      "sales.parquet": "698bcb60d7e1c163daaf13bcc007294e3afb13b76ec98ccf549c12e4a2ec9912",
+      "accounts.parquet": "6e0f6dd522cb358824a3be325c8a68546f1023aad17164b0f781ccbce162d715"
+    },
+    "compression": "snappy",
+    "row_group_size": 100000,
+    "distribution": "Independent uniform numeric columns; 5% missing discounts"
+  },
+  {
+    "version": 1,
+    "seed": 20260907,
+    "rows": 10000000,
+    "columns": 8,
+    "logical_fact_bytes": 640000000,
+    "parquet_fact_bytes": 190835721,
+    "dimension_rows": 100000,
+    "fact": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows10000000/sales.parquet",
+    "dimension": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows10000000/accounts.parquet",
+    "sha256": {
+      "sales.parquet": "197b8d1d0e3d0f6ad66fd237b065cc142818631bd503d73064ec0e65e4e669d8",
+      "accounts.parquet": "6e0f6dd522cb358824a3be325c8a68546f1023aad17164b0f781ccbce162d715"
+    },
+    "compression": "snappy",
+    "row_group_size": 100000,
+    "distribution": "Independent uniform numeric columns; 5% missing discounts"
+  }
+]

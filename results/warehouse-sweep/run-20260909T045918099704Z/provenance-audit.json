@@ -1,0 +1,503 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-09T23:15:14.474449+00:00",
+  "source_snapshots_verified": 20,
+  "canonical_input_files_verified": 10,
+  "load_part_files_verified": 110,
+  "canonical_rows": [
+    100000,
+    1000000,
+    10000000,
+    100000000,
+    1000000000
+  ],
+  "row_count_and_contiguous_id_footers": "passed for all facts and parts",
+  "dimension_contents": "all five files contain account_id 0..99999 and tier=account_id%4",
+  "successful_load_records": 6,
+  "warehouse_manifest": "four Standard Gen2 single-cluster sizes; result reuse disabled",
+  "input_hashes": [
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000/sales.parquet",
+      "sha256": "ec7e8d5d4c51860e19eda0159aa42576eb055b07cd68e237af32fcd747ed782a"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000/accounts.parquet",
+      "sha256": "6e0f6dd522cb358824a3be325c8a68546f1023aad17164b0f781ccbce162d715"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000/sales.parquet",
+      "sha256": "698bcb60d7e1c163daaf13bcc007294e3afb13b76ec98ccf549c12e4a2ec9912"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000/accounts.parquet",
+      "sha256": "6e0f6dd522cb358824a3be325c8a68546f1023aad17164b0f781ccbce162d715"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows10000000/sales.parquet",
+      "sha256": "197b8d1d0e3d0f6ad66fd237b065cc142818631bd503d73064ec0e65e4e669d8"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows10000000/accounts.parquet",
+      "sha256": "6e0f6dd522cb358824a3be325c8a68546f1023aad17164b0f781ccbce162d715"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/sales.parquet",
+      "sha256": "df921eab9abb39a327d67ba7523cfe44e3d823216b00682f76095abe90670433"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/accounts.parquet",
+      "sha256": "c7c5178dfc1b690131230f69e706596d819bae8cfcb202bbb123e9d34f912b52"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/sales.parquet",
+      "sha256": "af4cb072a8b59ac8f7c814027f48be258e2931761339469de4cfd48e9571e19e"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/accounts.parquet",
+      "sha256": "c7c5178dfc1b690131230f69e706596d819bae8cfcb202bbb123e9d34f912b52"
+    }
+  ],
+  "part_hashes": [
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0000.parquet",
+      "sha256": "422beb835fe3c255d63a72a75a91e2d130748bce5d86b955540e6141574032a3"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0001.parquet",
+      "sha256": "538b06929883e2fb7cf13f7bfe3c9027bf201934c0890c6032231a5f3d2acb5f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0002.parquet",
+      "sha256": "342417e6d365eab660cda28b41bb7462e112f81e5517aca3be4436120bace9a5"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0003.parquet",
+      "sha256": "9531830f930802069ae6eb0f7d43eea4d854332c8bad3519c2b83a765bf2fc05"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0004.parquet",
+      "sha256": "7e7bc76d4a6876c77327bc7b040920317784cb5a8a1c8ef5da65cb5fc44ecbb3"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0005.parquet",
+      "sha256": "3b8bc0ab10072415c659bffea818262b41120e932e3027167b50d2cc9d931f8c"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0006.parquet",
+      "sha256": "d43f3c989ecb1c1a89dc85d95d75d110975f02d1aa8c0be1c1c5963e21127a87"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0007.parquet",
+      "sha256": "739c537073ceccd38d21d2b44ae0b0a2a778e557cb4d3eec6660d270cb394ac8"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0008.parquet",
+      "sha256": "750ca53aa00856f0d668b025131b0b019b355fb15c763bc4b69ab6b8f8198b50"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000000/snowflake-parts/part-0009.parquet",
+      "sha256": "0f392b49b301ac8c2a686e6291a94e0a71fc927f291ee76e0a0242254140b322"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0000.parquet",
+      "sha256": "422beb835fe3c255d63a72a75a91e2d130748bce5d86b955540e6141574032a3"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0001.parquet",
+      "sha256": "538b06929883e2fb7cf13f7bfe3c9027bf201934c0890c6032231a5f3d2acb5f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0002.parquet",
+      "sha256": "342417e6d365eab660cda28b41bb7462e112f81e5517aca3be4436120bace9a5"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0003.parquet",
+      "sha256": "9531830f930802069ae6eb0f7d43eea4d854332c8bad3519c2b83a765bf2fc05"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0004.parquet",
+      "sha256": "7e7bc76d4a6876c77327bc7b040920317784cb5a8a1c8ef5da65cb5fc44ecbb3"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0005.parquet",
+      "sha256": "3b8bc0ab10072415c659bffea818262b41120e932e3027167b50d2cc9d931f8c"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0006.parquet",
+      "sha256": "d43f3c989ecb1c1a89dc85d95d75d110975f02d1aa8c0be1c1c5963e21127a87"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0007.parquet",
+      "sha256": "739c537073ceccd38d21d2b44ae0b0a2a778e557cb4d3eec6660d270cb394ac8"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0008.parquet",
+      "sha256": "750ca53aa00856f0d668b025131b0b019b355fb15c763bc4b69ab6b8f8198b50"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0009.parquet",
+      "sha256": "0f392b49b301ac8c2a686e6291a94e0a71fc927f291ee76e0a0242254140b322"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0010.parquet",
+      "sha256": "65754008a875b76839d608b9de90840e2e0e83d1ca82c174c5f997af801c8cce"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0011.parquet",
+      "sha256": "e5217f55fa6f94388b56cab6dcf5d34c23bdace0aab98dffed0ca07269dc377d"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0012.parquet",
+      "sha256": "6ca9e9cb8ed019ad2c231e0cc13508f453829fa0db7e8e34c978289b1d015d42"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0013.parquet",
+      "sha256": "c537a1026ca094473882e61ddbca4a379064904a48859dfde54698f4fa7dd760"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0014.parquet",
+      "sha256": "05b8d20bdb0c262a58b87523422d9990e9423e66e8d154d35a1391f96b000d97"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0015.parquet",
+      "sha256": "b5e20f7081e25615d35d81b5cb9df07fbb3b78f3d1206b45844da1baad123700"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0016.parquet",
+      "sha256": "b2251afa3f3cb386fdc882d0a415df496c28bd268dfc0c561a05f0463acce41f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0017.parquet",
+      "sha256": "beced252b891102a15569cba9339f4b49383d6f01af9fbcce3c01f75a2b44bf9"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0018.parquet",
+      "sha256": "bfb1dd78aac41ca6959ea63498d32b11a9cfbf2cfa8846dc1e659c657b527845"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0019.parquet",
+      "sha256": "6d1262fda4d25ec72d1ff25b0b84397c363b3730d6adbd15875967f342735367"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0020.parquet",
+      "sha256": "29d11ff224af477253426d2d8928523f30b20050c8436980b25199443f41159d"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0021.parquet",
+      "sha256": "e64b9cd7f27ebb27de64757281133af45de9f33e6fb03e8147c90b525f2addd1"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0022.parquet",
+      "sha256": "9bff8fdcdbca0c0a677ce007df138c311dd2be3aaa1d1c339b7d4e150b6cee67"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0023.parquet",
+      "sha256": "c2023d58c6c5b2c55017f859e9d2b0e3ca61018f2d922f05627f3754b9148933"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0024.parquet",
+      "sha256": "7b1d076512c80112d2e5b79d5efde2abb83b54c1e905e3becde161884ed9f7f4"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0025.parquet",
+      "sha256": "9a80ef7a6d54d6436090ca23ada4562137ea947c4f97b60f56609d7d4a44c16f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0026.parquet",
+      "sha256": "6a342b4ee865f49a04125a44a06d018167f6c84f01fc7d39f021216a21362a11"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0027.parquet",
+      "sha256": "6cee238f07911fb7a40804372aaf7815803aa88c90980c514dc6270680ba0c57"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0028.parquet",
+      "sha256": "2a71e595a0a132226ac82bfea734483db9b77f0b964c881818cff1085c1df3dd"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0029.parquet",
+      "sha256": "260149ccd463a8bb710f0666523bd7901dfd02a00362cd73e9a67b9810a5f604"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0030.parquet",
+      "sha256": "0efb75126d0d201661f0be208f0c984a22077111a6d513cfe42269d5acf5042e"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0031.parquet",
+      "sha256": "3bd27c5a58bc37b4d7dd87fee03a1a46e803959f9630fc7bcd673ce26200e6b2"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0032.parquet",
+      "sha256": "a4d86096bb0950343e728be175554cbe56b323c15bd3913aad4f829b8f71d528"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0033.parquet",
+      "sha256": "2981917dd050ad7209262942e67cc328aac75b9bf4c856fc2d53c1af5aca0e94"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0034.parquet",
+      "sha256": "503cbfcff7afe8cf18871bd2ed0e79def716578c9ac3f89321510584525dcf9f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0035.parquet",
+      "sha256": "9313d3cc29383b8f007a1928a195d5804ba55b53d6553deabb69544f66636fe0"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0036.parquet",
+      "sha256": "d659efb153181454d6a5931d41042a6f3f8a4305d14c634bb1e9b65df1a7f52e"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0037.parquet",
+      "sha256": "9505a34c3c07175205985f925247d887ea3b3cf4b52e155ee88859b52be083f0"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0038.parquet",
+      "sha256": "8fd2d158c284100ea6d26368197fb2a182cf84f084b353f82a4077098ece77f8"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0039.parquet",
+      "sha256": "4d701d5d42772155a14054879b978bd3e57414001192ca52afb6be9d7789e88f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0040.parquet",
+      "sha256": "e34a2f5576b805f276f7fda34f3ac7933b88fa421a30cb8878585007dc455b79"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0041.parquet",
+      "sha256": "8fce785e8b3550db4879b345c8658ee6da0629bc7f935d02b7cfde4212188c8c"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0042.parquet",
+      "sha256": "2ce8dca6147e4c03b3e4c659d5f1b50f1576456afa691757943284d2ce3dd223"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0043.parquet",
+      "sha256": "81700be5f4de16873c045e28b36996ad4e3b4399d29f7f7e637d4671a0c402f3"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0044.parquet",
+      "sha256": "42a2f1c0155d76cbefb2fc86b804306c7f0e30f1bc6fdee89fae80a9af6fafa2"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0045.parquet",
+      "sha256": "ffc59c6b6bbe55e27402e384273215827fd101e9460062b51d3f031a088e920b"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0046.parquet",
+      "sha256": "3a44bd52a92f4592e8005df7e73d127621da4be53cce98e98e004f26eafe6465"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0047.parquet",
+      "sha256": "4959da660a146b94eddce7139561255441f9d0a4bf998fe6915dc9037f4d7e94"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0048.parquet",
+      "sha256": "7bf95c81b98cfb256b619bb24fec107bd910fe83d03ea336ff2a42ebf5be4858"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0049.parquet",
+      "sha256": "179d59e2348dddb4b62d6ce970cc32bf0c19e18e8849f70172f0fbcbbf78fd94"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0050.parquet",
+      "sha256": "8e4fcb88e62008b7b665df9056249f8ea73e7c47b7cb79939d036db71002cdc6"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0051.parquet",
+      "sha256": "3bcfa287bbd954b381768fa2b0571f43c434e321e158c6d037759883139f407a"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0052.parquet",
+      "sha256": "d0401ca4f4357421afa9e9cce5986c6a72c7595bf87abfec7844e1680cccb23f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0053.parquet",
+      "sha256": "91a620f32a20b3454cb65344f5c2e129321f340d522f5e2ba5be46d4420a26a7"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0054.parquet",
+      "sha256": "813ec6d05e30210e39558a914fff8fe4ee5a2e5e562d84a644acc08a68d99caa"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0055.parquet",
+      "sha256": "5f953f328643389f514de9e3b6cce5c70213fca707b51f2302812ba9de0b17fe"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0056.parquet",
+      "sha256": "fbe5045827a2f7bfb916f7dac20a44bdfaa17fbd1e665fd7a3cb32a54c566199"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0057.parquet",
+      "sha256": "8aa33fb1b49405075d2e682e19a8a4399b482c5ed240ba267516a78ec73b5966"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0058.parquet",
+      "sha256": "4ec5d4c20874365dcdc43a4bc1805f1adcf514a2f40ab20a227d74bc3932bfe5"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0059.parquet",
+      "sha256": "49b926d17360059c5ab4c26a50b1f49798ad14c8d2b4ab3b4064854e1b03e87f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0060.parquet",
+      "sha256": "997727ff07925581e4314808a620c98d0404e3272c3906aea7b94f819acaa306"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0061.parquet",
+      "sha256": "70539f88f126e4738dec6a8e570368f85163e6ec2b685ec8c713ac6e01ab8123"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0062.parquet",
+      "sha256": "2878389c814347650de5fa93b993df4c0156350b6bf1da28e69a35ebbd2d7fb4"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0063.parquet",
+      "sha256": "a9d8a0521351745c13a69f54e787bd507df024068b382bbecacaebc98be53441"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0064.parquet",
+      "sha256": "48ebb75bd7af05a7f6a59ed9b49f04e3f7626842f3a21151dd0d9ce46302f36a"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0065.parquet",
+      "sha256": "2cc935844ddc9109cdd1d9ab33d18b325fe2502de2eed3e4aa9f1a886bada00b"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0066.parquet",
+      "sha256": "edcc5b401c12a3d9c242c4109e41340d79d85daf3d4bb5f25062cc12f61ec20a"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0067.parquet",
+      "sha256": "83193e7b7067694ecdfe6c336a34a60acd52ae766791e51bbb62c4beee38c3fc"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0068.parquet",
+      "sha256": "6f973776c453e35759e4ecd5136153ceaf8640958d19abdc2c2007bbe3c4a27f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0069.parquet",
+      "sha256": "071197acfa9817aa9f842bd6f60b64f05e047a095c7b0daab4976a754e4c523f"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0070.parquet",
+      "sha256": "eaf8ace2d9e56afef1cab1c77c3511c7a1a0d44ba7a53dfa5d20a07a9c4a0aee"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0071.parquet",
+      "sha256": "2ede04e56d91601fb1b8d0c58a07f2bce715c6489e9067998739ae1a14d0e3d0"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0072.parquet",
+      "sha256": "8e92a93e618b54e7de9c61f4b3c93c6fb379cdc5f85a5fcedd6485defbdc7b47"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0073.parquet",
+      "sha256": "4f626d75d0bfe9f9ba7d5e76d8f7230003a8b2f5aa74905a923ad86c77f8ed0a"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0074.parquet",
+      "sha256": "d4fc20dbacd687a9070fb06d3ccee58cdaa522adc367d79547104252126e9d33"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0075.parquet",
+      "sha256": "5f11314c3a9118ae39392e62011617d24d74385cf66ebbfb9a2760c5283fd6bc"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0076.parquet",
+      "sha256": "e06a874a7673fd4fd72963a2ee0485fee0438537d6c82d499e7c739e3129ece3"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0077.parquet",
+      "sha256": "e540442c158913bf4484aa3dc35ddcea95d5b2002b719849e421d77a7b9fef17"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0078.parquet",
+      "sha256": "599caaa902b951a554e99c3889bbccd6e4c1ff903124e508cb5e59a70e23d1ce"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0079.parquet",
+      "sha256": "298ab0f2883ca1046adea4ed7894a492bee66f4a2896f4d3ef51222243bfa113"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0080.parquet",
+      "sha256": "2b2f232fbe03a60171feb9a85b3b61d56d5f0a4f86c0bf1bf523a0efa7ee0a00"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0081.parquet",
+      "sha256": "4cc843cfb470aa824a0bfb777ab69436204af28a58586988b6d076ef84f78fd5"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0082.parquet",
+      "sha256": "8bb6d87ecde0cb477dbf05d4d5f03076395f7470e775a5950695ab521168fd88"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0083.parquet",
+      "sha256": "0aa22df99d7fe6c47da4cf829e5e0b8dc3459d92e56115127e39d441e9373562"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0084.parquet",
+      "sha256": "e34f45eb2c148c0cb423f11146c1712263f0c9d559a85f32791d0195098ae3e1"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0085.parquet",
+      "sha256": "2428fc1ccdc5fba3fdc60737c8d8d9bef4ac4b75b2d44545c0f1ff1cc19c0c46"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0086.parquet",
+      "sha256": "a182153bfe3edae060f7e81e83b9f67e2304698b8cd3964add679fa6bc89b9c2"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0087.parquet",
+      "sha256": "7dd1fdc933a69ba1b6c280342c3b99a3dbf192dd9c318993468ba32901003613"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0088.parquet",
+      "sha256": "a641170481b5902206f5c3539557883a565144758463093b0cf99c0ba7766914"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0089.parquet",
+      "sha256": "018729662ff0c308687111556f65d42956ad2a666734c8f709d999383fbf5fa1"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0090.parquet",
+      "sha256": "1d7ed5dfe298a5e35c2260be7d6cea806a07718dda4cc7d69415db1410504926"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0091.parquet",
+      "sha256": "6c295b93b4866192cd1ea2862e6392c4e82d116a50cce6cce7091ea158559ea2"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0092.parquet",
+      "sha256": "cf495d486a3245e5f0cb32e183fb4bbaca0f1cca7811dc6a3a9097775a1e5272"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0093.parquet",
+      "sha256": "e119dc6bd5c3616181bec283d2c8036781ee2efb2cebdcfbc16b3bf02e567873"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0094.parquet",
+      "sha256": "a721cfd63130f6a0ffec41c72b2d605212b7fa1a54fb18dcaeb76104eb7292d1"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0095.parquet",
+      "sha256": "b23e0b2fd766d9ab39b8f18665242996c71f115070e3818771978989b5d54eec"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0096.parquet",
+      "sha256": "bb30b04213a81a79fcd59a9a9023db516a87f2061415e53feeee04cfcf18d043"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0097.parquet",
+      "sha256": "5a2faa6ee926db3d82241619077ea469563a242be2ae434965e6df4a2ec245cd"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0098.parquet",
+      "sha256": "38ae0fa9991ca649573b0670892109941c352e66dea4e7588a3bb4b5e5880135"
+    },
+    {
+      "path": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows1000000000/snowflake-parts/part-0099.parquet",
+      "sha256": "17aad09fa89a98a3a30fb8890fa9fe6eb4fd0f835de1d3dcc76e405d19f55cec"
+    }
+  ],
+  "limitations": "File hashes/footer checks do not independently recompute the full input/output dataset. Warmup output checksums are audited separately."
+}
