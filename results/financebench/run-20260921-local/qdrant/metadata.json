@@ -1,0 +1,16 @@
+{
+  "engine": "qdrant",
+  "version": "1.15.4",
+  "load_and_index_seconds": 17.592132833990036,
+  "plan": {
+    "hnsw_ef": 128,
+    "indexed_vectors_count": 115174,
+    "points_count": 115174,
+    "collection_status": "green"
+  },
+  "filtered_plan": null,
+  "pid": 70714,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "repeats": 3,
+  "started_utc": "2026-09-21T05:02:54.480967+00:00"
+}

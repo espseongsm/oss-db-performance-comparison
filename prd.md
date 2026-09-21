@@ -223,3 +223,28 @@ DB 시작 → fact/dimension 생성 → 1회 검증 → 30회 측정
 LinkedIn 글은 실험 중 눈에 띈 결과와 느낀 점을 자연스럽게 풀어 쓰는 경험 공유 문체로 작성한다. 짧은 문단과 쉬운 설명을 사용하고, 보고서식 표현을 줄이되 핵심 수치와 실험 범위는 유지한다. baseline과 optimized를 구분하고, 날짜 필터 집계(medium)·전체 집계(large)·조인 후 집계(join)의 우위를 각각 설명한다. 수정한 게시글 전문은 채팅에만 제공한다.
 
 저장소에 게시하는 Markdown의 이미지와 내부 문서 링크는 해당 Markdown 파일 기준의 상대 경로를 사용한다. 개인 컴퓨터의 절대 경로를 포함하지 않으며, 링크 대상이 Git에 포함되어 있는지 확인한다.
+
+## FinanceBench vector retrieval benchmark (2026-09-21)
+
+- Publishable English report using all 368 PDFs at FinanceBench commit `cc39aeb4afdf33909ee1412188bf89035950c2eb` and its 150 public questions.
+- Entry point: `main.py financebench prepare|run|worker|report`; preserve existing relational/frame benchmarks and in-progress changes.
+- Shared page-preserving PyMuPDF extraction, 448-token chunks with 64-token overlap, pinned BAAI/bge-small-en-v1.5 embeddings (384-dimensional normalized float32). No oracle evidence text is used as the search corpus.
+- Local candidates: SQLite/sqlite-vec, DuckDB exact and VSS HNSW, pgvector, ClickHouse, Qdrant, Weaviate, Milvus. Snowflake SQL/Cortex Search require separately configured cloud execution.
+- Top-10 global and oracle-document-filter search, 150 questions, 3 randomized repeats, concurrency 1; exact NumPy reference, strict/tie-aware ANN recall and evidence-page metrics are separate.
+- Record raw returned IDs, latency, build totals, versions, source hashes, plans, failures and engine status. Failed/incomplete engines must not appear as completed performance rows.
+- Native macOS embedded DBs and Docker servers are different deployment paths; results are exploratory and cannot establish matched-hardware production rankings. No 1M-vector, peak-QPS or cloud-cost claims from this corpus.
+- Deliver English Markdown report, CSV, chart and Mermaid pipeline; preserve source provenance and limitations.
+
+### FinanceBench first measured result
+
+The 2026-09-21 run completed 9,000 measured requests across ten configurations of seven OSS databases on 115,174 chunks. Explicit prefilter/exact fallback variants supplement the default DuckDB VSS and ClickHouse paths; their low-recall default filtered results remain visible. The English report and raw-result audit are under `results/financebench/final-20260921/`. Snowflake remains outside completed coverage.
+
+### FinanceBench Cortex Search extension
+
+- Reuse the exact BGE document/query vectors; no Snowflake embedding generation, text search or reranking. Use multi-index `VECTOR INDEXES EMBEDDING` and Python API `multi_index_query`.
+- Preserve the local benchmark and both global/oracle-document-filter measurement protocols. Include 900 measured requests plus 300 warm-ups; use the same NumPy ground truth and evidence metrics.
+- Verify all uploaded vectors against local float32 inputs, record actual region/version/warehouse, DDL and query IDs, and report cloud network latency separately from local deployment performance.
+- Use uniquely named experiment resources, with a separate database if the configured personal database cannot hold tables. Delete the created service/schema/database after completion or failure. Do not modify shared warehouse settings.
+- Preserve failed attempts and publish only completed measurements. Cloud billing, server-only latency and recall-matched index tuning are outside this extension's measured claims.
+
+The extension completed 900 measured Cortex requests in AWS Seoul with all uploaded vectors verified. Global / oracle-filter p95 was 173.68 / 174.54 ms; tie-aware recall was 99.53% / 99.67%, and evidence hit was 29.33% / 62.67%. No result shortfalls occurred. The combined report and independent 9,900-request audit are in `results/financebench/combined-20260921/`. Experiment resources were removed; billed costs and Snowflake SQL exact search remain unmeasured.

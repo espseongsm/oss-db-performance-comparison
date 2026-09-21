@@ -1,0 +1,27 @@
+[
+  {
+    "sql": "CREATE SCHEMA \"USER$ESPSEONGSM\".\"FINANCEBENCH_BFB45FFDF819\" DATA_RETENTION_TIME_IN_DAYS=1",
+    "query_id": "01c736a6-0002-07cd-0001-9ade0015308e",
+    "seconds": 1.7964084580016788
+  },
+  {
+    "sql": "CREATE TEMPORARY STAGE \"USER$ESPSEONGSM\".\"FINANCEBENCH_BFB45FFDF819\".UPLOAD",
+    "query_id": "01c736a6-0002-089c-0001-9ade00163036",
+    "seconds": 0.190340750006726
+  },
+  {
+    "sql": "PUT 'file:///Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/financebench/cortex-20260921/cortex/upload.parquet' @\"USER$ESPSEONGSM\".\"FINANCEBENCH_BFB45FFDF819\".UPLOAD AUTO_COMPRESS=FALSE PARALLEL=4",
+    "query_id": "01c736a6-0002-089c-0001-9ade0016303a",
+    "seconds": 13.48968920801417
+  },
+  {
+    "sql": "CREATE TABLE \"USER$ESPSEONGSM\".\"FINANCEBENCH_BFB45FFDF819\".RAW (ID NUMBER, DOC_NAME VARCHAR, PAGE NUMBER, EMBEDDING ARRAY)",
+    "query_id": "01c736a6-0002-089c-0001-9ade0016303e",
+    "seconds": 0.1551695830130484
+  },
+  {
+    "sql": "DROP SCHEMA \"USER$ESPSEONGSM\".\"FINANCEBENCH_BFB45FFDF819\" CASCADE",
+    "query_id": "01c736a6-0002-07cd-0001-9ade00153092",
+    "seconds": 0.2695155419933144
+  }
+]

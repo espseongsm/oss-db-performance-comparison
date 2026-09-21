@@ -1,0 +1,42 @@
+[
+  {
+    "engine": "sqlite",
+    "status": "complete",
+    "returncode": 0
+  },
+  {
+    "engine": "duckdb-exact",
+    "status": "complete",
+    "returncode": 0
+  },
+  {
+    "engine": "duckdb-hnsw",
+    "status": "complete",
+    "returncode": 0
+  },
+  {
+    "engine": "postgres",
+    "status": "complete",
+    "returncode": 0
+  },
+  {
+    "engine": "clickhouse",
+    "status": "complete",
+    "returncode": 0
+  },
+  {
+    "engine": "qdrant",
+    "status": "complete",
+    "returncode": 0
+  },
+  {
+    "engine": "weaviate",
+    "status": "complete",
+    "returncode": 0
+  },
+  {
+    "engine": "milvus",
+    "status": "failed",
+    "returncode": 1
+  }
+]

@@ -1,0 +1,11 @@
+# Copy this profile into the Snowflake connector's local connections.toml.
+# The connector's default path depends on OS; see README.
+# Enter real identifiers locally. Do not put passwords/private keys in this repo.
+[benchmark]
+account = "YOUR_ORG-YOUR_ACCOUNT"
+user = "YOUR_USER"
+authenticator = "externalbrowser"
+role = "YOUR_BENCHMARK_ROLE"
+warehouse = "YOUR_EXISTING_WAREHOUSE"
+database = "YOUR_BENCHMARK_DATABASE"
+schema = "YOUR_BENCHMARK_SCHEMA"

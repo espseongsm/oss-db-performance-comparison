@@ -1,0 +1,41 @@
+cortex: uploading 115,174 existing vectors
+Traceback (most recent call last):
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/main.py", line 279, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/main.py", line 232, in main
+    return financebench_main(sys.argv[2:])
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 323, in main
+    worker(args.engine[0], args.output, args.repeats)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 161, in worker
+    db = backend(engine, vectors, chunks, out)
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 116, in backend
+    return CortexBackend(vectors, chunks, directory)
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/finance_cortex.py", line 117, in __init__
+    self.execute(
+    ~~~~~~~~~~~~^
+        f"CREATE TABLE {self.qualified_schema}.RAW (ID NUMBER, DOC_NAME VARCHAR, PAGE NUMBER, EMBEDDING ARRAY)"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/finance_cortex.py", line 187, in execute
+    cursor.execute(sql)
+    ~~~~~~~~~~~~~~^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/snowflake/connector/cursor.py", line 1142, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/snowflake/connector/errors.py", line 298, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+        connection,
+    ...<2 lines>...
+        error_value,
+    )
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/snowflake/connector/errors.py", line 354, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/snowflake/connector/errors.py", line 229, in default_errorhandler
+    raise error_class(
+    ...<10 lines>...
+    )
+snowflake.connector.errors.ProgrammingError: 060119 (0A000): Tables cannot currently be created in a personal database.

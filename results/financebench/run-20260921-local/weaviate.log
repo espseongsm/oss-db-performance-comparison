@@ -1,0 +1,5 @@
+/private/tmp/financebench-venv/lib/python3.13/site-packages/authlib/integrations/httpx_client/assertion_client.py:5: AuthlibDeprecationWarning: The httpx module is deprecated; please use httpx2 instead.
+  from ._compat import httpx2
+weaviate: loaded/indexed in 19.1s
+weaviate: global complete
+weaviate: document-filter complete

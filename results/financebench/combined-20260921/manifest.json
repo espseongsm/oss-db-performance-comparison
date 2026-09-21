@@ -1,0 +1,58 @@
+{
+  "source_commit": "cc39aeb4afdf33909ee1412188bf89035950c2eb",
+  "model": "BAAI/bge-small-en-v1.5",
+  "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+  "device": "mps:0",
+  "chunk_tokens": 448,
+  "overlap_tokens": 64,
+  "parser": "PyMuPDF 1.28.2; get_text(text, sort=True); no OCR",
+  "pdf_count": 368,
+  "chunk_count": 115174,
+  "questions": 150,
+  "embedding_stage_seconds": 634.8580040931702,
+  "query_prefix": "Represent this sentence for searching relevant passages: ",
+  "hashes": {
+    "chunks.jsonl": "22d384ecffbba4f0c6fc54f214dc25995c3d66d3a100cde6d9e1982035fe940d",
+    "vectors.npy": "cc9e1ec7cc646ab351b86deee69ac938c2706d8a98e4e90d09b7d2a838f0976a",
+    "queries.npy": "c4c1968ff1bf3b9b40c1f69216b69d33fd126b250d50ef18d1b8affe9e647e0c",
+    "questions.jsonl": "a5a2aa673e573e55675fc3c0f9aa38c1cf59d2abc91edb077534f71f10a71877"
+  },
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "python": "3.13.5 (main, Jul 11 2025, 22:26:07) [Clang 20.1.4 ]",
+  "repeats": 3,
+  "concurrency": 1,
+  "top_k": 10,
+  "seed": 20260921,
+  "host": {
+    "logical_cpus": 14,
+    "memory_bytes": 51539607552,
+    "load_average": [
+      4.4404296875,
+      4.9794921875,
+      4.49609375
+    ]
+  },
+  "source_runs": [
+    "../run-20260921-local/manifest.json",
+    "../refinements-20260921/manifest.json",
+    "../cortex-20260921-measured/manifest.json"
+  ],
+  "failed_cortex_attempts": [
+    "../cortex-20260921/status.json",
+    "../cortex-20260921-retry/status.json"
+  ],
+  "render_source_sha256": "176098255fc8342284ce7d971a401ef809e5d39787a412c91f487eca69f6d908",
+  "engines": [
+    "sqlite",
+    "duckdb-exact",
+    "duckdb-hnsw",
+    "postgres",
+    "clickhouse",
+    "qdrant",
+    "weaviate",
+    "duckdb-hnsw-prefilter",
+    "clickhouse-prefilter",
+    "milvus",
+    "cortex"
+  ]
+}

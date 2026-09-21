@@ -1,0 +1,45 @@
+name: financebench-vector
+x-resources: &resources
+  cpus: 4
+  mem_limit: 8g
+services:
+  postgres:
+    <<: *resources
+    image: pgvector/pgvector:0.8.1-pg17
+    environment:
+      POSTGRES_USER: benchmark
+      POSTGRES_PASSWORD: financebench_local
+      POSTGRES_DB: financebench
+    ports: ["127.0.0.1:15432:5432"]
+    shm_size: 1g
+  clickhouse:
+    <<: *resources
+    image: clickhouse/clickhouse-server:25.8
+    environment:
+      CLICKHOUSE_USER: benchmark
+      CLICKHOUSE_PASSWORD: financebench_local
+      CLICKHOUSE_DB: financebench
+    ports: ["127.0.0.1:18123:8123"]
+  qdrant:
+    <<: *resources
+    image: qdrant/qdrant:v1.15.4
+    ports: ["127.0.0.1:16333:6333"]
+  weaviate:
+    <<: *resources
+    image: cr.weaviate.io/semitechnologies/weaviate:1.32.4
+    environment:
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      DEFAULT_VECTORIZER_MODULE: none
+      CLUSTER_HOSTNAME: financebench
+      PERSISTENCE_DATA_PATH: /var/lib/weaviate
+    ports: ["127.0.0.1:18080:8080", "127.0.0.1:15051:50051"]
+  milvus:
+    <<: *resources
+    image: milvusdb/milvus:v2.6.4
+    command: ["milvus", "run", "standalone"]
+    environment:
+      ETCD_USE_EMBED: "true"
+      ETCD_DATA_DIR: /var/lib/milvus/etcd
+      COMMON_STORAGETYPE: local
+      DEPLOY_MODE: STANDALONE
+    ports: ["127.0.0.1:19530:19530"]

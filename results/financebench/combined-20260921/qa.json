@@ -1,0 +1,20 @@
+{
+  "pdf_pages": 54120,
+  "empty_text_pages": 215,
+  "unique_evidence_pages": 168,
+  "evidence_pages_without_chunks": [],
+  "completed_engines": [
+    "sqlite",
+    "duckdb-exact",
+    "duckdb-hnsw",
+    "postgres",
+    "clickhouse",
+    "qdrant",
+    "weaviate",
+    "duckdb-hnsw-prefilter",
+    "clickhouse-prefilter",
+    "milvus",
+    "cortex"
+  ],
+  "failed_engines": []
+}
