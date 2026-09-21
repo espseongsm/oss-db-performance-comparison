@@ -1,0 +1,112 @@
+{
+  "engine": "clickhouse",
+  "version": "25.8.33.6",
+  "load_and_index_seconds": 32.32574775000103,
+  "plan": [
+    [
+      "Expression (Project names)"
+    ],
+    [
+      "  Limit (preliminary LIMIT (without OFFSET))"
+    ],
+    [
+      "    Sorting (Sorting for ORDER BY)"
+    ],
+    [
+      "      Expression ((Before ORDER BY + (Projection + Change column names to column identifiers)))"
+    ],
+    [
+      "        ReadFromMergeTree (financebench.fb_items)"
+    ],
+    [
+      "        Indexes:"
+    ],
+    [
+      "          PrimaryKey"
+    ],
+    [
+      "            Condition: true"
+    ],
+    [
+      "            Parts: 1/1"
+    ],
+    [
+      "            Granules: 18/18"
+    ],
+    [
+      "          Skip"
+    ],
+    [
+      "            Name: idx"
+    ],
+    [
+      "            Description: vector_similarity GRANULARITY 100000000"
+    ],
+    [
+      "            Parts: 1/1"
+    ],
+    [
+      "            Granules: 2/18"
+    ],
+    [
+      "            Ranges: 2"
+    ]
+  ],
+  "filtered_plan": [
+    [
+      "Expression (Project names)"
+    ],
+    [
+      "  Limit (preliminary LIMIT (without OFFSET))"
+    ],
+    [
+      "    Sorting (Sorting for ORDER BY)"
+    ],
+    [
+      "      Expression ((Before ORDER BY + Projection))"
+    ],
+    [
+      "        Filter ((WHERE + Change column names to column identifiers))"
+    ],
+    [
+      "          ReadFromMergeTree (financebench.fb_items)"
+    ],
+    [
+      "          Indexes:"
+    ],
+    [
+      "            PrimaryKey"
+    ],
+    [
+      "              Condition: true"
+    ],
+    [
+      "              Parts: 1/1"
+    ],
+    [
+      "              Granules: 18/18"
+    ],
+    [
+      "            Skip"
+    ],
+    [
+      "              Name: idx"
+    ],
+    [
+      "              Description: vector_similarity GRANULARITY 100000000"
+    ],
+    [
+      "              Parts: 1/1"
+    ],
+    [
+      "              Granules: 2/18"
+    ],
+    [
+      "              Ranges: 2"
+    ]
+  ],
+  "pid": 70143,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "repeats": 3,
+  "started_utc": "2026-09-21T05:02:23.002158+00:00"
+}

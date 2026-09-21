@@ -226,6 +226,10 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
+    if len(sys.argv) > 1 and sys.argv[1] == "financebench":
+        from benchmarks.financebench import main as financebench_main
+
+        return financebench_main(sys.argv[2:])
     if len(sys.argv) > 1 and sys.argv[1] == "warehouse-sweep":
         from benchmarks.sweep_benchmark import main as sweep_main
 

@@ -282,3 +282,31 @@ SQLite 기존 측정에서 medium 단일 반복이 약 80~115초였고 100회 �
   두 패널 축 범위를 통일. 측정 당시 렌더러 소스와 후속 렌더러 해시를 보존해 계산 변경과 구분했다.
 - 결과: `results/pandas-duckdb/run-20260907T022808832856Z/report.md`, `summary.csv`,
   `measurements.csv`, `memory.csv`, `qa.json` 및 실행·입력 메타데이터.
+
+## 2026-09-21 — FinanceBench vector DB benchmark
+
+- 기존 관계형/프레임 벤치마크와 사용자 수정 파일을 보존하고 `main.py financebench` 실행 경로, 공통 데이터 준비, 7개 OSS DB 어댑터, 격리된 Docker Compose 및 영문 보고서 생성을 추가했다.
+- FinanceBench 고정 커밋의 PDF 368개(54,120페이지)를 체크섬 검증 후 파싱했다. 페이지 경계를 보존한 448-token/64-overlap 청크 115,174개와 150개 질의를 BGE-small-en-v1.5(384차원, 정규화 float32)로 임베딩했다.
+- SQLite/sqlite-vec, DuckDB exact/HNSW, PostgreSQL/pgvector, ClickHouse, Qdrant, Weaviate, Milvus를 순차 실행했다. 동시성 1, Top-10, global/문서 필터, 조건별 3회 반복이다.
+- DuckDB와 ClickHouse 기본 ANN 필터에서 450/450회 결과 부족과 약 14% 재현율을 관찰했다. 사전 필터 후 정확 검색 구성을 추가해 둘 다 재현율 100%, 부족 0건을 확인했다.
+- Milvus 초기 재시작 연결 실패는 HTTP 상태 확인보다 실제 검색 API 연결 확인이 필요했던 문제로 수정하고 재측정을 완료했다. 원본 실패 로그와 기본 측정은 보존했다.
+- 총 10개 구성 × 2개 조건 × 150개 질문 × 3회 = 9,000개 실측 결과를 보존했다. 입력 해시, 질문/반복 집합, ID/필터 유효성, ANN 재현율·근거 페이지 지표·p95를 독립 재계산하여 모두 일치했다.
+- 정적 검사 통과, 기존 테스트 포함 41개 통과. 최종 차트 시각 검수 완료. 모든 벤치마크 서버 컨테이너는 정지했다.
+- 결과: `results/financebench/final-20260921/report.md`, `summary.csv`, `comparison.png`, `audit.json`. 원시 결과와 측정 당시 코드/버전/실행 계획은 초기·보완 실행 폴더에 보존했다.
+- 해석 범위: 약 11만 벡터·warm-cache·단일 클라이언트·native/Docker 혼합 경로. 임베딩/파싱 품질과 DB 근사 검색 재현율을 구분한다. Snowflake SQL/Cortex Search는 연결 프로필 선택 확인이 남아 미실행했다.
+
+### FinanceBench Cortex Search 후속 실험
+
+- 사용자 승인에 따라 기존 `benchmark` 프로필로 AWS 서울 리전에 접속했다. BGE 문서 벡터 115,174개와 질의 벡터 150개를 재사용하고 재임베딩·키워드 검색·reranker 없이 벡터 전용 Cortex 인덱스를 측정했다.
+- 업로드한 전체 벡터를 다시 읽어 원본 float32 값과 일치함을 검증했다. 서비스 메타데이터의 `user_provided_vectors`, `auto_embedded=false`도 확인했다.
+- 개인 DB의 일반 테이블 생성 제한은 실험 전용 DB로 해결했다. 첫 검색 뒤 datetime 메타데이터 저장 오류를 수정하고, 메타데이터 저장 실패에도 리소스를 정리하는 회귀 테스트를 추가했다. 실패 시도와 정리 기록은 보존했다.
+- 성공 실행: 300회 warm-up + 900회 측정. global/문서 필터 p95 173.68/174.54ms, tie-aware recall 99.53/99.67%, evidence hit 29.33/62.67%, 결과 부족 0건. 클라우드 HTTPS/SDK 왕복 시간이 포함되므로 로컬 엔진 자체 속도 순위로 해석하지 않는다.
+- 적재·전체 벡터 검증·인덱스 준비 합계 81.59초, 서비스 생성 SQL 14.92초. 공유 X-Small 웨어하우스 설정을 변경하지 않았고 실험 전용 서비스·스키마·DB를 삭제했다. 실제 청구 비용은 측정하지 않았다.
+- 기존 OSS 결과와 합친 11개 구성·9,900개 측정의 입력 해시, 질문/반복 행렬·순서, 반환 ID·필터, 재현율·근거 지표·분위수를 독립 재계산하여 모두 일치했다. 전체 테스트 44개 및 ruff 검사 통과.
+- 영문 통합 보고서·CSV·차트·아키텍처 Mermaid·독립 audit 스크립트: `results/financebench/combined-20260921/`. 로컬 원본 결과는 보존했다.
+
+### FinanceBench PR #5 merge conflict resolution
+
+- Merged current main into the FinanceBench branch in an isolated worktree, preserving unrelated uncommitted files in the original checkout.
+- Resolved main.py dispatch conflicts by preserving FinanceBench, warehouse-sweep and warehouse-frames commands alongside frames. Retained vector and Snowflake dependencies and validated uv.lock.
+- Validation: all 107 tests passed; uv lock --check passed. Existing measured benchmark artifacts were unchanged.

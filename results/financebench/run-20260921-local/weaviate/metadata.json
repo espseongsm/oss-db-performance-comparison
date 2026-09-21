@@ -1,0 +1,11 @@
+{
+  "engine": "weaviate",
+  "version": "1.32.4",
+  "load_and_index_seconds": 19.142849249998108,
+  "plan": "HNSW cosine M=16 efConstruction=128 ef=128; synchronous indexing",
+  "filtered_plan": null,
+  "pid": 71070,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "repeats": 3,
+  "started_utc": "2026-09-21T05:03:24.668459+00:00"
+}

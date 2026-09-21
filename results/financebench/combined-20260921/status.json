@@ -1,0 +1,68 @@
+[
+  {
+    "engine": "sqlite",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../run-20260921-local/sqlite"
+  },
+  {
+    "engine": "duckdb-exact",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../run-20260921-local/duckdb-exact"
+  },
+  {
+    "engine": "duckdb-hnsw",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../run-20260921-local/duckdb-hnsw"
+  },
+  {
+    "engine": "postgres",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../run-20260921-local/postgres"
+  },
+  {
+    "engine": "clickhouse",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../run-20260921-local/clickhouse"
+  },
+  {
+    "engine": "qdrant",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../run-20260921-local/qdrant"
+  },
+  {
+    "engine": "weaviate",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../run-20260921-local/weaviate"
+  },
+  {
+    "engine": "duckdb-hnsw-prefilter",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../refinements-20260921/duckdb-hnsw-prefilter"
+  },
+  {
+    "engine": "clickhouse-prefilter",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../refinements-20260921/clickhouse-prefilter"
+  },
+  {
+    "engine": "milvus",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../refinements-20260921/milvus"
+  },
+  {
+    "engine": "cortex",
+    "status": "complete",
+    "returncode": 0,
+    "directory": "../cortex-20260921-measured/cortex"
+  }
+]

@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/client/grpc_handler.py", line 258, in _wait_for_channel_ready
+    target_final_channel, target_stub = self._setup_identifier_interceptor(
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._user, **setup_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/client/grpc_handler.py", line 449, in _setup_identifier_interceptor
+    self.__internal_register(user, host, timeout=timeout)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/decorators.py", line 606, in handler
+    raise e from e
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/decorators.py", line 595, in handler
+    return func(*args, **kwargs)
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/client/grpc_handler.py", line 3286, in __internal_register
+    return self._internal_register(user, host, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/client/grpc_handler.py", line 3280, in _internal_register
+    response = target_stub.Connect(request=req, timeout=kwargs.get("timeout"))
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/grpc/_channel.py", line 1159, in __call__
+    return _end_unary_response_blocking(state, call, False, None)
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/grpc/_channel.py", line 990, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNKNOWN
+	details = "service unavailable: internal: Milvus Proxy is not ready yet. please wait"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_status:2, grpc_message:"service unavailable: internal: Milvus Proxy is not ready yet. please wait"}"
+>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/main.py", line 279, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/main.py", line 232, in main
+    return financebench_main(sys.argv[2:])
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 314, in main
+    worker(args.engine[0], args.output, args.repeats)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 154, in worker
+    db = backend(engine, vectors, chunks, out)
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 136, in backend
+    return constructors[engine](vectors, chunks, directory)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/finance_servers.py", line 161, in __init__
+    self.db = MilvusClient(uri="http://localhost:19530")
+              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/milvus_client/milvus_client.py", line 100, in __init__
+    self._handler = self._manager.get_or_create(
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._config,
+        ^^^^^^^^^^^^^
+    ...<2 lines>...
+        timeout=timeout,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/client/connection_manager.py", line 502, in get_or_create
+    return self._create_shared(config, client, timeout)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/client/connection_manager.py", line 526, in _create_shared
+    handler._wait_for_channel_ready(timeout=timeout)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/private/tmp/financebench-venv/lib/python3.13/site-packages/pymilvus/client/grpc_handler.py", line 265, in _wait_for_channel_ready
+    raise MilvusException(
+    ...<2 lines>...
+    ) from e
+pymilvus.exceptions.MilvusException: <MilvusException: (code=2, message=Fail connecting to server on localhost:19530, illegal connection params or server unavailable)>

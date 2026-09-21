@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "measured_requests_verified": 9900,
+  "input_hashes_verified": {
+    "chunks.jsonl": "22d384ecffbba4f0c6fc54f214dc25995c3d66d3a100cde6d9e1982035fe940d",
+    "vectors.npy": "cc9e1ec7cc646ab351b86deee69ac938c2706d8a98e4e90d09b7d2a838f0976a",
+    "queries.npy": "c4c1968ff1bf3b9b40c1f69216b69d33fd126b250d50ef18d1b8affe9e647e0c",
+    "questions.jsonl": "a5a2aa673e573e55675fc3c0f9aa38c1cf59d2abc91edb077534f71f10a71877"
+  },
+  "checks": [
+    {
+      "engine": "sqlite",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "sqlite",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "duckdb-exact",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "duckdb-exact",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "duckdb-hnsw",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "duckdb-hnsw",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "postgres",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "postgres",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "clickhouse",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "clickhouse",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "qdrant",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "qdrant",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "weaviate",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "weaviate",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "duckdb-hnsw-prefilter",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "duckdb-hnsw-prefilter",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "clickhouse-prefilter",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "clickhouse-prefilter",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "milvus",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "milvus",
+      "mode": "document-filter",
+      "requests_verified": 450
+    },
+    {
+      "engine": "cortex",
+      "mode": "global",
+      "requests_verified": 450
+    },
+    {
+      "engine": "cortex",
+      "mode": "document-filter",
+      "requests_verified": 450
+    }
+  ],
+  "cortex_all_uploaded_vectors_verified": 115174,
+  "cortex_cleanup_record_verified": true
+}

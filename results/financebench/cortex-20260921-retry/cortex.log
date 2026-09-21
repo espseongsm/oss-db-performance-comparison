@@ -1,0 +1,25 @@
+cortex: uploading 115,174 existing vectors
+cortex: all vectors verified; building vector-only search index
+Traceback (most recent call last):
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/main.py", line 279, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/main.py", line 232, in main
+    return financebench_main(sys.argv[2:])
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 323, in main
+    worker(args.engine[0], args.output, args.repeats)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/benchmarks/financebench.py", line 174, in worker
+    (out / "metadata.json").write_text(json.dumps(metadata, indent=2))
+                                       ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soonmoseong/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/Users/soonmoseong/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/soonmoseong/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/json/encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/soonmoseong/.local/share/uv/python/cpython-3.13.5-macos-aarch64-none/lib/python3.13/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type datetime is not JSON serializable

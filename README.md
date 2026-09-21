@@ -350,3 +350,33 @@ uv run python main.py --rows 1000000000 --runs 30 --purge-data-after-engine --ig
 ## 주의사항
 
 DuckDB와 SQLite는 서버 프로세스가 아니라 컨테이너 내부의 임베디드 엔진이다. 따라서 이 결과는 동시 접속 서버 성능이 아니라 단일 프로세스 분석 쿼리 성능 비교다. DuckDB optimized는 대형 ART 인덱스 대신 물리 정렬과 zone map을 사용한다. Docker Desktop의 호스트 파일 캐시와 VM 리소스 설정은 실험 메타데이터와 함께 기록해야 한다.
+
+## FinanceBench vector benchmark
+
+The separate vector experiment downloads all 368 pinned FinanceBench PDFs, parses page-local chunks, generates shared BGE embeddings and evaluates all 150 public questions. Existing benchmark commands remain unchanged.
+
+```bash
+uv sync --locked --extra vector
+uv run --extra vector python main.py financebench prepare
+docker compose -f docker-compose.vector.yml pull
+uv run --extra vector python main.py financebench run --repeats 3
+```
+
+Use repeated `--engine` options to select candidates. Results are stored under `results/financebench/`; downloads, models and embeddings under ignored `data/financebench/`. Servers use dedicated localhost ports and a separate Compose project, and are stopped after each measurement. The runner only resets its own benchmark tables/collections.
+
+This is a warm-cache, concurrency-one experiment, not a production saturation test. Native embedded databases and Docker servers are reported with their deployment differences. Snowflake is not executed by this local command. Source PDF parsing uses PyMuPDF text extraction without OCR or table reconstruction.
+
+On macOS, keep the virtual environment on a fully local filesystem. If the workspace is cloud-offloaded, set `UV_PROJECT_ENVIRONMENT=/private/tmp/financebench-venv` for uv commands.
+
+Measured results: [FinanceBench English report](results/financebench/final-20260921/report.md), [summary CSV](results/financebench/final-20260921/summary.csv), and [raw-result audit](results/financebench/final-20260921/audit.json). The default vector run includes the original and explicit prefilter variants so their correctness differences remain visible.
+
+To measure Cortex Search using the same prepared document and query vectors:
+
+```bash
+uv sync --locked --extra vector --extra snowflake
+uv run --extra vector --extra snowflake python main.py financebench run --engine cortex --repeats 3
+```
+
+The `benchmark` Snowflake connection profile is used by default (`FINANCEBENCH_SNOWFLAKE_CONNECTION` overrides it). Existing task-specific macOS Keychain authentication is supported. The adapter creates a uniquely named schema, uploads and checks every vector, creates a vector-only Cortex Search service, and disables reranking. If the profile points to a personal database, it creates a temporary experiment database as regular tables are unsupported there. It drops its own cloud resources after the run, including failures; it does not alter the shared warehouse configuration. This explicitly selected cloud run incurs Snowflake service/warehouse charges. Reported query latency includes HTTPS/SDK overhead from the client to the cloud.
+
+Completed local + Cortex results: [English comparison](results/financebench/combined-20260921/report.md), [summary CSV](results/financebench/combined-20260921/summary.csv), and [9,900-request audit](results/financebench/combined-20260921/audit.json). The earlier local-only report remains preserved.

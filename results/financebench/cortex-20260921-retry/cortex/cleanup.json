@@ -1,0 +1,5 @@
+{
+  "database_dropped": "FINANCEBENCH_767EE3D16A39_DB",
+  "service_and_source_removed": true,
+  "reason": "Recovered after metadata serialization failure"
+}

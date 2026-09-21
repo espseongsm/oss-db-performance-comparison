@@ -5,3 +5,5 @@ __pycache__/
 .venv/
 .pytest_cache/
 data/frame-benchmark/
+data/financebench/
+results/financebench/**/sqlite.db*

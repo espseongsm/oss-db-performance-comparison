@@ -1,0 +1,11 @@
+{
+  "engine": "sqlite",
+  "version": "v0.1.9",
+  "load_and_index_seconds": 2.857589416002156,
+  "plan": "sqlite-vec vec0 exact KNN; metadata doc filter",
+  "filtered_plan": null,
+  "pid": 68314,
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "repeats": 3,
+  "started_utc": "2026-09-21T04:59:45.306145+00:00"
+}

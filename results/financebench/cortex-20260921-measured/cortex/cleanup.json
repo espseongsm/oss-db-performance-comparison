@@ -1,0 +1,7 @@
+{
+  "schema_dropped": "FINANCEBENCH_2B75A5BA9799",
+  "completed_utc": "2026-09-21T06:38:12.197623+00:00",
+  "service_and_source_removed": true,
+  "shared_warehouse_configuration_changed": false,
+  "database_dropped": "\"FINANCEBENCH_2B75A5BA9799_DB\""
+}

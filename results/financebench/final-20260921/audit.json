@@ -1,0 +1,8 @@
+{
+  "verified_requests": 9000,
+  "verified_configurations": 10,
+  "all_input_hashes_match": true,
+  "all_query_repeat_sets_complete": true,
+  "independently_recomputed_metrics_match": true,
+  "summary_p95_matches_raw": true
+}
