@@ -310,3 +310,25 @@ SQLite 기존 측정에서 medium 단일 반복이 약 80~115초였고 100회 �
 - Merged current main into the FinanceBench branch in an isolated worktree, preserving unrelated uncommitted files in the original checkout.
 - Resolved main.py dispatch conflicts by preserving FinanceBench, warehouse-sweep and warehouse-frames commands alongside frames. Retained vector and Snowflake dependencies and validated uv.lock.
 - Validation: all 107 tests passed; uv lock --check passed. Existing measured benchmark artifacts were unchanged.
+
+## 2026-10-06 — Doris 관계형 SQL·전처리 추가
+
+- 기존 엔진의 측정 결과와 진행 중 Snowflake 작업을 보존하고 Doris만 추가 실행한다. SQL은 10억 행·4개 쿼리·30회, baseline 및 optimized를 각각 측정한다.
+- 전처리용 `main.py frames-doris`를 추가했다. 기존 10만·100만·1,000만 행 Parquet의 SHA256·스키마·결정적 설정을 확인하고 기존 전체 결과 fingerprint와 대조한다. 4개 작업·각 30회·6개 묶음, 총 360회가 목표다.
+- 전처리 시간은 전체 결과 다운로드·DataFrame 생성·int64 정규화를 포함한다. 연결·적재·워밍업·검증 시간은 제외하고 적재 시간은 별도로 보존한다. SQL/query cache를 비활성화하고 합계 4 CPU·8GiB Docker 환경에서 단일 클라이언트로 측정한다.
+- 10만 행·4개 작업·각 2회, 총 8회 확인 실행을 완료했다. 모든 출력 fingerprint가 기존 값과 일치했으며 원본 3개 크기의 입력 SHA256 검사도 통과했다. 확인 실행: `results/doris/frames/run-20261005T235820062825Z/`(폴더 시각은 UTC).
+- 전처리 360회 및 SQL baseline·optimized 각각 120회, 총 600회 본 측정을 완료했다. 모든 출력이 기존 checksum/fingerprint와 일치했다. SQL은 14 CPU·24GiB, 전처리는 4 CPU·8GiB로 실행했고 실제 Docker VM·컨테이너 한도·이미지·버전·실행 소스를 보존했다. 이전 엔진은 재실행하지 않았다.
+- SQL 최초 최적화형 파일럿에서 FE 접속 가능 시점과 BE 저장 공간 보고 시점의 차이를 확인했다. 연결 이후 살아 있는 BE와 양수 가용 공간을 기다리도록 보완했으며 재현·시간 초과 검사와 SQL 검사 19개를 통과했다. 실패 시도의 소스·배포 정보는 보존하고 완료 측정으로 합치지 않는다.
+- 기존 9월 측정과 10월 6일 Doris 측정의 실행일·OS/패키지 버전·호스트 부하 및 입력/배포 경로 차이를 보고서에 공개했다. 현재 폴더의 전처리 Snowflake 결과는 X-Small 파일럿이며 DW 크기별 본 결과는 통합 대상에 없다.
+- README에 재현 명령과 기존 입력 → Doris → 전체 fetch → 출력 검증 → 독립 결과 저장 흐름을 Mermaid로 추가했다.
+- 통합 표·CSV·차트·환경 정보: `results/doris/comparisons/frames-20261006-final/`, `sql-baseline-20261006-final/`, `sql-optimized-20261006-final/`. 각각 60·20·19개 비교 항목, 모든 항목 30회다. SQLite optimized 미완료 조인은 값 없이 보존하고 오래된 파일럿 summary 대신 검증된 원시 결과를 사용했다. 차트 시각 검수를 마쳤다.
+- Doris SQL 평균 baseline → optimized(ms): 단건 9.403 → 11.862, 조건 집계 3,718.970 → 411.267, 전체 집계 3,816.098 → 5,740.346, 조인 7,294.055 → 8,267.184. 날짜 조건 집계는 약 9배 개선됐으나 나머지는 느려졌다.
+- 측정 직후 FE/BE 데이터·메타·로그 디렉터리 합계는 baseline 13.86GiB, optimized 72.45GiB였다. BE trash도 포함하므로 논리 테이블 압축률로 해석하지 않는다. SQL 컨테이너와 Doris 전용 볼륨을 정리했고 결과 파일·소스 해시는 보존했다.
+- 최종 관련 검사 57개 및 ruff 검사 통과. 600개 신규 측정과 원시 결과·소스 해시·과거 출력 대조, 통합 항목별 30회 완전성을 확인했다.
+- 기존 클라우드 보관 가상 환경은 패키지 파일 읽기에서 시간 초과가 발생했다. 같은 프로젝트 lock으로 로컬 임시 경로에 실행 환경을 만들어 전처리 실측과 최종 57개 검사를 완료했다. 원래 입력 파일은 SHA256 확인 후 재사용했고 README에 로컬 가상 환경 명령을 기록했다. runner 빌드는 신뢰 CA secret으로 인증서 검증을 유지했다.
+- 사용자 요청에 따라 기존 SQL·전처리 보고서의 문서 구성과 표·차트 양식을 유지하면서 Doris 행·열·시리즈만 추가했다. 수정 전 보고서와 차트는 `results/doris/original-report-backup/`에 보존했다. 기존 전처리 배율 차트·대응 구간과 누락된 SQLite 조인은 유지했다.
+- 독립 검수에서 과거 원시 결과·입력·통계·메타데이터 55개 파일의 SHA256이 변경되지 않았고 기존 표 수치와 38개 보고서 링크가 모두 일치했다. Doris 전처리 12개 케이스는 기존 두 입력 방식 옆에 동일한 참조값으로 표시한다. 추가 측정 없이 기존 차트와 보고서를 재생성하는 `main.py frames-doris-report`를 추가하고 반복 생성의 동일 결과를 확인했다.
+- 후속 분석 확인: SQL에는 Doris의 최적화 효과·손실과 추천 판단이 반영돼 있었으나 전처리 보고서는 해석이 부족했다. 기존 양식을 유지해 Doris의 1,000만 행 집계, 조인 집계의 작은 차이, 대량 행 반환 시간을 결과 해석·도입 판단에 보완하고 재생성 코드에도 반영했다. SQL 요약·결론에는 Doris 추가 후 기존 최저 평균 엔진이 유지됐음을 명시했다. 새 벤치마크는 실행하지 않았다.
+- 분석 보완 검증: 전처리 재생성 전후 기존 차트·원시 결과·통계 등 15개 파일의 SHA256과 기존 24개 표 행·목차가 유지됐다. 추가 해석의 평균·표준편차·시간 차이는 검증된 Doris 요약과 기존 원시 측정에서 계산했다. 해당 모듈의 ruff 검사·포맷 검사가 통과했다.
+- 게시 준비에서 원격 main의 최신 Snowflake 크기별 본 실험·보고서가 별도로 완료됐음을 확인했다. 최신 main 기반 새 브랜치에 Doris 변경만 추가하고 `warehouse-sweep`·`warehouse-frames`를 포함한 기존 실행 경로와 결과를 유지한다. 이번 Doris 전처리는 9월 7일 전체 DataFrame 반환 조건을 사용했으므로 측정 범위가 다른 Snowflake 결과와 직접 합치지 않는다.
+- 게시 브랜치 검증: 최신 main과 통합한 Doris 게시본에서 기존·추가 테스트 152개와 ruff 검사가 모두 통과했다. 기존 Snowflake 결과·네 CLI 경로·문서 링크를 확인했으며 Doris의 원시 결과와 보고서 백업을 함께 게시한다.

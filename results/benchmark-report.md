@@ -1,21 +1,25 @@
 # 10억 행 DB 벤치마크: 어떤 DB를, 어떤 워크로드에 선택할 것인가
 
-작성일: 2026-09-07 · 비교 대상: ClickHouse, DuckDB, PostgreSQL, SQLite · 프로파일: baseline / optimized
+작성일: 2026-09-07 · Doris 추가: 2026-10-06 · 비교 대상: ClickHouse, DuckDB, PostgreSQL, SQLite, Apache Doris · 프로파일: baseline / optimized
+
+기존 네 DB의 측정값에 **같은 논리 데이터·쿼리로 실행한 Apache Doris 결과**를 추가했다. 기존 DB는 9월, Doris는 10월에 측정했으며 실행 환경 기록에도 차이가 있다. 표와 차트의 순위는 이 관측값의 비교이며, 동일 시점·동일 환경에서 재측정한 순위는 아니다. 상세 조건은 5절에 기록했다.
 
 ## 1. 어떤 DB가 좋은가: 분석 작업의 첫 후보는 DuckDB, 집계 중심이면 ClickHouse
 
-**이번 조건에서 분석 파이프라인용 엔진을 하나 먼저 검토한다면 DuckDB를 선택하겠다.** baseline부터 필터 집계와 조인에서 낮은 평균 응답 시간을 보였고, 다른 DB에도 최적화를 적용한 뒤에도 경쟁력이 유지됐다. optimized DuckDB의 날짜 필터 집계는 약 **85 ms**, 전체 집계는 **849 ms**, fact-dimension 조인은 **1.15초**였다. 저장 크기도 **20.58 GiB**로 optimized의 유효한 기록이 있는 세 엔진 중 가장 작았다.
+**이번 조건에서 분석 파이프라인용 엔진을 하나 먼저 검토한다면 DuckDB를 선택하겠다.** baseline부터 필터 집계와 조인에서 낮은 평균 응답 시간을 보였고, 다른 DB에도 최적화를 적용한 뒤에도 경쟁력이 유지됐다. optimized DuckDB의 날짜 필터 집계는 약 **85 ms**, 전체 집계는 **849 ms**, fact-dimension 조인은 **1.15초**였다. 저장 크기도 **20.58 GiB**로 optimized의 유효한 기록이 있는 네 엔진 중 가장 작았다.
 
 **집계 응답 시간을 우선한다면 ClickHouse가 더 좋은 후보였다.** optimized 날짜 필터 집계는 약 **60 ms**, 전체 집계는 **549 ms**로 이번 실험에서 가장 빨랐다. 반면 조인은 DuckDB가 ClickHouse의 약 **5.20초**보다 낮은 평균을 보였다.
 
 **인덱스가 있는 단건 조회에서는 PostgreSQL과 SQLite가 강했다.** optimized 평균은 각각 **0.187 ms**, **0.051 ms**였다. 이 결과를 대규모 분석 집계 순위와 함께 보면, DB 선택은 주요 쿼리와 운영 방식에 따라 달라진다.
 
+**Doris 추가 후에도 워크로드별 최저 평균 엔진과 우선 검토 후보는 유지된다.** Doris의 날짜 필터 집계는 optimized에서 **411 ms**로 개선됐으나 ClickHouse **60 ms**·DuckDB **85 ms**보다 오래 걸렸다. Doris 내부의 9.04배 개선과 엔진 간 선택은 별도의 판단이며, 실제 쿼리 비중에 맞춰 전체 집계·조인의 시간 증가도 함께 평가해야 한다.
+
 | 워크로드 | Baseline 최저 평균 | Optimized 최저 평균 | 이번 결과의 선택 근거 |
 |---|---:|---:|---|
-| `small`: 단일 id 조회 | DuckDB · 5.444 ms | SQLite · 0.051 ms | PostgreSQL도 0.187 ms. 단건 조회에는 인덱스가 결정적이었다. |
-| `medium`: 날짜 필터 후 집계 | DuckDB · 440.185 ms | ClickHouse · 59.616 ms | DuckDB도 84.515 ms. 날짜 조건에 맞춘 물리 설계의 효과가 컸다. |
-| `large`: 전체 fact 집계 | ClickHouse · 570.474 ms | ClickHouse · 548.748 ms | 두 프로파일 모두 ClickHouse의 평균이 가장 낮았다. |
-| `join`: fact-dimension 조인·집계 | DuckDB · 1,124.878 ms | DuckDB · 1,151.178 ms | 완료된 결과 중 DuckDB의 평균이 가장 낮았다. SQLite optimized는 미완료다. |
+| `small`: 단일 id 조회 | DuckDB · 5.444 ms | SQLite · 0.051 ms | PostgreSQL도 0.187 ms. 단건 조회에는 인덱스가 결정적이었다. Doris는 baseline 9.403 ms, optimized 11.862 ms다. |
+| `medium`: 날짜 필터 후 집계 | DuckDB · 440.185 ms | ClickHouse · 59.616 ms | DuckDB도 84.515 ms. 날짜 조건에 맞춘 물리 설계의 효과가 컸다. Doris는 3,718.970 → 411.267 ms로 개선됐다. |
+| `large`: 전체 fact 집계 | ClickHouse · 570.474 ms | ClickHouse · 548.748 ms | 두 프로파일 모두 ClickHouse의 평균이 가장 낮았다. Doris는 3,816.098 → 5,740.346 ms다. |
+| `join`: fact-dimension 조인·집계 | DuckDB · 1,124.878 ms | DuckDB · 1,151.178 ms | 완료된 결과 중 DuckDB의 평균이 가장 낮았다. SQLite optimized는 미완료다. Doris는 7,294.055 → 8,267.184 ms다. |
 
 이는 **합성 fact 10억 행·dimension 100만 행, 단일 클라이언트, 쿼리별 30회 반복**의 관측 결과다. 표의 1위는 표본 평균의 순위이며 통계적으로 확정된 우열을 뜻하지 않는다. 쿼리 비중이 정해지지 않아 종합 점수나 전체 1위는 산출하지 않았다. 특히 baseline `medium`의 DuckDB와 ClickHouse 차이는 440 ms 대 472 ms로, 반복 변동성까지 함께 봐야 한다.
 
@@ -33,6 +37,7 @@ baseline은 **보조 인덱스를 추가하지 않은 구성**이다. 엔진 자
 | DuckDB | `event_day` 그룹별로 직접 순서 적재해 `(event_day, id)` 레이아웃 구성, 별도 ART 인덱스 없음 | 날짜 범위 필터에서 zone map 활용 |
 | PostgreSQL | fact의 `id`, `event_day`, `account_id` 및 dimension의 `account_id`에 B-tree 인덱스 | 단건·범위 조회와 조인 키 접근 |
 | SQLite | PostgreSQL과 같은 컬럼에 인덱스 | 단건·범위 조회와 조인 키 접근 |
+| Apache Doris | fact의 `DUPLICATE KEY(id)`를 `DUPLICATE KEY(event_day, id)`로 변경하고 `id` Bloom filter 추가; dimension은 `DUPLICATE KEY(account_id)` 유지 | 날짜 범위 축소와 단건 조회의 data skipping. 두 프로파일 모두 기본 prefix index·zone map, hash 분산 8 buckets·복제 1개 사용 |
 
 ### 2.2 평균과 표준편차를 함께 비교
 
@@ -60,12 +65,18 @@ baseline은 **보조 인덱스를 추가하지 않은 구성**이다. 엔진 자
 | SQLite | medium | 115,489.283 ± 1,153.385 | 75,369.337 ± 36,612.206 | 1.53배 |
 | SQLite | large | 359,175.903 ± 2,246.334 | 394,733.001 ± 5,071.916 | 0.91배 |
 | SQLite | join | 710,052.903 ± 7,793.117 | 중단 (0/30) | 비교 불가 |
+| Apache Doris | small | 9.403 ± 2.415 | 11.862 ± 4.273 | 0.79배 |
+| Apache Doris | medium | 3,718.970 ± 332.677 | 411.267 ± 108.470 | 9.04배 |
+| Apache Doris | large | 3,816.098 ± 263.227 | 5,740.346 ± 985.152 | 0.66배 |
+| Apache Doris | join | 7,294.055 ± 351.943 | 8,267.184 ± 1,369.293 | 0.88배 |
 
 ### 2.3 최적화 효과를 어떻게 해석할 것인가
 
 **선택적 조회에는 분명한 효과가 있었다.** ClickHouse의 단건 조회는 10.75배, 날짜 필터 집계는 7.92배 빨라졌다. DuckDB의 날짜 필터 집계도 5.21배 빨라졌다. PostgreSQL 단건 조회는 약 137초에서 0.187 ms, SQLite는 약 85초에서 0.051 ms로 줄었다. 단건 조회의 거대한 배수는 인덱스 없는 구성과 있는 구성의 차이이며, 일반적인 서비스 전체가 그 배수만큼 빨라진다는 뜻은 아니다.
 
-**전체 집계와 조인은 이번 변경으로 일관되게 개선되지 않았다.** 전체 집계 평균 시간은 ClickHouse 약 3.8%, DuckDB 약 4.0% 감소했지만 PostgreSQL은 약 3.8%, SQLite는 약 9.9% 증가했다. 조인은 완료된 세 엔진 모두 평균 시간이 약 2~6% 늘었다. 인덱스가 추가됐다는 사실만으로 대규모 스캔·조인의 실행 비용이 줄어드는 것은 아니다. 실행 계획과 자원 사용량을 추가로 확인해야 원인을 확정할 수 있다.
+**전체 집계와 조인은 이번 변경으로 일관되게 개선되지 않았다.** 전체 집계 평균 시간은 ClickHouse 약 3.8%, DuckDB 약 4.0% 감소했지만 PostgreSQL은 약 3.8%, SQLite는 약 9.9% 증가했다. 기존 실험에서 조인을 완료한 세 엔진 모두 평균 시간이 약 2~6% 늘었다. 인덱스가 추가됐다는 사실만으로 대규모 스캔·조인의 실행 비용이 줄어드는 것은 아니다. 실행 계획과 자원 사용량을 추가로 확인해야 원인을 확정할 수 있다.
+
+**Doris도 날짜 필터의 이익과 다른 쿼리의 손실이 갈렸다.** 날짜 필터 집계는 약 3.72초에서 0.41초로 줄어 **9.04배** 빨라졌지만, 단건 조회는 9.403 → 11.862 ms, 전체 집계는 3.82 → 5.74초, 조인은 7.29 → 8.27초로 늘었다. 날짜 정렬 키와 Bloom filter를 함께 적용한 결과이므로 각 변경의 효과를 개별적으로 분리할 수 없다. 기존 워크로드별 최저 평균 엔진은 Doris 추가 후에도 바뀌지 않았다.
 
 **DuckDB의 장점은 최적화 이후에도 분석 전반에서 낮은 지연시간을 유지했다는 점이다.** optimized DuckDB는 ClickHouse보다 날짜 필터 집계와 전체 집계에서 각각 약 1.42배·1.55배 오래 걸렸지만, 조인은 약 4.52배 빨랐다. 이 조합은 필터·집계·조인이 함께 있는 배치 분석에서 DuckDB를 먼저 검토할 근거가 된다.
 
@@ -85,12 +96,17 @@ baseline은 **보조 인덱스를 추가하지 않은 구성**이다. 엔진 자
 | DuckDB | 9.96 GiB | 20.58 GiB | +106.7% |
 | PostgreSQL | 177.73 GiB | 212.76 GiB | +19.7% |
 | SQLite | 71.06 GiB | 유효한 최종 기록 없음 | 비교 불가 |
+| Apache Doris | 13.86 GiB | 72.45 GiB | +422.7% |
 
 DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 중심 레이아웃으로 바꾸면서 자체 저장 크기는 약 **2.07배**가 됐다. 날짜 필터가 드물고 공간 효율과 단건 조회가 중요하다면 baseline을 유지할 이유도 있다. 이 데이터는 반복되는 정수 패턴이 많아 압축에 유리하므로, 이 저장 비율을 일반 데이터셋의 압축률로 확장하지 않는다.
 
 저장 크기는 엔진별 volume의 기록이며 ClickHouse에는 로그 volume도 포함한다. 테이블 데이터만의 크기나 peak 임시 공간과 같지 않다. optimized PostgreSQL은 `total_bytes`를 기준으로 계산했고 `total_gib` 필드와의 약 0.001 GiB 차이는 반올림 후 모두 212.76 GiB다. optimized SQLite의 `storage.json`은 10,000행 파일럿이어서 제외했다.
 
+Doris의 **13.86 / 72.45 GiB는 FE·BE 데이터·메타데이터·로그 디렉터리의 합계이며, BE storage 내 trash도 포함**한다. +422.7%는 종료 직전 전체 디렉터리 크기의 관측 변화다. 테이블 데이터만 분리하거나 두 프로파일의 compaction·trash 상태를 통일한 측정이 아니므로, 이를 최적화에 따른 테이블 압축률이나 인덱스 크기 차이로 해석하지 않는다.
+
 적재·인덱스 생성·레이아웃 구축은 쿼리 시간에 포함하지 않았다. PostgreSQL·SQLite의 인덱스 생성과 DuckDB의 순서 적재는 `optimization.json`에 별도로 기록되지만, 측정 구간이 서로 달라 공통 구축 비용 순위로 쓰지 않는다. 특히 ClickHouse의 해당 파일에 있는 매우 짧은 후처리 시간은 적재 중 물리 정렬·Bloom filter 구축 전체 비용을 나타내지 않는다.
+
+Doris는 DDL·적재·레이아웃 구축을 합쳐 baseline **135.82초**, optimized **267.64초**로 별도 기록했다. 기존 엔진의 후처리 시간과 측정 구간이 달라 공통 구축 비용 순위에 넣지 않았다.
 
 ## 3. DB별 추천 워크로드: 실험 결과를 실제 선택에 적용하기
 
@@ -102,6 +118,7 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 | **ClickHouse** | 로그·이벤트 집계, 기간별 지표, 집계 중심의 분석 대시보드 | optimized 날짜 필터 집계 60 ms, 전체 집계 549 ms로 최저 평균 | 지속 적재 중 조회 지연시간, 동시 사용자, 정렬 키, 조인 비중과 데이터 모델 |
 | **PostgreSQL** | 주문·계정 등 서비스의 트랜잭션 DB, 인덱스 조회, 여러 클라이언트가 공유하는 업무 데이터 | optimized 단건 조회 0.187 ms; 이번 전체 분석 쿼리는 오래 걸림 | 실제 읽기·쓰기 혼합 부하, 잠금, p95/p99, 집계 분리 필요성 |
 | **SQLite** | 모바일·데스크톱·오프라인 앱의 로컬 데이터, 설정·상태 저장, 인덱스 조회 | optimized 단건 조회 0.051 ms; 10억 행 조인은 미완료 | 파일별 쓰기 경쟁, 데이터 크기, 내구성 설정, 장시간 분석의 영향 |
+| **Apache Doris** | 기간 조건이 있는 서버형 SQL 분석·집계의 추가 검토 후보 | 날짜 정렬 적용 후 필터 집계 411 ms로 9.04배 개선; 전체 집계 5.74초·조인 8.27초 | 실제 쿼리 비중, 데이터 분산·정렬 키, compaction 상태, 지속 적재와 동시 요청; 이번 단일 BE 결과를 분산 운영 성능으로 확장하지 않음 |
 
 ### DuckDB: Python 분석 파이프라인의 우선 검토 대상
 
@@ -121,6 +138,10 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 
 이번 실험의 indexed lookup은 매우 빨랐지만, 전체 집계는 평균 약 395초였고 optimized 조인의 첫 측정은 6시간을 넘겼다. 따라서 이 10억 행 분석 패턴에는 우선 추천하지 않는다. 모바일·데스크톱·오프라인 앱처럼 데이터가 애플리케이션 가까이에 있고 쓰기 경쟁이 크지 않은 경우가 검토 대상이다. 다수의 동시 writer가 필요한 상황에서는 다른 구성을 비교해야 한다. [SQLite 적합한 사용 사례](https://www.sqlite.org/whentouse.html)
 
+### Apache Doris: 날짜 범위 집계 전략과 운영 요구를 함께 검토
+
+이번 단일 FE·BE 구성에서는 날짜 정렬과 Bloom filter를 적용한 범위 집계가 크게 좋아졌지만, 전체 집계와 조인은 각각 ClickHouse와 DuckDB보다 높은 평균을 보였다. 따라서 기존 분석 파이프라인·집계 서비스의 우선 후보 추천은 유지한다. Doris 도입 판단은 실제 데이터와 쿼리 비중, 지속 적재 중 조회, 동시성 및 분산 구성으로 추가 검증한다. 이번 결과만으로 다중 노드에서의 처리량이나 안정성을 판단하지 않는다.
+
 ## 4. 엔진 간 성능 상세: 평균·p50·p95
 
 차트는 요청에 맞춰 **세로 막대 + 평균 ± 1 표본 SD**로 구성했다. 낮을수록 빠르며, 가장 낮은 평균을 진한 파란색과 1위 표시로 강조했다. 모든 패널은 동일한 로그 축을 사용한다. SD 하한 생략 기호와 로그 축 해석은 2.2절과 같다.
@@ -137,6 +158,7 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 | DuckDB | 5.444 / 2.721 / 13.100 | 440.185 / 427.644 / 459.540 | 884.257 / 884.036 / 908.084 | 1,124.878 / 1,113.492 / 1,239.484 |
 | PostgreSQL | 137,259.049 / 138,482.897 / 142,303.761 | 140,548.054 / 139,292.809 / 147,742.906 | 223,475.015 / 223,261.437 / 227,679.585 | 365,647.704 / 365,416.764 / 385,624.063 |
 | SQLite | 85,024.640 / 84,820.472 / 86,721.873 | 115,489.283 / 115,307.562 / 117,789.879 | 359,175.903 / 359,024.929 / 362,350.047 | 710,052.903 / 712,846.081 / 719,405.679 |
+| Apache Doris | 9.403 / 8.837 / 14.992 | 3,718.970 / 3,635.354 / 4,415.903 | 3,816.098 / 3,771.364 / 4,388.765 | 7,294.055 / 7,242.245 / 7,926.210 |
 
 ### 4.2 Optimized: 단건 조회와 분석 집계의 강점이 갈림
 
@@ -148,6 +170,7 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 | DuckDB | 25.239 / 7.623 / 10.253 | 84.515 / 73.887 / 85.831 | 849.329 / 769.234 / 979.682 | 1,151.178 / 1,082.352 / 1,417.437 |
 | PostgreSQL | 0.187 / 0.033 / 0.153 | 141,338.233 / 140,708.737 / 146,254.390 | 231,867.791 / 224,196.541 / 306,007.375 | 388,852.194 / 380,646.620 / 500,961.237 |
 | SQLite | 0.051 / 0.004 / 0.010 | 75,369.337 / 69,766.308 / 72,209.733 | 394,733.001 / 393,562.730 / 402,256.946 | 중단 (0/30) |
+| Apache Doris | 11.862 / 10.771 / 17.701 | 411.267 / 378.885 / 641.504 | 5,740.346 / 5,466.813 / 7,199.531 | 8,267.184 / 8,008.232 / 10,243.581 |
 
 일부 쿼리는 평균이 p95보다 크다. 소수의 긴 실행이 평균을 끌어올린 결과이며 계산 오류를 뜻하지 않는다. 예를 들어 DuckDB optimized `small`의 최댓값은 526.650 ms다. 첫 실행을 포함한 완료된 30회 모두를 사용했고, 느린 관측값을 임의로 제외하지 않았다. SQLite optimized의 세 쿼리는 원시 측정에서 재계산했다.
 
@@ -163,11 +186,17 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 | 반복과 동시성 | 쿼리별 30회, 단일 클라이언트, 한 번에 한 엔진 실행 |
 | 캐시 | 1회 검증 후 반복 실행. 캐시를 매번 비우는 cold-cache 실험은 아님 |
 | 제외한 비용 | 데이터 생성·적재, 연결 수립, 인덱스·레이아웃 구축, 결과 checksum 계산 |
-| 실행 구성 | Docker의 임베디드 DuckDB·SQLite와 서버형 ClickHouse·PostgreSQL |
+| 실행 구성 | Docker의 임베디드 DuckDB·SQLite와 서버형 ClickHouse·PostgreSQL·Doris |
 | 저장 크기 | 각 엔진 종료 후 volume 삭제 직전에 기록; 결과 파일은 호스트에 보존 |
 | 설정에 명시된 버전 | DuckDB 1.3.2, PostgreSQL 이미지 17.5, ClickHouse 이미지 25.3; SQLite는 Python 런타임 내장 버전 |
+| Doris 버전·구성 | 이미지 `apache/doris:all-in-one-4.1.3`; 실제 BE `doris-4.1.3-rc02-7126cf65d96`, 단일 FE·BE, 복제 1개·8 buckets |
+| Doris 자원 | native arm64 컨테이너 CPU 14개·메모리 24 GiB; Docker VM CPU 14개·총 메모리 약 30.80 GiB |
+| Doris 세션 설정 | `enable_sql_cache=false`, `enable_query_cache=false`, `exec_mem_limit=100147483648`, `parallel_pipeline_task_num=0`, `query_timeout=900`의 실제 조회값 보존 |
+| 실행 시점·출처 | 기존 네 DB는 2026-09, Doris는 2026-10-06. Doris의 실제 이미지·자원·소스 SHA-256은 실행별 `deployment.json`과 `source/`에 보존 |
 
 설정 버전은 [requirements-runner.txt](../requirements-runner.txt)와 [docker-compose.yml](../docker-compose.yml)에 근거한다. 최신 버전 전체의 성능을 대표하지 않으며, SQLite 실제 버전과 이미지 digest까지 고정한 실행 환경 스냅샷은 별도로 보완해야 한다.
+
+Doris의 버전은 `SHOW BACKENDS`에서 확인했으며, `SELECT VERSION()`의 `5.7.99`는 MySQL 호환 버전이므로 제품 버전으로 사용하지 않았다. 쿼리 결과 캐시는 껐지만 OS·스토리지 캐시를 매회 비우지는 않았다. `exec_mem_limit`는 세션 설정값이며 실제 가용 메모리를 뜻하지 않는다. 위 24 GiB 컨테이너 제한과 구분한다. [Baseline 실행 환경](doris-sql/run-20261006-baseline/deployment.json), [Optimized 실행 환경](doris-sql/run-20261006-optimized/deployment.json), [Doris 실제 DDL·세션](doris-sql/run-20261006-optimized/optimized/doris/dataset.json)
 
 | 쿼리 | 읽고 처리하는 범위 | 결과 행 수 |
 |---|---|---:|
@@ -180,9 +209,11 @@ DuckDB는 비교 가능한 두 프로파일 모두 가장 작았지만, 날짜 �
 
 ### 5.2 완료 상태와 무효·부분 결과 처리
 
-baseline 네 엔진은 각 쿼리 30회를 완료했다. optimized는 ClickHouse·DuckDB·PostgreSQL이 네 쿼리를 완료했고, SQLite는 `small`·`medium`·`large`만 각 30회를 완료했다. **완료 측정은 총 930회, 완성된 엔진·프로파일·쿼리 조합은 31개, 직접 비교 가능한 baseline/optimized 쌍은 15개**다.
+기존 baseline 네 엔진은 각 쿼리 30회를 완료했다. optimized는 ClickHouse·DuckDB·PostgreSQL이 네 쿼리를 완료했고, SQLite는 `small`·`medium`·`large`만 각 30회를 완료했다. 기존 완료 측정 **930회·31개 조합·15개 프로파일 쌍**에 Doris의 두 프로파일·네 쿼리·각 30회 **240회**를 추가했다. **합계 1,170회·39개 완료 조합·19개 직접 비교 가능한 baseline/optimized 쌍**이다.
 
-8개 엔진·프로파일의 최초 검증에서 네 쿼리의 checksum은 모두 기준 결과와 일치했다. 완료된 반복 측정의 checksum도 일치했다. optimized DuckDB의 초기 생성식 괄호 오류가 있던 실행은 제외하고, 수정된 schema v3의 10억 행 검증·측정 결과를 사용했다.
+기존 8개 엔진·프로파일의 최초 검증에서 네 쿼리의 checksum은 모두 기준 결과와 일치했다. 완료된 반복 측정의 checksum도 일치했다. optimized DuckDB의 초기 생성식 괄호 오류가 있던 실행은 제외하고, 수정된 schema v3의 10억 행 검증·측정 결과를 사용했다.
+
+Doris의 두 프로파일도 schema v3의 동일한 논리 데이터를 사용했다. 측정 전 네 쿼리의 행 수·checksum을 기존 DuckDB 10억 행 기준과 대조해 모두 일치했으며, 완료된 240회 측정의 행 수·checksum도 기준과 일치했다. 파일럿 측정은 본 보고서 수치에 포함하지 않았다.
 
 SQLite optimized는 최초 조인 검증에는 성공했지만 **첫 timed join은 0/30회 완료 상태에서 중단**했다. 2026-09-06 13:48경 시작 후 20:02경까지 약 6시간 13분 동안 결과를 반환하지 않았다. 당시 개발 기록에는 CPU 약 100% 사용이 남아 있다. 이 경과 시간은 완료된 쿼리의 latency가 아니므로 평균·SD·속도 배수·순위에 대입하지 않는다.
 
@@ -192,7 +223,8 @@ SQLite optimized는 최초 조인 검증에는 성공했지만 **첫 timed join�
 
 - **합성 데이터와 고정 쿼리다.** 문자열, 실제 데이터의 편향·NULL·복잡한 관계, 다양한 id·날짜 범위를 시험하지 않았다. baseline의 적재 순서도 데이터 skipping에 영향을 줄 수 있다.
 - **검증 후 반복 측정이며 캐시 상태를 완전히 통제하지 않았다.** 검증과 측정은 새 연결로 실행된다. OS·DB 캐시의 모든 계층이 동일하게 warm이라는 보장은 없고 첫 측정이 길어지는 사례도 있다.
-- **자원과 접근 방식이 완전히 같지는 않다.** Compose에 엔진별 CPU·메모리 제한이나 동일한 쿼리 스레드 수를 고정하지 않았다. 서버형은 클라이언트 통신·직렬화 비용을 포함하고 임베디드형은 같은 방식의 네트워크 왕복이 없다. CPU 모델·VM 자원·peak RSS를 포함한 실행별 환경 기록도 보완이 필요하다.
+- **자원과 접근 방식이 완전히 같지는 않다.** 기존 네 DB 실험에서는 Compose에 엔진별 CPU·메모리 제한이나 동일한 쿼리 스레드 수를 고정하지 않았다. 서버형은 클라이언트 통신·직렬화 비용을 포함하고 임베디드형은 같은 방식의 네트워크 왕복이 없다. CPU 모델·VM 자원·peak RSS를 포함한 실행별 환경 기록도 보완이 필요하다.
+- **Doris는 기존 결과와 실행 시점·환경 기록 범위가 다르다.** Doris에는 CPU 14개·24 GiB 제한과 실제 이미지·소스 기록이 있지만, 기존 네 DB를 같은 시점에 재실행하지 않았다. 기존 실행의 동일 수준 환경 스냅샷이 없어 자원·캐시·백그라운드 부하가 완전히 같았다고 확인할 수 없다. 이번 단일 FE·BE 구성의 결과를 다중 노드 성능으로 일반화하지 않는다.
 - **표현식과 설정의 영향이 포함된다.** checksum 일치를 위해 금액을 실행 중 정수 센트로 변환한다. PostgreSQL은 추가 `NUMERIC` 캐스팅을 사용하므로 엔진 구조만의 차이로 모든 시간 차이를 설명할 수 없다. SQLite는 `journal_mode=OFF`, `synchronous=OFF`, `temp_store=FILE`을 사용했으며, 이 결과로 운영 내구성 설정에서의 쓰기 성능을 판단할 수 없다.
 - **단일 실행의 평균은 프로덕션 지연시간 보장이 아니다.** 30회 반복으로 서비스 p99나 장기간 안정성을 검증하지 않았다. 동시 쓰기·조회, 지속 적재, 장애·복구, pandas와의 비교는 범위 밖이다.
 - **이번 optimized는 선택한 전략의 결과다.** DuckDB의 초기 ART 인덱스 생성은 약 33분 후 24.6 GiB 메모리 한도에서 실패했고, 전역 정렬도 임시 공간 200 GB 한도에 도달했다. 최종 결과는 날짜별 직접 순서 적재 전략이다. 다른 인덱스·파티셔닝·자료형·쿼리 계획을 적용한 최선의 성능이라고 볼 수 없다.
@@ -205,12 +237,15 @@ SQLite optimized는 최초 조인 검증에는 성공했지만 **첫 timed join�
 | 분석 서비스에서 DuckDB와 ClickHouse 중 무엇이 맞는가? | 실제 쿼리 비중과 동시 요청, 지속 적재 조건으로 비교 | 처리량, p95/p99, 실패율, 자원 사용량 |
 | 날짜 중심 optimized를 유지할 것인가? | 여러 날짜 범위·id를 무작위 순서로 실행하고 독립 재실행, cold/warm 조건 구분 | 쿼리별 평균·SD, 긴 실행, 구축 비용, 저장 증가 |
 | PostgreSQL·SQLite의 운영 적합성은 어떤가? | 운영용 내구성 설정에서 실제 읽기·쓰기 혼합 부하와 복구 절차 검증 | 트랜잭션 처리량, 잠금·대기, 지연시간, 복구 결과 |
+| Doris의 날짜 중심 optimized를 유지할 것인가? | 실제 기간·쿼리 비중과 동시 요청·지속 적재 조건으로 비교하고, 활성 데이터와 trash·로그 크기를 분리 | p95/p99, 처리량, 실행 계획·compaction 상태, 구축 비용, 데이터·인덱스·trash별 저장 크기 |
 
 현재 결과로는 **DuckDB를 분석 파이프라인의 우선 후보로, ClickHouse를 집계 서비스의 우선 후보로 평가할 근거가 있다.** PostgreSQL과 SQLite는 각각 공유 트랜잭션 DB와 로컬 임베디드 DB의 요구까지 포함해 판단한다. 최적화 적용 여부는 쿼리별 이익, 변동성, 구축·저장 비용을 합쳐 결정한다.
 
+Doris는 이번 네 쿼리의 최저 평균 엔진을 바꾸지 않았지만, 날짜 중심 물리 설계가 범위 집계에 큰 효과를 보였다. 도입 후보로 검토할 때는 실제 기간 조건의 비중과 동시 요청·지속 적재 성능을 확인한다. 이번 단일 FE·BE 관측값으로 분산 운영의 성능을 결론 내리지는 않는다.
+
 ## 부록 A. 실제 실행 SQL
 
-아래는 [engine_worker.py](../scripts/engine_worker.py)의 `query_specs()`에 대응하는 SQL이다. 금액·할인율은 부동소수점 합산 순서에 따른 checksum 차이를 막기 위해 정수 센트로 집계한다. 표기는 DuckDB·SQLite 형태이고, PostgreSQL은 `NUMERIC` 캐스팅을 추가하며 ClickHouse는 `toInt64(round(... * 100))`를 사용한다. 필터·조인·그룹화·정렬 조건은 동일하다.
+아래는 [engine_worker.py](../scripts/engine_worker.py)의 `query_specs()`에 대응하는 SQL이다. 금액·할인율은 부동소수점 합산 순서에 따른 checksum 차이를 막기 위해 정수 센트로 집계한다. 표기는 DuckDB·SQLite·Doris 형태이고, PostgreSQL은 `NUMERIC` 캐스팅을 추가하며 ClickHouse는 `toInt64(round(... * 100))`를 사용한다. 필터·조인·그룹화·정렬 조건은 동일하다.
 
 ### small
 
@@ -272,6 +307,9 @@ ORDER BY b.region_id, d.account_tier;
 |---|---|
 | Baseline 원시 결과 | [ClickHouse](clickhouse/measurements.jsonl), [DuckDB](duckdb/measurements.jsonl), [PostgreSQL](postgres/measurements.jsonl), [SQLite](sqlite/measurements.jsonl) |
 | Optimized 원시 결과 | [ClickHouse](optimized/clickhouse/measurements.jsonl), [DuckDB](optimized/duckdb/measurements.jsonl), [PostgreSQL](optimized/postgres/measurements.jsonl), [SQLite 부분 결과](optimized/sqlite/measurements.jsonl) |
+| Doris 원시 결과 | [Baseline](doris-sql/run-20261006-baseline/doris/measurements.jsonl), [Optimized](doris-sql/run-20261006-optimized/optimized/doris/measurements.jsonl) |
+| Doris 실행 환경·소스 | [Baseline deployment](doris-sql/run-20261006-baseline/deployment.json)·[보존 소스](doris-sql/run-20261006-baseline/source/main.py), [Optimized deployment](doris-sql/run-20261006-optimized/deployment.json)·[보존 소스](doris-sql/run-20261006-optimized/source/main.py) |
+| 확장 전 보고서·차트 | [원본 보고서](doris/original-report-backup/sql/benchmark-report.md), [원본 차트](doris/original-report-backup/sql/charts/comparison.png) — 기존 형식과 수치 보존 |
 | 실행·데이터·쿼리 정의 | [main.py](../main.py), [engine_worker.py](../scripts/engine_worker.py), [PRD](../prd.md) |
 | 시각화 재생성 | [visualize_results.py](../scripts/visualize_results.py) — 프로젝트 루트에서 `uv run scripts/visualize_results.py` |
 | 진행·실패 기록 | [daily-development-report.md](../daily-development-report.md) |

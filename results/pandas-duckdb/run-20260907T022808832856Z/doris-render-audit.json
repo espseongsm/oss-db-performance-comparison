@@ -1,0 +1,30 @@
+{
+  "doris_source": "results/doris/frames/run-20261006T000356880611Z",
+  "verified_comparison": "results/doris/comparisons/frames-20261006-final/comparison.csv",
+  "doris_requests": 360,
+  "doris_cases": 12,
+  "table_rows": 24,
+  "same_doris_cases_reused_in_memory_and_parquet": true,
+  "historical_headings_and_narrative_preserved": true,
+  "protected_sha256": {
+    "measurements.csv": "ff4af94da81d0cbb86dd1e1274e1ddbb7e0f1481e2c0fae683464eebea1d00e0",
+    "measurements.jsonl": "9a369150414cce343a46f7bd066d4cfa5d96c3e421e50769dd6b3fc8fccb29e4",
+    "summary.csv": "96c34f5d8a2cd607267e2981be9670d8b1293254c97d12aeda716db464806dc3",
+    "summary.json": "31b7b0e0133ec229c607ac1e8e936285d6053e896b7f9c3e356d6b1ab2467fe6",
+    "comparison.csv": "38c12facb2241967d52bf7f88e7680db6a878c3f5c3b9bc8c07c5d664236661c",
+    "manifest.json": "53a97f19c4ff603eb70f445449a9b0eca8118ccdb047b12ca95f387c4c0f9069",
+    "datasets.json": "09f6387a1aa431c2f8f70d01ac7790ee71bd9a2e42bdffe8790f93fcc47d36fd",
+    "validation.json": "bd4f9ff03c78b7febe12d5a300561c733cbcf0fb80c772b5767276dcdc16f5b7",
+    "execution-order.json": "7af12d42c0b06753ea82fac38374df6a95848ec0b46b9194fe4e417abc44bd31",
+    "memory.csv": "7458f6a35149241ee11339d519ae5c9544678892e2c0204f8183999564328a2e",
+    "qa.json": "9786a5ad6ae8860b2f2ee361967aa5ae9edef84237a1d4add70e1426f038bf0c",
+    "speedup.png": "5fb86992b1bad1fbcf8d5270cdd745e5b639a57940d5cbc5f7f59f7887666686"
+  },
+  "source_sha256": "db97b5b0ee0266f56ee17eb92411cb57170dc463a4c6b1539794923708a1da7d",
+  "output_sha256": {
+    "report.md": "c670f01464d0fd8aec70639a684aecfa6712954d06d5a2f0a0286c27029005a6",
+    "timing-parquet.png": "5eb51442668355916cfdba7eafc41c1ece984cfa30c38aab1e88fd921839f941",
+    "timing-memory.png": "221180063df118caca223b8bf82c6757ce171c99be530e1018243de4bcefc5de",
+    "doris-summary.csv": "6b2aca7f37a7a7587cd6b6b92664702095fe03987e7c98ace1315e2825ec6cd3"
+  }
+}

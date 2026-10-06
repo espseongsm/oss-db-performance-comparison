@@ -1,0 +1,312 @@
+[
+  {
+    "source": "historical",
+    "manifest": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/experiment-manifest-optimized-clickhouse.json",
+    "manifest_sha256": "92caef971b35efbbb0613f3d73a4d552723854a8f985ec0ea46cc18c50146f69",
+    "completed_at": "2026-09-04T02:29:10.768833+00:00",
+    "engines": [
+      "clickhouse"
+    ]
+  },
+  {
+    "source": "historical",
+    "manifest": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/experiment-manifest-optimized-duckdb.json",
+    "manifest_sha256": "798c1e689e355efbd3a9e4345b251021b6d505ac785d27ede76a3464fa1d37e1",
+    "completed_at": "2026-09-04T13:42:52.301848+00:00",
+    "engines": [
+      "duckdb"
+    ]
+  },
+  {
+    "source": "historical",
+    "engine": "clickhouse",
+    "physical_design": {
+      "profile": "optimized",
+      "engine": "clickhouse",
+      "sort_key": "(event_day, id)",
+      "data_skipping_index": "id bloom_filter",
+      "indexes": [],
+      "total_elapsed_ms": 0.028667000151472166
+    }
+  },
+  {
+    "source": "historical",
+    "engine": "duckdb",
+    "physical_design": {
+      "profile": "optimized",
+      "engine": "duckdb",
+      "sort_key": "(event_day, id)",
+      "data_skipping_index": "DuckDB zone maps (ordered load)",
+      "indexes": [],
+      "sort_elapsed_ms": 744736.4570459977
+    }
+  },
+  {
+    "source": "historical",
+    "engine": "postgres",
+    "physical_design": {
+      "profile": "optimized",
+      "engine": "postgres",
+      "sort_key": null,
+      "data_skipping_index": null,
+      "indexes": [
+        {
+          "name": "benchmark_id_idx",
+          "elapsed_ms": 516610.387277
+        },
+        {
+          "name": "benchmark_event_day_idx",
+          "elapsed_ms": 374199.2579600001
+        },
+        {
+          "name": "benchmark_account_id_idx",
+          "elapsed_ms": 344228.15015800006
+        },
+        {
+          "name": "account_dim_account_id_idx",
+          "elapsed_ms": 128.12216700012868
+        }
+      ],
+      "total_elapsed_ms": 1235166.042395
+    }
+  },
+  {
+    "source": "historical",
+    "engine": "sqlite",
+    "physical_design": {
+      "profile": "optimized",
+      "engine": "sqlite",
+      "sort_key": null,
+      "data_skipping_index": null,
+      "indexes": [
+        {
+          "name": "benchmark_id_idx",
+          "elapsed_ms": 285125.73675600014
+        },
+        {
+          "name": "benchmark_event_day_idx",
+          "elapsed_ms": 317946.99677100015
+        },
+        {
+          "name": "benchmark_account_id_idx",
+          "elapsed_ms": 315575.1690180005
+        },
+        {
+          "name": "account_dim_account_id_idx",
+          "elapsed_ms": 177.60524999994232
+        }
+      ],
+      "total_elapsed_ms": 918826.3455449997
+    }
+  },
+  {
+    "source": "new",
+    "manifest": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/doris-sql/run-20261006-optimized/experiment-manifest-optimized-doris.json",
+    "manifest_sha256": "a9abe4c27e2b3a30df5409d985d86cc1fcdc65cc65dea36491028bfbb90f22a5",
+    "completed_at": "2026-10-06T00:45:29.695596+00:00",
+    "engines": [
+      "doris"
+    ]
+  },
+  {
+    "source": "new",
+    "engine": "doris",
+    "physical_design": {
+      "profile": "optimized",
+      "engine": "doris",
+      "table_model": "DUPLICATE KEY",
+      "sort_key": "(event_day, id)",
+      "dimension_sort_key": "(account_id)",
+      "built_in_indexes": [
+        "prefix index",
+        "zone map"
+      ],
+      "data_skipping_index": "id Bloom filter",
+      "replication_num": 1,
+      "buckets": 8,
+      "load_and_layout_elapsed_ms": 267641.7373729996,
+      "session": {
+        "version": "doris-4.1.3-rc02-7126cf65d96",
+        "mysql_compatibility_version": "5.7.99",
+        "database": "benchmark_sql",
+        "sql_host": "doris",
+        "sql_port": 9030,
+        "sql_cache": false,
+        "query_cache": false,
+        "backends": [
+          {
+            "BackendId": "1791246789055",
+            "Host": "127.0.0.1",
+            "HeartbeatPort": "9050",
+            "BePort": "9060",
+            "HttpPort": "8040",
+            "BrpcPort": "8060",
+            "ArrowFlightSqlPort": "8050",
+            "LastStartTime": "2026-10-06 00:33:12",
+            "LastHeartbeat": "2026-10-06 00:37:39",
+            "Alive": "true",
+            "SystemDecommissioned": "false",
+            "TabletNum": "38",
+            "DataUsedCapacity": "19.905 GB",
+            "TrashUsedCapacity": "0.000 ",
+            "AvailCapacity": "680.657 GB",
+            "TotalCapacity": "910.737 GB",
+            "UsedPct": "25.26 %",
+            "MaxDiskUsedPct": "25.26 %",
+            "RemoteUsedCapacity": "0.000 ",
+            "Tag": "{\"location\" : \"default\"}",
+            "ErrMsg": "",
+            "Version": "doris-4.1.3-rc02-7126cf65d96",
+            "Status": "{\"lastSuccessReportTabletsTime\":\"2026-10-06 00:37:31\",\"lastStreamLoadTime\":-1,\"isQueryDisabled\":false,\"isLoadDisabled\":false,\"isActive\":true,\"isShutdown\":false,\"currentFragmentNum\":1,\"lastFragmentUpdateTime\":1791247059694}",
+            "HeartbeatFailureCounter": "0",
+            "CpuCores": "14",
+            "Memory": "24.00 GB",
+            "LiveSince": "2026-10-06 00:37:39",
+            "RunningTasks": "1",
+            "NodeRole": "mix"
+          }
+        ],
+        "enable_sql_cache": [
+          [
+            "enable_sql_cache",
+            "false",
+            "true",
+            "1"
+          ]
+        ],
+        "enable_query_cache": [
+          [
+            "enable_query_cache",
+            "false",
+            "false",
+            "0"
+          ]
+        ],
+        "exec_mem_limit": [
+          [
+            "exec_mem_limit",
+            "100147483648",
+            "100147483648",
+            "0"
+          ]
+        ],
+        "parallel_pipeline_task_num": [
+          [
+            "parallel_pipeline_task_num",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "query_timeout": [
+          [
+            "query_timeout",
+            "900",
+            "900",
+            "0"
+          ]
+        ],
+        "fact_ddl": [
+          [
+            "benchmark",
+            "CREATE TABLE `benchmark` (\n  `event_day` bigint NULL,\n  `id` bigint NULL,\n  `account_id` bigint NULL,\n  `category_id` bigint NULL,\n  `region_id` bigint NULL,\n  `quantity` bigint NULL,\n  `amount` double NULL,\n  `discount` double NULL,\n  `event_second` bigint NULL,\n  `is_active` bigint NULL,\n  `status_id` bigint NULL,\n  `source_id` bigint NULL,\n  `metric_01` bigint NULL,\n  `metric_02` bigint NULL,\n  `metric_03` bigint NULL,\n  `metric_04` bigint NULL,\n  `metric_05` bigint NULL,\n  `metric_06` bigint NULL,\n  `metric_07` bigint NULL,\n  `metric_08` bigint NULL\n) ENGINE=OLAP\nDUPLICATE KEY(`event_day`, `id`)\nDISTRIBUTED BY HASH(`id`) BUCKETS 8\nPROPERTIES (\n\"replication_allocation\" = \"tag.location.default: 1\",\n\"min_load_replica_num\" = \"-1\",\n\"bloom_filter_columns\" = \"id\",\n\"is_being_synced\" = \"false\",\n\"storage_medium\" = \"hdd\",\n\"storage_format\" = \"V2\",\n\"inverted_index_storage_format\" = \"V3\",\n\"light_schema_change\" = \"true\",\n\"disable_auto_compaction\" = \"false\",\n\"group_commit_interval_ms\" = \"10000\",\n\"group_commit_data_bytes\" = \"134217728\"\n);"
+          ]
+        ],
+        "dimension_ddl": [
+          [
+            "account_dim",
+            "CREATE TABLE `account_dim` (\n  `account_id` bigint NULL,\n  `account_tier` bigint NULL,\n  `account_region_id` bigint NULL\n) ENGINE=OLAP\nDUPLICATE KEY(`account_id`)\nDISTRIBUTED BY HASH(`account_id`) BUCKETS 8\nPROPERTIES (\n\"replication_allocation\" = \"tag.location.default: 1\",\n\"min_load_replica_num\" = \"-1\",\n\"is_being_synced\" = \"false\",\n\"storage_medium\" = \"hdd\",\n\"storage_format\" = \"V2\",\n\"inverted_index_storage_format\" = \"V3\",\n\"light_schema_change\" = \"true\",\n\"disable_auto_compaction\" = \"false\",\n\"group_commit_interval_ms\" = \"10000\",\n\"group_commit_data_bytes\" = \"134217728\"\n);"
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "source": "new",
+    "deployment_file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/doris-sql/run-20261006-optimized/deployment.json",
+    "deployment_sha256": "c895165b02b5a5604641e45a00f794783e88ae16996b9f9e19f58edba31952ec",
+    "recorded_deployment": {
+      "recorded_at": "2026-10-06T00:33:08.069573+00:00",
+      "host": {
+        "system": "Darwin",
+        "release": "27.0.0",
+        "architecture": "arm64"
+      },
+      "docker": {
+        "ServerVersion": "28.3.0",
+        "OperatingSystem": "Docker Desktop",
+        "OSType": "linux",
+        "Architecture": "aarch64",
+        "KernelVersion": "6.10.14-linuxkit",
+        "NCPU": 14,
+        "MemTotal": 33073651712
+      },
+      "containers": [
+        {
+          "id": "3f401ba7cdf1abb34d52ae51831c2b66cde9d92f853beaefc3c2e0ea156576ce",
+          "service": "doris",
+          "requested_image": "apache/doris:all-in-one-4.1.3",
+          "image_id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+          "limits": {
+            "NanoCpus": 14000000000,
+            "CpuQuota": 0,
+            "CpuPeriod": 0,
+            "CpusetCpus": "",
+            "Memory": 25769803776,
+            "MemorySwap": 51539607552,
+            "ShmSize": 67108864
+          }
+        },
+        {
+          "id": "2e3614834a9f90f01bb2900dcd7ef33fed1c76e6c97d50c3156902331d4c1ea1",
+          "service": "runner",
+          "requested_image": "db-performance-comparison-runner",
+          "image_id": "sha256:e61c0447f155bc8c293eca52e390f4d7dbf8e64fd4fc003eee7f362f61b25191",
+          "limits": {
+            "NanoCpus": 0,
+            "CpuQuota": 0,
+            "CpuPeriod": 0,
+            "CpusetCpus": "",
+            "Memory": 0,
+            "MemorySwap": 0,
+            "ShmSize": 67108864
+          }
+        }
+      ],
+      "images": [
+        {
+          "Id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+          "RepoTags": [
+            "apache/doris:all-in-one-4.1.3"
+          ],
+          "RepoDigests": [
+            "apache/doris@sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609"
+          ],
+          "Architecture": "arm64",
+          "Os": "linux"
+        },
+        {
+          "Id": "sha256:e61c0447f155bc8c293eca52e390f4d7dbf8e64fd4fc003eee7f362f61b25191",
+          "RepoTags": [
+            "db-performance-comparison-runner:latest"
+          ],
+          "RepoDigests": [
+            "db-performance-comparison-runner@sha256:e61c0447f155bc8c293eca52e390f4d7dbf8e64fd4fc003eee7f362f61b25191"
+          ],
+          "Architecture": "arm64",
+          "Os": "linux"
+        }
+      ],
+      "note": "Actual container resource limits and Docker VM totals at recorded_at; zero Memory or NanoCpus means no container override.",
+      "source_sha256": {
+        "main.py": "ed53393b88c0cfbba659a9fa7366b8c35610e12bc1949bb619c91b5910325cc9",
+        "scripts/engine_worker.py": "650c51b8e6a60c44588a130edafce8dd2a3c0424f27d99c089ec1d1a19cc5804",
+        "scripts/doris_sql.py": "3ca98a8e47f81559cebf7487661ce8eddc956b2c8d8c6cf6e6e6b360b47aad71",
+        "scripts/doris_client.py": "6a39ac57e27c0c7ab416c40442707da5624bb626e84860f354b10538e52877f9",
+        "docker-compose.yml": "7d912f969f0cfc433e3031d2b55ad900032bda163211b832b5c3eec8d3dfd169",
+        "docker/runner/Dockerfile": "e31f31d6384f51c69a19870fe0e09f8be691c29de04e5705950fbfb1a1987252",
+        "requirements-runner.txt": "969982f0891d0b776d5565eb33622382ea71ed6ff1d833960b956a342abc009d"
+      }
+    }
+  }
+]

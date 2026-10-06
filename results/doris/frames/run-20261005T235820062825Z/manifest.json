@@ -1,0 +1,98 @@
+{
+  "status": "complete",
+  "started_at": "2026-10-05T23:58:20.063520+00:00",
+  "settings": {
+    "sizes": [
+      100000
+    ],
+    "runs": 2,
+    "blocks": 1,
+    "threads": 4,
+    "memory_gb": 8,
+    "seed": 20260907,
+    "timeout_seconds": 1800,
+    "data_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark",
+    "reference_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/pandas-duckdb/run-20260907T022808832856Z",
+    "output_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/doris/frames"
+  },
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "python": "3.13.5 (main, Jul 11 2025, 22:26:07) [Clang 20.1.4 ]",
+  "engine": "doris",
+  "mode": "warehouse",
+  "reference_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/pandas-duckdb/run-20260907T022808832856Z",
+  "cache": "Warm cache; one untimed verified query before each block",
+  "timing": "SQL request to fully fetched/materialized/normalized int64 pandas result",
+  "excluded": "Connection, schema, Stream Load, warmup, explicit GC and fingerprint verification",
+  "memory": "Server memory is not client RSS; reported cpu_ms is client CPU only",
+  "comparison_scope": "Preserved historical local measurements have a different input/deployment path",
+  "versions": {
+    "pandas": "2.3.3",
+    "numpy": "2.5.3",
+    "pyarrow": "23.0.1",
+    "scipy": "1.18.1"
+  },
+  "measurement_count": 8,
+  "reference_sha256": {
+    "datasets.json": "09f6387a1aa431c2f8f70d01ac7790ee71bd9a2e42bdffe8790f93fcc47d36fd",
+    "validation.json": "bd4f9ff03c78b7febe12d5a300561c733cbcf0fb80c772b5767276dcdc16f5b7",
+    "manifest.json": "53a97f19c4ff603eb70f445449a9b0eca8118ccdb047b12ca95f387c4c0f9069"
+  },
+  "source_sha256": {
+    "benchmarks/frame_doris_benchmark.py": "ecefef25e7499d9da99857893d2743e6a881abb63952f3fed2dafda6d7a1d837",
+    "benchmarks/frame_doris.py": "bc7742f6d8498306739c9ac30871e0a7afb6e82c98c26874410d197f6b762954",
+    "benchmarks/frame_workloads.py": "5f90b4be1ba1e97f52d320fa44bc1efaf574c542c9324fe26b4a176353a6c717",
+    "benchmarks/frame_statistics.py": "2488ce1fd685d0cccab5820465ec43b3813c93afff1de2ec12c6b4ceff04dd48",
+    "scripts/doris_client.py": "e20d0add28eca7d51432a907b8da2075bfe18ea4f8a45622f9bd0c2b275a1c18",
+    "main.py": "e7fc005c980e161c5d7326814f9b3c2ac5a4c61f326971972b51408c76572fc8",
+    "uv.lock": "52260a15db71864f141e2cc7571270f113f4558277b4e6b296ea10d558b7e041"
+  },
+  "doris": {
+    "version": "doris-4.1.3-rc02-7126cf65d96",
+    "mysql_compatibility_version": "5.7.99",
+    "database": "frames_doris_20261005t235820062825z",
+    "sql_host": "127.0.0.1",
+    "sql_port": 19030,
+    "sql_cache": false,
+    "query_cache": false,
+    "backends": [
+      {
+        "BackendId": "1791244543342",
+        "Host": "127.0.0.1",
+        "HeartbeatPort": "9050",
+        "BePort": "9060",
+        "HttpPort": "8040",
+        "BrpcPort": "8060",
+        "ArrowFlightSqlPort": "8050",
+        "LastStartTime": "2026-10-05 23:55:47",
+        "LastHeartbeat": "2026-10-05 23:58:14",
+        "Alive": "true",
+        "SystemDecommissioned": "false",
+        "TabletNum": "22",
+        "DataUsedCapacity": "28.946 KB",
+        "TrashUsedCapacity": "0.000 ",
+        "AvailCapacity": "728.832 GB",
+        "TotalCapacity": "910.737 GB",
+        "UsedPct": "19.97 %",
+        "MaxDiskUsedPct": "19.97 %",
+        "RemoteUsedCapacity": "0.000 ",
+        "Tag": "{\"location\" : \"default\"}",
+        "ErrMsg": "",
+        "Version": "doris-4.1.3-rc02-7126cf65d96",
+        "Status": "{\"lastSuccessReportTabletsTime\":\"2026-10-05 23:57:59\",\"lastStreamLoadTime\":-1,\"isQueryDisabled\":false,\"isLoadDisabled\":false,\"isActive\":true,\"isShutdown\":false,\"currentFragmentNum\":0,\"lastFragmentUpdateTime\":1791244605687}",
+        "HeartbeatFailureCounter": "0",
+        "CpuCores": "14",
+        "Memory": "8.00 GB",
+        "LiveSince": "2026-10-05 23:58:14",
+        "RunningTasks": "0",
+        "NodeRole": "mix"
+      }
+    ],
+    "parallel_pipeline_task_num": 4,
+    "exec_mem_limit": 8589934592,
+    "enable_sql_cache": false,
+    "enable_query_cache": false,
+    "client_memory_is_not_server_memory": true
+  },
+  "completed_at": "2026-10-05T23:58:22.197487+00:00",
+  "cleanup": "complete"
+}

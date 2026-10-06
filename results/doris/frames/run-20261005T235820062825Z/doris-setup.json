@@ -1,0 +1,58 @@
+[
+  {
+    "file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000/accounts.parquet",
+    "table": "accounts",
+    "rows": 100000,
+    "ddl_ms": 6.675457999790524,
+    "stream_load_ms": 415.10945800018817,
+    "stream_load": {
+      "TxnId": 3,
+      "Label": "benchmark_6c9850faedb04dd7b0b2f779ecc2c286",
+      "Comment": "",
+      "TwoPhaseCommit": "false",
+      "Status": "Success",
+      "Message": "OK",
+      "NumberTotalRows": 100000,
+      "NumberLoadedRows": 100000,
+      "NumberFilteredRows": 0,
+      "NumberUnselectedRows": 0,
+      "LoadBytes": 606596,
+      "LoadTimeMs": 72,
+      "BeginTxnTimeMs": 2,
+      "StreamLoadPutTimeMs": 10,
+      "ReadDataTimeMs": 0,
+      "WriteDataTimeMs": 31,
+      "ReceiveDataTimeMs": 15,
+      "CommitAndPublishTimeMs": 24,
+      "client_elapsed_ms": 78.417083000204
+    }
+  },
+  {
+    "file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark/v1-seed20260907-rows100000/sales.parquet",
+    "table": "sales_100000",
+    "rows": 100000,
+    "ddl_ms": 10.00904200009245,
+    "stream_load_ms": 95.75487500023883,
+    "stream_load": {
+      "TxnId": 4,
+      "Label": "benchmark_2b2ba65abac24e9d98fbd41b3ca8b8d0",
+      "Comment": "",
+      "TwoPhaseCommit": "false",
+      "Status": "Success",
+      "Message": "OK",
+      "NumberTotalRows": 100000,
+      "NumberLoadedRows": 100000,
+      "NumberFilteredRows": 0,
+      "NumberUnselectedRows": 0,
+      "LoadBytes": 1912365,
+      "LoadTimeMs": 90,
+      "BeginTxnTimeMs": 0,
+      "StreamLoadPutTimeMs": 4,
+      "ReadDataTimeMs": 0,
+      "WriteDataTimeMs": 57,
+      "ReceiveDataTimeMs": 14,
+      "CommitAndPublishTimeMs": 17,
+      "client_elapsed_ms": 94.55691699986346
+    }
+  }
+]

@@ -1,0 +1,9 @@
+rows,mode,workload,engine,block,run,elapsed_ms,execute_roundtrip_ms,fetch_dataframe_ms,cpu_ms,output_rows,validated
+100000,warehouse,groupby,doris,1,1,19.058917,18.7715,0.287417,0.605,50,True
+100000,warehouse,groupby,doris,1,2,15.199625,14.980584,0.219041,0.487,50,True
+100000,warehouse,join_groupby,doris,1,1,18.026666,17.756291,0.270375,0.81,200,True
+100000,warehouse,join_groupby,doris,1,2,18.193583,17.912625,0.280958,0.825,200,True
+100000,warehouse,filter_project,doris,1,1,51.79025,47.786958,4.003292,38.011,19886,True
+100000,warehouse,filter_project,doris,1,2,53.902542,49.763709,4.138833,37.457,19886,True
+100000,warehouse,clean_derive,doris,1,1,184.374291,170.649666,13.724625,157.159,100000,True
+100000,warehouse,clean_derive,doris,1,2,192.501667,178.333334,14.168333,160.198,100000,True

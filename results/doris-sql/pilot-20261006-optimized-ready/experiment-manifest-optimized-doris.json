@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-10-06T00:21:56.654238+00:00",
+  "rows": 10000,
+  "runs": 1,
+  "engines": [
+    "doris"
+  ],
+  "sequential": true,
+  "purge_data_after_engine": true
+}

@@ -1,0 +1,223 @@
+[
+  {
+    "source": "historical",
+    "manifest": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/pandas-duckdb/run-20260907T022808832856Z/manifest.json",
+    "manifest_sha256": "53a97f19c4ff603eb70f445449a9b0eca8118ccdb047b12ca95f387c4c0f9069",
+    "started_at": "2026-09-07T02:28:08.833407+00:00",
+    "completed_at": "2026-09-07T02:33:16.932906+00:00",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "python": "3.13.5 (main, Jul 11 2025, 22:26:07) [Clang 20.1.4 ]",
+    "versions": {
+      "pandas": "3.0.5",
+      "duckdb": "1.5.5",
+      "numpy": "2.5.3",
+      "pyarrow": "23.0.1",
+      "psutil": "7.2.2",
+      "scipy": "1.18.1"
+    },
+    "settings": {
+      "sizes": [
+        100000,
+        1000000,
+        10000000
+      ],
+      "runs": 30,
+      "blocks": 6,
+      "threads": 4,
+      "memory_gb": 8,
+      "seed": 20260907,
+      "timeout_seconds": 1800,
+      "data_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark",
+      "output_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/pandas-duckdb",
+      "pilot": false
+    },
+    "source_sha256": {
+      "main.py": "28a881f4ce74c41ebb494399a537b4329296cb976819eb478cc0cda44cc95f96",
+      "uv.lock": "032bf3f94532adc5ab56c28d172fe0e3c360d0f529ee2a55805cc36c3e58d169",
+      "benchmarks/__init__.py": "13f6fec0e8819e0007704feaf1c3b8ad5603ce44a1e4cc4844865955026b92ee",
+      "benchmarks/frame_benchmark.py": "2accef2f43656f4ee752d38c22d170d9cb8ff28b7bd05a0886573052fdd21a3b",
+      "benchmarks/frame_charts.py": "df23c13e0a1ba10a682e205ae92231f3a5c899dd73593b4042817abc0dcbfe66",
+      "benchmarks/frame_statistics.py": "2488ce1fd685d0cccab5820465ec43b3813c93afff1de2ec12c6b4ceff04dd48",
+      "benchmarks/frame_worker.py": "e192c8591a7af42eb7c903410b07f5e9606e17bf9d3ce2c09ac5e958c82c4115",
+      "benchmarks/frame_workloads.py": "5f90b4be1ba1e97f52d320fa44bc1efaf574c542c9324fe26b4a176353a6c717"
+    },
+    "cpu_logical_count": 14,
+    "cpu_physical_count": 14,
+    "physical_memory_bytes": 51539607552,
+    "initial_system": {
+      "at": "2026-09-07T02:28:08.870152+00:00",
+      "system_cpu_pct": 9.8,
+      "load_average": [
+        4.89794921875,
+        5.396484375,
+        5.88916015625
+      ],
+      "available_memory_bytes": 9717252096,
+      "swap_used_bytes": 10488119296,
+      "swap_in_bytes": 567265411072,
+      "swap_out_bytes": 164718428160
+    },
+    "final_system": {
+      "at": "2026-09-07T02:33:16.932994+00:00",
+      "system_cpu_pct": 27.0,
+      "load_average": [
+        6.2666015625,
+        5.8349609375,
+        5.96337890625
+      ],
+      "available_memory_bytes": 13005733888,
+      "swap_used_bytes": 12551192576,
+      "swap_in_bytes": 569701892096,
+      "swap_out_bytes": 164754030592
+    },
+    "cache": "Warm filesystem cache; no OS cache purge; one warmup per block",
+    "timing": "Execute to fully materialized pandas result, including DuckDB .df()",
+    "excluded": "Imports, connection, memory-mode input preload/register, GC collection, validation",
+    "memory": "Separate fresh-process single execution; OS peak RSS includes imports and preload; before validation"
+  },
+  {
+    "source": "new",
+    "manifest": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/doris/frames/run-20261006T000356880611Z/manifest.json",
+    "manifest_sha256": "5c8a78356338ce4f604ca005f73fb16656c0b4d9318d10a55617fa3e20df12f7",
+    "started_at": "2026-10-06T00:03:56.881002+00:00",
+    "completed_at": "2026-10-06T00:18:10.829090+00:00",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.5 (main, Jul 11 2025, 22:26:07) [Clang 20.1.4 ]",
+    "versions": {
+      "pandas": "2.3.3",
+      "numpy": "2.5.3",
+      "pyarrow": "23.0.1",
+      "scipy": "1.18.1"
+    },
+    "settings": {
+      "sizes": [
+        100000,
+        1000000,
+        10000000
+      ],
+      "runs": 30,
+      "blocks": 6,
+      "threads": 4,
+      "memory_gb": 8,
+      "seed": 20260907,
+      "timeout_seconds": 1800,
+      "data_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/data/frame-benchmark",
+      "reference_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/pandas-duckdb/run-20260907T022808832856Z",
+      "output_dir": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/doris/frames"
+    },
+    "source_sha256": {
+      "benchmarks/frame_doris_benchmark.py": "ecefef25e7499d9da99857893d2743e6a881abb63952f3fed2dafda6d7a1d837",
+      "benchmarks/frame_doris.py": "bc7742f6d8498306739c9ac30871e0a7afb6e82c98c26874410d197f6b762954",
+      "benchmarks/frame_workloads.py": "5f90b4be1ba1e97f52d320fa44bc1efaf574c542c9324fe26b4a176353a6c717",
+      "benchmarks/frame_statistics.py": "2488ce1fd685d0cccab5820465ec43b3813c93afff1de2ec12c6b4ceff04dd48",
+      "scripts/doris_client.py": "e20d0add28eca7d51432a907b8da2075bfe18ea4f8a45622f9bd0c2b275a1c18",
+      "main.py": "e7fc005c980e161c5d7326814f9b3c2ac5a4c61f326971972b51408c76572fc8",
+      "uv.lock": "52260a15db71864f141e2cc7571270f113f4558277b4e6b296ea10d558b7e041"
+    },
+    "cache": "Warm cache; one untimed verified query before each block",
+    "timing": "SQL request to fully fetched/materialized/normalized int64 pandas result",
+    "excluded": "Connection, schema, Stream Load, warmup, explicit GC and fingerprint verification",
+    "memory": "Server memory is not client RSS; reported cpu_ms is client CPU only",
+    "doris": {
+      "version": "doris-4.1.3-rc02-7126cf65d96",
+      "mysql_compatibility_version": "5.7.99",
+      "database": "frames_doris_20261006t000356880611z",
+      "sql_host": "127.0.0.1",
+      "sql_port": 19030,
+      "sql_cache": false,
+      "query_cache": false,
+      "backends": [
+        {
+          "BackendId": "1791244543342",
+          "Host": "127.0.0.1",
+          "HeartbeatPort": "9050",
+          "BePort": "9060",
+          "HttpPort": "8040",
+          "BrpcPort": "8060",
+          "ArrowFlightSqlPort": "8050",
+          "LastStartTime": "2026-10-06 00:03:37",
+          "LastHeartbeat": "2026-10-06 00:03:53",
+          "Alive": "true",
+          "SystemDecommissioned": "false",
+          "TabletNum": "54",
+          "DataUsedCapacity": "1.594 MB",
+          "TrashUsedCapacity": "0.000 ",
+          "AvailCapacity": "728.372 GB",
+          "TotalCapacity": "910.737 GB",
+          "UsedPct": "20.02 %",
+          "MaxDiskUsedPct": "20.02 %",
+          "RemoteUsedCapacity": "0.000 ",
+          "Tag": "{\"location\" : \"default\"}",
+          "ErrMsg": "",
+          "Version": "doris-4.1.3-rc02-7126cf65d96",
+          "Status": "{\"lastSuccessReportTabletsTime\":\"2026-10-06 00:03:45\",\"lastStreamLoadTime\":-1,\"isQueryDisabled\":false,\"isLoadDisabled\":false,\"isActive\":true,\"isShutdown\":false,\"currentFragmentNum\":0,\"lastFragmentUpdateTime\":1791245024792}",
+          "HeartbeatFailureCounter": "0",
+          "CpuCores": "14",
+          "Memory": "8.00 GB",
+          "LiveSince": "2026-10-06 00:03:53",
+          "RunningTasks": "0",
+          "NodeRole": "mix"
+        }
+      ],
+      "parallel_pipeline_task_num": 4,
+      "exec_mem_limit": 8589934592,
+      "enable_sql_cache": false,
+      "enable_query_cache": false,
+      "client_memory_is_not_server_memory": true
+    }
+  },
+  {
+    "source": "new",
+    "deployment_file": "/Users/soonmoseong/Documents/ChatGPT/db-performance-comparison/results/doris/frames/run-20261006T000356880611Z/deployment.json",
+    "deployment_sha256": "5ebd2c1a318ca07187ab4862bc24ad09e67a5da7018a6a312441178ac06745a8",
+    "recorded_deployment": {
+      "recorded_at": "2026-10-06T00:04:56.535878+00:00",
+      "host": {
+        "system": "Darwin",
+        "release": "27.0.0",
+        "architecture": "arm64"
+      },
+      "docker": {
+        "ServerVersion": "28.3.0",
+        "OperatingSystem": "Docker Desktop",
+        "OSType": "linux",
+        "Architecture": "aarch64",
+        "KernelVersion": "6.10.14-linuxkit",
+        "NCPU": 14,
+        "MemTotal": 33073651712
+      },
+      "containers": [
+        {
+          "id": "9dd4eb95c68b67ca1d711a7ab7ba539920b8bb4e4660279203e874bb083baf71",
+          "service": "doris",
+          "requested_image": "apache/doris:all-in-one-4.1.3",
+          "image_id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+          "limits": {
+            "NanoCpus": 4000000000,
+            "CpuQuota": 0,
+            "CpuPeriod": 0,
+            "CpusetCpus": "",
+            "Memory": 8589934592,
+            "MemorySwap": 17179869184,
+            "ShmSize": 67108864
+          }
+        }
+      ],
+      "images": [
+        {
+          "Id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+          "RepoTags": [
+            "apache/doris:all-in-one-4.1.3"
+          ],
+          "RepoDigests": [
+            "apache/doris@sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609"
+          ],
+          "Architecture": "arm64",
+          "Os": "linux"
+        }
+      ],
+      "note": "Container resource limits and Docker VM totals captured before SQL setup; zero Memory or NanoCpus means no container override."
+    }
+  }
+]

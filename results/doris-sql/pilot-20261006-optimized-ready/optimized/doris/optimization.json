@@ -1,0 +1,109 @@
+{
+  "profile": "optimized",
+  "engine": "doris",
+  "table_model": "DUPLICATE KEY",
+  "sort_key": "(event_day, id)",
+  "dimension_sort_key": "(account_id)",
+  "built_in_indexes": [
+    "prefix index",
+    "zone map"
+  ],
+  "data_skipping_index": "id Bloom filter",
+  "replication_num": 1,
+  "buckets": 8,
+  "load_and_layout_elapsed_ms": 473.44179200035796,
+  "session": {
+    "version": "doris-4.1.3-rc02-7126cf65d96",
+    "mysql_compatibility_version": "5.7.99",
+    "database": "benchmark_sql",
+    "sql_host": "doris",
+    "sql_port": 9030,
+    "sql_cache": false,
+    "query_cache": false,
+    "backends": [
+      {
+        "BackendId": "1791246094096",
+        "Host": "127.0.0.1",
+        "HeartbeatPort": "9050",
+        "BePort": "9060",
+        "HttpPort": "8040",
+        "BrpcPort": "8060",
+        "ArrowFlightSqlPort": "8050",
+        "LastStartTime": "2026-10-06 00:21:37",
+        "LastHeartbeat": "2026-10-06 00:21:44",
+        "Alive": "true",
+        "SystemDecommissioned": "false",
+        "TabletNum": "38",
+        "DataUsedCapacity": "0.000 ",
+        "TrashUsedCapacity": "0.000 ",
+        "AvailCapacity": "728.375 GB",
+        "TotalCapacity": "910.737 GB",
+        "UsedPct": "20.02 %",
+        "MaxDiskUsedPct": "20.02 %",
+        "RemoteUsedCapacity": "0.000 ",
+        "Tag": "{\"location\" : \"default\"}",
+        "ErrMsg": "",
+        "Version": "doris-4.1.3-rc02-7126cf65d96",
+        "Status": "{\"lastSuccessReportTabletsTime\":\"N/A\",\"lastStreamLoadTime\":-1,\"isQueryDisabled\":false,\"isLoadDisabled\":false,\"isActive\":true,\"isShutdown\":false,\"currentFragmentNum\":0,\"lastFragmentUpdateTime\":1791246096577}",
+        "HeartbeatFailureCounter": "0",
+        "CpuCores": "14",
+        "Memory": "24.00 GB",
+        "LiveSince": "2026-10-06 00:21:44",
+        "RunningTasks": "0",
+        "NodeRole": "mix"
+      }
+    ],
+    "enable_sql_cache": [
+      [
+        "enable_sql_cache",
+        "false",
+        "true",
+        "1"
+      ]
+    ],
+    "enable_query_cache": [
+      [
+        "enable_query_cache",
+        "false",
+        "false",
+        "0"
+      ]
+    ],
+    "exec_mem_limit": [
+      [
+        "exec_mem_limit",
+        "100147483648",
+        "100147483648",
+        "0"
+      ]
+    ],
+    "parallel_pipeline_task_num": [
+      [
+        "parallel_pipeline_task_num",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "query_timeout": [
+      [
+        "query_timeout",
+        "900",
+        "900",
+        "0"
+      ]
+    ],
+    "fact_ddl": [
+      [
+        "benchmark",
+        "CREATE TABLE `benchmark` (\n  `event_day` bigint NULL,\n  `id` bigint NULL,\n  `account_id` bigint NULL,\n  `category_id` bigint NULL,\n  `region_id` bigint NULL,\n  `quantity` bigint NULL,\n  `amount` double NULL,\n  `discount` double NULL,\n  `event_second` bigint NULL,\n  `is_active` bigint NULL,\n  `status_id` bigint NULL,\n  `source_id` bigint NULL,\n  `metric_01` bigint NULL,\n  `metric_02` bigint NULL,\n  `metric_03` bigint NULL,\n  `metric_04` bigint NULL,\n  `metric_05` bigint NULL,\n  `metric_06` bigint NULL,\n  `metric_07` bigint NULL,\n  `metric_08` bigint NULL\n) ENGINE=OLAP\nDUPLICATE KEY(`event_day`, `id`)\nDISTRIBUTED BY HASH(`id`) BUCKETS 8\nPROPERTIES (\n\"replication_allocation\" = \"tag.location.default: 1\",\n\"min_load_replica_num\" = \"-1\",\n\"bloom_filter_columns\" = \"id\",\n\"is_being_synced\" = \"false\",\n\"storage_medium\" = \"hdd\",\n\"storage_format\" = \"V2\",\n\"inverted_index_storage_format\" = \"V3\",\n\"light_schema_change\" = \"true\",\n\"disable_auto_compaction\" = \"false\",\n\"group_commit_interval_ms\" = \"10000\",\n\"group_commit_data_bytes\" = \"134217728\"\n);"
+      ]
+    ],
+    "dimension_ddl": [
+      [
+        "account_dim",
+        "CREATE TABLE `account_dim` (\n  `account_id` bigint NULL,\n  `account_tier` bigint NULL,\n  `account_region_id` bigint NULL\n) ENGINE=OLAP\nDUPLICATE KEY(`account_id`)\nDISTRIBUTED BY HASH(`account_id`) BUCKETS 8\nPROPERTIES (\n\"replication_allocation\" = \"tag.location.default: 1\",\n\"min_load_replica_num\" = \"-1\",\n\"is_being_synced\" = \"false\",\n\"storage_medium\" = \"hdd\",\n\"storage_format\" = \"V2\",\n\"inverted_index_storage_format\" = \"V3\",\n\"light_schema_change\" = \"true\",\n\"disable_auto_compaction\" = \"false\",\n\"group_commit_interval_ms\" = \"10000\",\n\"group_commit_data_bytes\" = \"134217728\"\n);"
+      ]
+    ]
+  }
+}

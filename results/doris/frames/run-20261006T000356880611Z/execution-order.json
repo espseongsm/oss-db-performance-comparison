@@ -1,0 +1,506 @@
+[
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 2
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 3
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 4
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 5
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 10000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 1000000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 6
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 6
+  }
+]

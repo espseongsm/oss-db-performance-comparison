@@ -1,0 +1,5 @@
+rows,mode,workload,engine,import_rss_bytes,setup_rss_bytes,process_peak_rss_bytes,output_bytes
+100000,warehouse,groupby,doris,,,,1732
+100000,warehouse,join_groupby,doris,,,,6532
+100000,warehouse,filter_project,doris,,,,477396
+100000,warehouse,clean_derive,doris,,,,1600132

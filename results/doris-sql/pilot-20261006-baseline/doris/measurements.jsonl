@@ -1,0 +1,4 @@
+{"engine": "doris", "query": "small", "iteration": 1, "elapsed_ms": 7.509625000011511, "row_count": 1, "digest": "79e85b7978ddf821333cb74ea98847d3a5b6c6153e1f9eddfb2550dc51675334"}
+{"engine": "doris", "query": "medium", "iteration": 1, "elapsed_ms": 18.47987499991177, "row_count": 50, "digest": "e5599c4aa3ec1027b91175c0554c0810855643b0e05ace858a74b36967b3c2e8"}
+{"engine": "doris", "query": "large", "iteration": 1, "elapsed_ms": 15.422375000071042, "row_count": 1000, "digest": "610268ca7055b4c4e6b6f68a3d186ddac73c6873fbde8cb418621ea869e178f3"}
+{"engine": "doris", "query": "join", "iteration": 1, "elapsed_ms": 31.839458000035847, "row_count": 250, "digest": "ee868fe0b0ffad60e7aadd6bcdf0c23953527ea4b2457031e9203409dc3c7064"}

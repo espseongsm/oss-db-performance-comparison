@@ -1,0 +1,83 @@
+{
+  "recorded_at": "2026-10-06T00:21:33.236472+00:00",
+  "host": {
+    "system": "Darwin",
+    "release": "27.0.0",
+    "architecture": "arm64"
+  },
+  "docker": {
+    "ServerVersion": "28.3.0",
+    "OperatingSystem": "Docker Desktop",
+    "OSType": "linux",
+    "Architecture": "aarch64",
+    "KernelVersion": "6.10.14-linuxkit",
+    "NCPU": 14,
+    "MemTotal": 33073651712
+  },
+  "containers": [
+    {
+      "id": "cedb12741b877118c6598f96aedf7b330711294d4c80b4b83da50ea511371f78",
+      "service": "doris",
+      "requested_image": "apache/doris:all-in-one-4.1.3",
+      "image_id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+      "limits": {
+        "NanoCpus": 14000000000,
+        "CpuQuota": 0,
+        "CpuPeriod": 0,
+        "CpusetCpus": "",
+        "Memory": 25769803776,
+        "MemorySwap": 51539607552,
+        "ShmSize": 67108864
+      }
+    },
+    {
+      "id": "0305e1c8f3d888141889b649c76031fcfeeb66fc0e0cdcc0fc292d430640d625",
+      "service": "runner",
+      "requested_image": "db-performance-comparison-runner",
+      "image_id": "sha256:3847ad7cf5e2ff46b1ba80853aa8557c8cff49fdb8f262c5e17ccd48daff3f93",
+      "limits": {
+        "NanoCpus": 0,
+        "CpuQuota": 0,
+        "CpuPeriod": 0,
+        "CpusetCpus": "",
+        "Memory": 0,
+        "MemorySwap": 0,
+        "ShmSize": 67108864
+      }
+    }
+  ],
+  "images": [
+    {
+      "Id": "sha256:3847ad7cf5e2ff46b1ba80853aa8557c8cff49fdb8f262c5e17ccd48daff3f93",
+      "RepoTags": [
+        "db-performance-comparison-runner:latest"
+      ],
+      "RepoDigests": [
+        "db-performance-comparison-runner@sha256:3847ad7cf5e2ff46b1ba80853aa8557c8cff49fdb8f262c5e17ccd48daff3f93"
+      ],
+      "Architecture": "arm64",
+      "Os": "linux"
+    },
+    {
+      "Id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+      "RepoTags": [
+        "apache/doris:all-in-one-4.1.3"
+      ],
+      "RepoDigests": [
+        "apache/doris@sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609"
+      ],
+      "Architecture": "arm64",
+      "Os": "linux"
+    }
+  ],
+  "note": "Actual container resource limits and Docker VM totals at recorded_at; zero Memory or NanoCpus means no container override.",
+  "source_sha256": {
+    "main.py": "ed53393b88c0cfbba659a9fa7366b8c35610e12bc1949bb619c91b5910325cc9",
+    "scripts/engine_worker.py": "650c51b8e6a60c44588a130edafce8dd2a3c0424f27d99c089ec1d1a19cc5804",
+    "scripts/doris_sql.py": "3ca98a8e47f81559cebf7487661ce8eddc956b2c8d8c6cf6e6e6b360b47aad71",
+    "scripts/doris_client.py": "6a39ac57e27c0c7ab416c40442707da5624bb626e84860f354b10538e52877f9",
+    "docker-compose.yml": "7d912f969f0cfc433e3031d2b55ad900032bda163211b832b5c3eec8d3dfd169",
+    "docker/runner/Dockerfile": "e31f31d6384f51c69a19870fe0e09f8be691c29de04e5705950fbfb1a1987252",
+    "requirements-runner.txt": "969982f0891d0b776d5565eb33622382ea71ed6ff1d833960b956a342abc009d"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "join_groupby",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "filter_project",
+    "engine": "doris",
+    "block": 1
+  },
+  {
+    "rows": 100000,
+    "mode": "warehouse",
+    "workload": "clean_derive",
+    "engine": "doris",
+    "block": 1
+  }
+]
