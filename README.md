@@ -380,3 +380,63 @@ uv run --extra vector --extra snowflake python main.py financebench run --engine
 The `benchmark` Snowflake connection profile is used by default (`FINANCEBENCH_SNOWFLAKE_CONNECTION` overrides it). Existing task-specific macOS Keychain authentication is supported. The adapter creates a uniquely named schema, uploads and checks every vector, creates a vector-only Cortex Search service, and disables reranking. If the profile points to a personal database, it creates a temporary experiment database as regular tables are unsupported there. It drops its own cloud resources after the run, including failures; it does not alter the shared warehouse configuration. This explicitly selected cloud run incurs Snowflake service/warehouse charges. Reported query latency includes HTTPS/SDK overhead from the client to the cloud.
 
 Completed local + Cortex results: [English comparison](results/financebench/combined-20260921/report.md), [summary CSV](results/financebench/combined-20260921/summary.csv), and [9,900-request audit](results/financebench/combined-20260921/audit.json). The earlier local-only report remains preserved.
+
+## Doris만 추가 측정 (2026-10-06)
+
+관계형 SQL과 pandas/DuckDB 전처리 실험에 Apache Doris를 추가한다. 기존 DB·pandas·DuckDB·Snowflake 원시 측정값은 보존하고 읽어서 비교하며 기존 보고서의 표·차트에 Doris만 추가한다. FinanceBench 벡터 실험은 이번 추가 범위에 포함하지 않는다.
+
+클라우드 보관 폴더에서 Python 패키지 읽기가 지연되면 가상 환경을 로컬 경로에 둔다. 아래 명령은 그 경로에서 프로젝트 lock에 맞는 패키지를 설치한다.
+
+```bash
+export UV_PROJECT_ENVIRONMENT=/private/tmp/db-performance-doris-venv
+uv sync --locked --extra doris
+DORIS_CPUS=14 DORIS_MEMORY=24g uv run --extra doris python main.py --engine doris --profile baseline --rows 1000000000 --runs 30 --purge-data-after-engine
+DORIS_CPUS=14 DORIS_MEMORY=24g uv run --extra doris python main.py --engine doris --profile optimized --rows 1000000000 --runs 30 --purge-data-after-engine
+docker compose up -d doris
+uv run --extra doris python main.py frames-doris
+docker compose stop doris
+```
+
+- SQL: 10억 행, 기존 4개 쿼리, baseline·optimized 각각 쿼리별 30회. 같은 데이터 생성식과 출력 행 수·checksum을 검증한다. 새 결과는 `results/doris-sql/run-*/`에 저장한다.
+- 이번 SQL 실행의 Doris 컨테이너는 14 CPU·24GiB로 설정한다. 과거 SQL은 엔진별 한도를 고정하지 않았고 메모리 한도 24.6GiB가 기록되어 있다. 당시 자원을 완전히 재현했다고 가정하지 않으며 실제 이미지·VM·컨테이너 제한과 실행 소스를 새 결과 폴더에 보존한다.
+- 전처리: 기존 10만·100만·1,000만 행 Parquet의 SHA256·스키마·생성 설정을 확인한다. 4개 작업을 각각 30회, 6개 묶음으로 측정하며 모든 출력 fingerprint를 기존 결과와 비교한다. 새 결과는 `results/doris/frames/run-*/`에 저장한다. `--reference-dir` 기본값은 `results/pandas-duckdb/run-20260907T022808832856Z`다.
+- 전처리 시간에는 SQL 요청부터 전체 결과 수신·pandas DataFrame 생성·int64 정규화까지 포함한다. 연결·적재·워밍업·결과 검증은 제외하며 적재 시간은 별도로 기록한다. SQL cache와 query cache를 끄고 warm-cache·동시성 1로 실행한다. Doris FE/BE를 포함한 컨테이너 기본 한도는 합계 4 CPU·8GiB다.
+- 기존 결과는 2026년 9월, Doris 추가 측정은 10월 6일이다. OS·패키지 버전·호스트 부하와 native/Docker·사전 적재/Parquet 시작 조건의 차이를 함께 기록한다. 과거 결과와의 비교를 동일 시점·동일 실행 경로의 엔진 속도 순위로 해석하지 않는다.
+- 이번 Doris 전처리 비교는 9월 7일 로컬 pandas/DuckDB 결과를 참조했다. 기존 [Snowflake 크기별 본 실험](results/warehouse-sweep/run-20260909T045918099704Z/report.md)은 별도로 보존한다. 해당 실험의 배치 처리·서버 쿼리 시간과 이번 전체 DataFrame 반환 시간은 측정 범위가 달라 수치를 직접 합치지 않았다.
+
+Doris 본 실험 600회가 완료됐고 모든 출력이 과거 검증값과 일치했다. 기존 솔루션은 재측정하지 않았다. 통합 보고서는 검증된 원시 결과에서 통계를 다시 계산하며 표·CSV·차트·실행 환경 정보를 포함한다.
+
+| 실험 | 추가 측정 | 통합 결과 |
+|---|---:|---|
+| SQL baseline·optimized | 10억 행·4개 쿼리·각 30회·2개 프로파일 | [기존 SQL 보고서에 Doris 추가](results/benchmark-report.md) |
+| 전처리 | 3개 크기·4개 작업·각 30회 | [기존 전처리 보고서에 Doris 추가](results/pandas-duckdb/run-20260907T022808832856Z/report.md) |
+
+SQL은 기존 문서의 장·표·세로 막대 차트 형식을, 전처리는 기존 표·박스플롯 형식을 사용한다. 수정 전 보고서와 차트는 `results/doris/original-report-backup/`에 보존했다. `results/doris/comparisons/`의 별도 표·CSV·환경 정보도 검증 자료로 유지한다.
+
+측정을 다시 실행하지 않고 기존 보고서의 Doris 표·차트를 재생성하려면 다음 명령을 사용한다.
+
+```bash
+uv run scripts/visualize_results.py
+uv run python main.py frames-doris-report
+```
+
+SQL 원시 결과는 `results/doris-sql/run-20261006-baseline/` 및 `run-20261006-optimized/`, 전처리는 `results/doris/frames/run-20261006T000356880611Z/`에 보존했다. 이번 Doris optimized의 날짜 조건 집계 평균은 3,718.970ms → 411.267ms로 약 9배 개선됐지만 전체 집계·조인은 느려졌다. 과거 SQLite optimized의 미완료 조인은 그대로 누락 표시한다.
+
+분석·추천도 Doris를 반영했다. SQL의 워크로드별 최저 평균 엔진은 유지됐다. 전처리의 1,000만 행 집계는 Doris 22.345ms로 DuckDB Parquet 경로 29.137ms보다 관측 평균이 낮았으나, 메모리 입력 DuckDB 14.462ms는 더 빨랐다. 대량 행을 Python으로 반환하는 작업은 로컬 경로가 유리했고, 조인 집계의 작은 평균 차이는 확정적 우위로 해석하지 않는다. 실행일·환경·입력 경로가 다른 비교라는 한계도 결론에 함께 적용했다.
+
+관련 검사 57개와 정적 검사를 통과했다. SQL 측정 후 Doris 전용 컨테이너·데이터 볼륨을 정리했다. 로컬 인증서가 필요한 환경에서는 `docker build --secret id=benchmark_ca,src=/path/to/ca.pem -f docker/runner/Dockerfile -t db-performance-comparison-runner .`로 신뢰 CA 파일을 전달할 수 있다.
+
+```mermaid
+flowchart LR
+    S[기존 SQL 데이터 생성식] --> D[Doris 적재 및 물리 설계]
+    P[기존 Parquet와 SHA256] --> V[입력 일치 검증]
+    V --> D
+    D --> Q[4개 작업 SQL 실행]
+    Q --> F[전체 결과 수신]
+    F --> C[기존 checksum 또는 fingerprint와 비교]
+    C --> R[새 Doris 원시 결과와 통계]
+    R --> T[기존 보고서 표 및 차트에 Doris 추가]
+    H[보존한 기존 측정값] --> T
+    B[기존 보고서 양식] --> T
+    T --> I[워크로드별 해석과 도입 판단]
+```

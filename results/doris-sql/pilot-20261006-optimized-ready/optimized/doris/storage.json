@@ -1,0 +1,14 @@
+{
+  "engine": "doris",
+  "rows": 10000,
+  "paths": {
+    "/opt/apache-doris/be/storage": 87793664,
+    "/opt/apache-doris/fe/doris-meta": 184320,
+    "/opt/apache-doris/be/log": 225280,
+    "/opt/apache-doris/fe/log": 270336
+  },
+  "total_bytes": 88473600,
+  "total_gb": 0.0884736,
+  "total_gib": 0.0823974609375,
+  "note": "Measured immediately before the engine volume is purged."
+}

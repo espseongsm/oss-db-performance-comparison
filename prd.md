@@ -357,3 +357,17 @@ flowchart LR
   CLI --> W[warehouse-frames]
   CLI --> P[frames]
 ```
+
+## Doris 추가 측정 범위 (2026-10-06)
+
+- 관계형 SQL과 전처리 실험에 Doris만 추가한다. 기존 엔진·Snowflake는 실행하지 않고 기존 측정 결과를 읽어서 비교한다. 기존 결과·진행 중 Snowflake 코드는 보존한다. FinanceBench 벡터 추가는 이번 범위에 포함하지 않는다.
+- SQL: 기존 결정적 생성식의 10억 행·4개 쿼리, baseline 및 optimized 각각 30회. 결과 행 수·checksum을 기존 검증 결과와 대조하고 새 실행은 `results/doris-sql/run-*/`에 격리한다.
+- 전처리: 기존 10만·100만·1,000만 행 Parquet를 재사용한다. 데이터 SHA256·스키마·seed 등 설정을 reference와 대조하고 4개 작업의 전체 출력 fingerprint가 기존 결과와 일치해야 한다. 작업·크기별 30회, 6개 묶음으로 총 360회 측정한다.
+- 진입점은 `main.py --engine doris` 및 `main.py frames-doris`. 전처리 결과는 `results/doris/frames/run-*/`에 원시 JSONL·통계·실행 순서·입력 및 소스 해시·적재 시간을 보존한다.
+- warm-cache·동시성 1·SQL/query cache 비활성화. 전처리는 Doris 전체 컨테이너 4 CPU·8GiB, SQL은 14 CPU·24GiB로 실행하고 실제 자원·이미지 정보를 보존한다. 전처리는 SQL 요청부터 전체 fetch·DataFrame 생성·int64 정규화까지 측정하고, 적재·워밍업·fingerprint 검증은 제외한다.
+- 9월 기존 결과와 10월 6일 추가 결과의 실행일·OS/패키지 버전·자원/부하 및 native/Docker·입력 위치 차이를 공개한다. 동일 임무의 출력 일치와 동일 하드웨어·배포 경로의 성능 일치를 구분한다.
+- 이번 전처리 통합은 9월 7일 로컬 결과와 Doris 전체 DataFrame 반환 경로를 비교한다. 원격 main에 이미 완료된 Snowflake 크기별 본 실험은 별도로 보존하며, 배치 처리·서버 쿼리 시간과 측정 범위가 다른 수치를 직접 합치지 않는다.
+- 완료 상태: SQL baseline·optimized 각각 120회, 전처리 360회로 총 600회. 모든 측정 출력이 과거 checksum/fingerprint와 일치했다. 새 통합 표·CSV·차트·환경 정보는 `results/doris/comparisons/{sql-baseline-20261006-final,sql-optimized-20261006-final,frames-20261006-final}/`에 저장했다.
+- 과거 SQLite optimized 조인은 미완료로 보존하고 오래된 파일럿 summary를 합치지 않는다. 통합 통계는 검증된 10억 행 원시 측정에서 계산한다. 관련 검사 57개와 정적 검사 통과, Doris SQL 전용 컨테이너·볼륨 정리 완료.
+- 보고서 양식: 기존 `results/benchmark-report.md`의 장 구성·기본형/최적화형 표·차트에 Doris 엔진을 추가한다. 전처리는 기존 `results/pandas-duckdb/run-20260907T022808832856Z/report.md`의 표와 박스플롯에 Doris 열·시리즈를 추가한다. 원시 결과·기존 통계는 보존하며 수정 전 보고서와 차트를 별도로 백업한다. Doris warehouse 12개 케이스는 기존 두 입력 경로 옆에 같은 참조값으로 표시하고 기존 pandas/DuckDB 대응 구간은 유지한다.
+- 분석·추천: SQL은 Doris 최적화의 날짜 필터 이익과 전체 집계·조인 손실, 기존 최저 평균 엔진 유지 여부를 요약·결론에 반영한다. 전처리는 대량 행 반환과 작은 집계 결과 반환을 구분하고 1,000만 행 집계의 Doris 관측 평균, 입력 경로별 차이, 조인 집계의 작은 차이를 해석한다. 서버 실행·전송·클라이언트 변환의 개별 비용이나 Doris의 통계적 우위를 측정 없이 단정하지 않는다. 기존 보고서 재생성 후에도 추가 해석이 유지돼야 한다.

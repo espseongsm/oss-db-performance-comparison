@@ -1,0 +1,57 @@
+{
+  "rows": 10000,
+  "actual_rows": 10000,
+  "dimension_rows": 1000000,
+  "actual_dimension_rows": 1000000,
+  "schema_version": "v3",
+  "physical_design": {
+    "profile": "baseline",
+    "engine": "doris",
+    "table_model": "DUPLICATE KEY",
+    "sort_key": "(id)",
+    "dimension_sort_key": "(account_id)",
+    "built_in_indexes": [
+      "prefix index",
+      "zone map"
+    ],
+    "data_skipping_index": null,
+    "replication_num": 1,
+    "buckets": 8,
+    "load_and_layout_elapsed_ms": 173.61195900002713,
+    "session": {
+      "server_version": [
+        [
+          "5.7.99"
+        ]
+      ],
+      "enable_sql_cache": [
+        [
+          "enable_sql_cache",
+          "false",
+          "true",
+          "1"
+        ]
+      ],
+      "enable_query_cache": [
+        [
+          "enable_query_cache",
+          "false",
+          "false",
+          "0"
+        ]
+      ],
+      "fact_ddl": [
+        [
+          "benchmark",
+          "CREATE TABLE `benchmark` (\n  `id` bigint NULL,\n  `account_id` bigint NULL,\n  `category_id` bigint NULL,\n  `region_id` bigint NULL,\n  `quantity` bigint NULL,\n  `amount` double NULL,\n  `discount` double NULL,\n  `event_day` bigint NULL,\n  `event_second` bigint NULL,\n  `is_active` bigint NULL,\n  `status_id` bigint NULL,\n  `source_id` bigint NULL,\n  `metric_01` bigint NULL,\n  `metric_02` bigint NULL,\n  `metric_03` bigint NULL,\n  `metric_04` bigint NULL,\n  `metric_05` bigint NULL,\n  `metric_06` bigint NULL,\n  `metric_07` bigint NULL,\n  `metric_08` bigint NULL\n) ENGINE=OLAP\nDUPLICATE KEY(`id`)\nDISTRIBUTED BY HASH(`id`) BUCKETS 8\nPROPERTIES (\n\"replication_allocation\" = \"tag.location.default: 1\",\n\"min_load_replica_num\" = \"-1\",\n\"is_being_synced\" = \"false\",\n\"storage_medium\" = \"hdd\",\n\"storage_format\" = \"V2\",\n\"inverted_index_storage_format\" = \"V3\",\n\"light_schema_change\" = \"true\",\n\"disable_auto_compaction\" = \"false\",\n\"group_commit_interval_ms\" = \"10000\",\n\"group_commit_data_bytes\" = \"134217728\"\n);"
+        ]
+      ],
+      "dimension_ddl": [
+        [
+          "account_dim",
+          "CREATE TABLE `account_dim` (\n  `account_id` bigint NULL,\n  `account_tier` bigint NULL,\n  `account_region_id` bigint NULL\n) ENGINE=OLAP\nDUPLICATE KEY(`account_id`)\nDISTRIBUTED BY HASH(`account_id`) BUCKETS 8\nPROPERTIES (\n\"replication_allocation\" = \"tag.location.default: 1\",\n\"min_load_replica_num\" = \"-1\",\n\"is_being_synced\" = \"false\",\n\"storage_medium\" = \"hdd\",\n\"storage_format\" = \"V2\",\n\"inverted_index_storage_format\" = \"V3\",\n\"light_schema_change\" = \"true\",\n\"disable_auto_compaction\" = \"false\",\n\"group_commit_interval_ms\" = \"10000\",\n\"group_commit_data_bytes\" = \"134217728\"\n);"
+        ]
+      ]
+    }
+  }
+}

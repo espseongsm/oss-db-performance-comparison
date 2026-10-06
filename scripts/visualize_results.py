@@ -19,8 +19,12 @@ from matplotlib.ticker import FuncFormatter
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 OUTPUT = RESULTS / "charts"
-ENGINES = ("clickhouse", "duckdb", "postgres", "sqlite")
-LABELS = ("ClickHouse", "DuckDB", "PostgreSQL", "SQLite")
+ENGINES = ("clickhouse", "duckdb", "postgres", "sqlite", "doris")
+LABELS = ("ClickHouse", "DuckDB", "PostgreSQL", "SQLite", "Apache Doris")
+DORIS_RESULTS = {
+    "baseline": RESULTS / "doris-sql/run-20261006-baseline/doris",
+    "optimized": RESULTS / "doris-sql/run-20261006-optimized/optimized/doris",
+}
 QUERIES = ("small", "medium", "large", "join")
 BLUE = "#3975B9"
 GOLD = "#B88725"
@@ -30,8 +34,14 @@ def read(path):
     return json.loads(path.read_text())
 
 
+def result_folder(profile, engine):
+    if engine == "doris":
+        return DORIS_RESULTS[profile]
+    return RESULTS / engine if profile == "baseline" else RESULTS / profile / engine
+
+
 def query_stats(profile, engine):
-    folder = RESULTS / engine if profile == "baseline" else RESULTS / profile / engine
+    folder = result_folder(profile, engine)
     assert read(folder / "dataset.json")["actual_rows"] == 1_000_000_000
     raw = [
         json.loads(line)
@@ -47,6 +57,7 @@ def query_stats(profile, engine):
         assert len(records) == 30
         assert {row["iteration"] for row in records} == set(range(1, 31))
         assert all(row["digest"] == reference[query]["digest"] for row in records)
+        assert all(row["row_count"] == reference[query]["row_count"] for row in records)
         values = sorted(row["elapsed_ms"] for row in records)
         stats[query] = (
             statistics.mean(values),
@@ -91,7 +102,7 @@ def draw_sd(ax, x, mean, sd, floor):
 
 def performance(profile):
     data = [query_stats(profile, engine) for engine in ENGINES]
-    fig, axes = plt.subplots(2, 2, figsize=(14, 11))
+    fig, axes = plt.subplots(2, 2, figsize=(16, 11))
     fig.subplots_adjust(
         left=0.09, right=0.98, top=0.78, bottom=0.17, hspace=0.53, wspace=0.24
     )
@@ -184,8 +195,8 @@ def performance(profile):
                 lambda value, _: f"{value:,.2f}" if value < 1 else f"{value:,.0f}"
             )
         )
-        ax.set_xticks(range(4), LABELS)
-        ax.set_xlim(-0.6, 3.6)
+        ax.set_xticks(range(len(ENGINES)), LABELS)
+        ax.set_xlim(-0.6, len(ENGINES) - 0.4)
         ax.set_ylabel("평균 응답 시간 (ms · 로그 축)", fontsize=11)
         ax.grid(axis="y", color="#E5E5E5", zorder=0)
         ax.spines[["top", "right"]].set_visible(False)
@@ -195,6 +206,7 @@ def performance(profile):
         0.035,
         "출처: measurements.jsonl · n=30, 표본 SD (분모 n-1)"
         " · 완주한 실행은 summary.json과 대조\n"
+        "기존 4개 DB: 2026-09 · Doris: 2026-10-06, 실행 시점·환경 기록 차이 있음.\n"
         "SD는 반복 측정값의 변동성입니다."
         " 평균의 신뢰구간이나 최솟값·최댓값을 의미하지 않습니다.\n"
         "▽: 평균-SD가 0.01 ms보다 작아 하한을 생략했습니다."
@@ -212,7 +224,7 @@ def comparison():
         profile: [query_stats(profile, engine) for engine in ENGINES]
         for profile in ("baseline", "optimized")
     }
-    fig, axes = plt.subplots(2, 2, figsize=(14, 10.5))
+    fig, axes = plt.subplots(2, 2, figsize=(16, 10.5))
     fig.subplots_adjust(
         left=0.09, right=0.98, top=0.78, bottom=0.17, hspace=0.48, wspace=0.24
     )
@@ -303,8 +315,8 @@ def comparison():
                 lambda value, _: f"{value:,.2f}" if value < 1 else f"{value:,.0f}"
             )
         )
-        ax.set_xticks(range(4), LABELS)
-        ax.set_xlim(-0.6, 3.6)
+        ax.set_xticks(range(len(ENGINES)), LABELS)
+        ax.set_xlim(-0.6, len(ENGINES) - 0.4)
         ax.set_ylabel("평균 응답 시간 (ms · 로그 축)", fontsize=11)
         ax.grid(axis="y", color="#E5E5E5", zorder=0)
         ax.spines[["top", "right"]].set_visible(False)
@@ -316,6 +328,7 @@ def comparison():
         " 1보다 크면 개선, 1보다 작으면 악화입니다.\n"
         "출처: measurements.jsonl · n=30 · SD는 반복 간 변동성으로 신뢰구간이 아닙니다."
         " 정확한 평균 ± SD는 표 참조.\n"
+        "기존 4개 DB: 2026-09 · Doris: 2026-10-06, 실행 시점·환경 기록 차이 있음.\n"
         "동일한 로그 축, 시작값 0.01 ms. ▽는 평균-SD가 표시 범위 아래임을 뜻하며"
         " 관측 최솟값이 아닙니다.\n"
         "막대 높이의 비율은 시간 비율이 아닙니다. SQLite optimized join은 0/30이므로"
@@ -327,7 +340,7 @@ def comparison():
 
 
 def storage():
-    fig, ax = plt.subplots(figsize=(13, 5.6))
+    fig, ax = plt.subplots(figsize=(13, 6.2))
     fig.subplots_adjust(left=0.14, right=0.95, top=0.73, bottom=0.2)
     fig.suptitle(
         "엔진별 저장 크기", x=0.04, ha="left", y=0.97, fontsize=21, weight="bold"
@@ -344,11 +357,7 @@ def storage():
         ("optimized", 0.18, GOLD, "//"),
     ):
         for y, engine in enumerate(ENGINES):
-            folder = (
-                RESULTS / engine
-                if profile == "baseline"
-                else RESULTS / profile / engine
-            )
+            folder = result_folder(profile, engine)
             record = read(folder / "storage.json")
             if record["rows"] != 1_000_000_000:
                 ax.text(
@@ -373,8 +382,8 @@ def storage():
                 label=profile if y == 0 else None,
             )
             ax.text(value + 2, y + offset, f"{value:.2f}", va="center", fontsize=11)
-    ax.set_yticks(range(4), LABELS)
-    ax.set_ylim(3.55, -0.55)
+    ax.set_yticks(range(len(ENGINES)), LABELS)
+    ax.set_ylim(len(ENGINES) - 0.45, -0.55)
     ax.set_xlim(0, 245)
     ax.set_xlabel("저장 크기 (GiB)")
     ax.set_axisbelow(True)
@@ -387,7 +396,8 @@ def storage():
         "출처: 각 엔진 storage.json · PostgreSQL optimized:"
         " 현재 10억 행 파일의 212.76 GiB 반영\n"
         "SQLite optimized의 중단 당시 관측값(약 107.40 GiB)은"
-        " 동일한 최종 산출물이 없어 차트에서 제외했습니다.",
+        " 동일한 최종 산출물이 없어 차트에서 제외했습니다.\n"
+        "Doris는 FE·BE 데이터·메타데이터·로그와 storage 내 trash를 포함한 전체 크기입니다.",
         fontsize=10,
         color="#555555",
     )

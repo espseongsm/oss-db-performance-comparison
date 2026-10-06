@@ -13,6 +13,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+doris = [
+    "pymysql==1.1.2",
+    "requests>=2.34.2",
+]
 snowflake = [
     "keyring>=25,<26",
     "snowflake-connector-python[pandas]>=3.12,<5",

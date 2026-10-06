@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-10-06T00:04:56.535878+00:00",
+  "host": {
+    "system": "Darwin",
+    "release": "27.0.0",
+    "architecture": "arm64"
+  },
+  "docker": {
+    "ServerVersion": "28.3.0",
+    "OperatingSystem": "Docker Desktop",
+    "OSType": "linux",
+    "Architecture": "aarch64",
+    "KernelVersion": "6.10.14-linuxkit",
+    "NCPU": 14,
+    "MemTotal": 33073651712
+  },
+  "containers": [
+    {
+      "id": "9dd4eb95c68b67ca1d711a7ab7ba539920b8bb4e4660279203e874bb083baf71",
+      "service": "doris",
+      "requested_image": "apache/doris:all-in-one-4.1.3",
+      "image_id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+      "limits": {
+        "NanoCpus": 4000000000,
+        "CpuQuota": 0,
+        "CpuPeriod": 0,
+        "CpusetCpus": "",
+        "Memory": 8589934592,
+        "MemorySwap": 17179869184,
+        "ShmSize": 67108864
+      }
+    }
+  ],
+  "images": [
+    {
+      "Id": "sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609",
+      "RepoTags": [
+        "apache/doris:all-in-one-4.1.3"
+      ],
+      "RepoDigests": [
+        "apache/doris@sha256:82a5cabc7900ebcd3d080412d636c0cebd6602799fffe2605c652b2ea7d42609"
+      ],
+      "Architecture": "arm64",
+      "Os": "linux"
+    }
+  ],
+  "note": "Container resource limits and Docker VM totals captured before SQL setup; zero Memory or NanoCpus means no container override."
+}
