@@ -1,24 +1,39 @@
 {
   "status": "passed",
-  "checked_at": "2026-09-10T00:42:05.924442+00:00",
+  "checked_at": "2026-10-06T23:59:44.842894+00:00",
   "report_mean_sd_pairs": 120,
+  "doris_mean_sd_pairs": 12,
+  "doris_unmeasured_cells": 8,
+  "doris_saved_measurements": 360,
+  "doris_saved_conditions": 12,
+  "doris_csv_rows_verified": {
+    "doris-summary.csv": 12,
+    "doris-comparison.csv": 132
+  },
+  "doris_shared_input_metadata_and_sha256": "passed for all three shared sizes",
+  "doris_workload_source_sha256": "identical to the preserved warehouse sweep",
+  "metric_scopes": "local batches, Snowflake platform query and Doris full pandas return remain distinct",
   "warehouse_ratio_values": 12,
   "png_references": 5,
   "recommendation_cells_verified": 20,
-  "existing_local_links_checked": 33,
+  "existing_local_links_checked": 51,
   "billion_large_winner_in_each_workload_and_block": 24,
   "billion_duckdb_join_slower_than_xsmall_blocks": 2,
   "warehouse_name_size_mapping": "passed against saved manifest",
   "sha256": {
-    "report.md": "7027a2135047706207717bb1a29e158cda2e499b196d43dc6ba647972381bd2e",
-    "mean-sd-100000.png": "190225547439da82e56a00a407d28eae152bac1624b0263a36e545e1ce1f4fe7",
-    "mean-sd-1000000.png": "55b7e89d16841474a81a21369cc37c9334ed18c94ab714d597ac09cf6fad6e4b",
-    "mean-sd-10000000.png": "b69de314b335c286aa420108cd6e3d1c1bfaf15c8ac4e36a1c521d9c8941e044",
-    "mean-sd-100000000.png": "5df010d3c9e136d680215a542268f3b3347ea9d50d355f44782c99c6c0567255",
-    "mean-sd-1000000000.png": "b170682e4bb40be121c3981f2846fadcaf87d86806713b99e8fbf595af1e1ea3",
+    "report.md": "71fbb060b4439ea196eff5d057014fa2ae57f0d91cb4949e4699c7ec239786f4",
+    "mean-sd-100000.png": "a4eb63710a98ab5714487ca5254ed21f6aab356e9dbf1194d00f62703f3615ab",
+    "mean-sd-1000000.png": "29cdff731233fc4cabdd6e1893b1211ed7860d19c5b8ba60e04830102d7bcf13",
+    "mean-sd-10000000.png": "923b0b026d1564b87a74ef5693ea91b97ff8ee1324f52bf91515b3448e9c99ca",
+    "mean-sd-100000000.png": "cd884f24f3563cc8215590da7f4d0dc5434948159e6e3b538a0f59896eb924af",
+    "mean-sd-1000000000.png": "9bb05b7745abbf7ba760e70483dddb0b3f315bed01148ecf8a5455c724964436",
     "independent-audit.json": "b8dfc0b2bdae73721c01f4a616ac910c2b21edb2841d128801cf957ac4fdabc5",
     "provenance-audit.json": "3ff8d9a60b3aaf482cc3be58aff16cd4486ba366ff523c14799b0b71870aa2a6",
-    "visual-review.json": "4a33aecbbb5b4e5d1a45ebb40d35f22003285e811acee3c0d005b7ff1122ca58"
+    "visual-review.json": "4a33aecbbb5b4e5d1a45ebb40d35f22003285e811acee3c0d005b7ff1122ca58",
+    "doris-summary.csv": "435f700434346a0c1d865f0387c851244ab4241df1b3049c9b48e5def7a280cc",
+    "doris-comparison.csv": "58100ed554019ce4aa0729d793e02807e9511a9f75264e7647807cbddaebc9d8",
+    "doris-render-audit.json": "171b537ae30fcc636949ae7d0a871b7f19b2b9e3f91178d52a339121de52bd0e",
+    "doris-visual-review.json": "0e5d18ba5ed5366d7c28f1b51fd0fde1b1ff878b2455829908324676efeed01d"
   },
   "limits": "Checks saved evidence and Markdown links/numbers; visual PNG inspection is recorded separately. No new Snowflake queries or measurements."
 }

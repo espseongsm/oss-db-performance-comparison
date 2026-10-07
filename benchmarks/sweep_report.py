@@ -90,25 +90,47 @@ def audit(raw, manifest, validations, references):
     return pd.DataFrame(records)
 
 
-def draw(folder, summary, rows, manifest):
+def draw(folder, summary, rows, manifest, doris=None):
     font = Path("/System/Library/Fonts/AppleSDGothicNeo.ttc")
     if font.exists():
         font_manager.fontManager.addfont(str(font))
         plt.rcParams["font.family"] = "Apple SD Gothic Neo"
     plt.rcParams["axes.unicode_minus"] = False
     data = summary.loc[summary.rows.eq(rows)].set_index(["workload", "path"])
+    paths, labels, colors, hatches = list(PATHS), dict(LABELS), COLORS, HATCHES
+    if doris is not None:
+        data = pd.concat(
+            [data, doris.loc[doris.rows.eq(rows)].set_index(["workload", "path"])]
+        )
+        paths.append("doris")
+        labels["doris"] = "Doris†\n전체 반환"
+        colors = [*COLORS, "#2B8C60"]
+        hatches = [*HATCHES, "\\\\"]
     fig, axes = plt.subplots(2, 2, figsize=(19, 12.5))
     fig.subplots_adjust(
-        left=0.065, right=0.985, top=0.80, bottom=0.19, wspace=0.22, hspace=0.58
+        left=0.065,
+        right=0.985,
+        top=0.80,
+        bottom=0.23 if doris is not None else 0.19,
+        wspace=0.22,
+        hspace=0.58,
     )
     for ax, (work, title) in zip(axes.flat, WORKS.items(), strict=True):
-        samples = [data.loc[(work, path)] for path in PATHS]
+        samples = [
+            data.loc[(work, path)] if (work, path) in data.index else None
+            for path in paths
+        ]
         maximum = max(
-            s.mean_ms + (0 if pd.isna(s.std_ms) else s.std_ms) for s in samples
+            s.mean_ms + (0 if pd.isna(s.std_ms) else s.std_ms)
+            for s in samples
+            if s is not None
         )
         for x, (sample, color, hatch) in enumerate(
-            zip(samples, COLORS, HATCHES, strict=True)
+            zip(samples, colors, hatches, strict=True)
         ):
+            if sample is None:
+                ax.text(x, maximum * 0.03, "미측정\n(n/a)", ha="center", fontsize=12)
+                continue
             mean, sd = sample.mean_ms, sample.std_ms
             ax.bar(
                 x,
@@ -141,9 +163,11 @@ def draw(folder, summary, rows, manifest):
                 va="bottom",
                 fontsize=12,
             )
-        ax.set_xticks(range(6), [LABELS[p] for p in PATHS], fontsize=12)
+        ax.set_xticks(range(len(paths)), [labels[p] for p in paths], fontsize=12)
         ax.set_ylim(0, maximum * 1.38)
-        ax.set_xlim(-0.6, 5.6)
+        ax.set_xlim(-0.6, len(paths) - 0.4)
+        if doris is not None:
+            ax.axvline(5.5, color="#888888", linestyle="--", linewidth=1)
         ax.set_ylabel("실행 시간 (ms)", fontsize=13)
         ax.set_title(title, loc="left", fontsize=22, pad=16)
         ax.yaxis.set_major_locator(MaxNLocator(4, min_n_ticks=3))
@@ -153,22 +177,29 @@ def draw(folder, summary, rows, manifest):
         ax.set_axisbelow(True)
         ax.spines[["top", "right"]].set_visible(False)
     phase = "파일럿" if manifest["settings"]["pilot"] else "본 실험"
+    subtitle = f"{rows:,} 행  |  {phase} · 조건별 {manifest['settings']['runs']}회  |  평균 ± 표본 SD (ms)  |  {manifest['started_at'][:10]}"
+    if doris is not None:
+        doris_repeats = "각 30회" if doris.rows.eq(rows).any() else "미측정"
+        subtitle = f"{rows:,} 행  |  기존 6개 경로 각 30회 · Doris {doris_repeats}  |  평균 ± 표본 SD (ms)"
     fig.text(
         0.045,
         0.95,
-        "로컬 pandas · DuckDB와 Snowflake warehouse 크기별 성능",
-        fontsize=28,
+        "로컬 pandas · DuckDB와 Snowflake warehouse 크기별 성능"
+        + (" · Doris 추가 관측" if doris is not None else ""),
+        fontsize=26 if doris is not None else 28,
     )
     fig.text(
         0.045,
         0.91,
-        f"{rows:,} 행  |  {phase} · 조건별 {manifest['settings']['runs']}회  |  평균 ± 표본 SD (ms)  |  {manifest['started_at'][:10]}",
+        subtitle,
         fontsize=18,
     )
     fig.text(
         0.045,
         0.872,
-        "로컬: Parquet → 모든 결과 배치 생성   ·   Snowflake: 적재 테이블 → 서버의 전체 쿼리 시간",
+        "로컬: Parquet → 모든 결과 배치 생성   ·   Snowflake: 적재 테이블 → 서버의 전체 쿼리 시간"
+        if doris is None
+        else "로컬: Parquet → 결과 배치   ·   Snowflake: 서버 쿼리 시간   ·   Doris†: 적재 테이블 → 전체 pandas 결과",
         fontsize=17,
     )
     notes = [
@@ -176,7 +207,16 @@ def draw(folder, summary, rows, manifest):
         "로컬은 결과 배치를 순차 생성하고 해제  ·  모든 크기에 같은 처리 기준  ·  같은 하드웨어의 엔진 비교가 아님",
         "작업별 축 범위가 다름  ·  0 기준 선형 축  ·  오차막대 = 평균 ± 표본 SD, 신뢰구간 아님  ·  ▼: 음수 SD 하한을 0에서 자름",
     ]
-    for y, note in zip((0.115, 0.077, 0.039), notes, strict=True):
+    positions = (0.115, 0.077, 0.039)
+    if doris is not None:
+        notes = [
+            "Doris†: 요청·전체 수신·DataFrame 생성·정규화 포함  ·  최초 적재 제외  ·  별도 실행 2026-10-06, 4 CPU / 8 GiB",
+            "기존 6개 경로: 2026-09-09  ·  Snowflake 전체 결과 다운로드 제외  ·  서로 다른 측정 범위를 그대로 표시",
+            "Doris의 1억·10억 행은 미측정  ·  점선은 추가 관측 경계  ·  동등한 서버 처리 시간이나 엔진 순위가 아님",
+            notes[-1],
+        ]
+        positions = (0.155, 0.115, 0.075, 0.035)
+    for y, note in zip(positions, notes, strict=True):
         fig.text(0.045, y, note, fontsize=14, color="#50555D")
     name = f"mean-sd-{rows}.png"
     fig.savefig(folder / name, dpi=160, facecolor="white")
