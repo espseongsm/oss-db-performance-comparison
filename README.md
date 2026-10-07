@@ -2,17 +2,19 @@
 
 ClickHouse, DuckDB, SQLite, PostgreSQL을 동일한 결정론적 데이터와 쿼리로 순차 비교한다.
 
-## 로컬 pandas·DuckDB와 Snowflake 크기별 6개 경로 비교
+## 로컬 pandas·DuckDB와 Snowflake 크기별 비교·Doris 참조 결과
 
 사용자가 요청한 새 비교는 로컬에서 Parquet를 읽는 pandas·DuckDB와, 같은 데이터를
 미리 적재한 Snowflake 테이블의 X-Small·Small·Medium·Large SQL 실행이다.
 **본 실험 3,600회 완료·검수 완료** (측정: 2026-09-09 13:59:18–17:29:04 KST, 사후 검수: 2026-09-10 KST).
 [최신 리포트·행 수별 세로 막대 5개](results/warehouse-sweep/run-20260909T045918099704Z/report.md) · [행 수·워크로드별 선택 가이드](results/warehouse-sweep/run-20260909T045918099704Z/report.md#selection-guide) · [10억 행 그림](results/warehouse-sweep/run-20260909T045918099704Z/mean-sd-1000000000.png) · [검수 근거](results/warehouse-sweep/run-20260909T045918099704Z/qa.json).
-10억 행에서 Snowflake Large는 네 작업 모두 가장 짧은 평균을 기록했다. 평균 ± 표본 SD는
+기존 6개 경로의 10억 행 결과에서 Snowflake Large는 네 작업 모두 가장 짧은 평균을 기록했다. 평균 ± 표본 SD는
 결측치 처리 **5.327 ± 0.157초**, 필터 **1.275 ± 0.101초**, 지역 집계 **0.433 ± 0.019초**, 조인 후 집계 **0.946 ± 0.045초**다.
-10만~1,000만 행에서는 단순 가공의 pandas와 집계의 DuckDB가 앞섰다. 가까운 평균과 큰 편차는 리포트에서 별도로 설명한다.
+기존 6개 경로의 10만~1,000만 행에서는 단순 가공의 pandas와 집계의 DuckDB가 앞섰다. 가까운 평균과 큰 편차는 리포트에서 별도로 설명한다.
 120조건·각 30회, 720개 묶음 예열 체크섬, 2,400개 고유 원격 측정 쿼리, 원자료·통계·입력 해시와 PNG 5개를 검수했다.
 [파일럿 리포트](results/warehouse-sweep/pilot-20260909T044933710556Z/report.md)는 기능 검증용이다.
+
+**2026-10-07 KST 보고서 확장:** 10월 6일에 완료한 Doris 전처리 **360회**를 기존 양식의 표·차트에 참조 경로로 추가한다. 새 측정 없이 기존 3,600회와 Doris 원자료·통계를 읽는다. 공통 10만·100만·1,000만 행의 입력 SHA-256·작업 코드와 출력 검증 기록을 대조하며, **1억·10억 행 Doris는 미측정**으로 표시한다. Doris는 전체 결과를 Python DataFrame으로 수신하는 시간이고, 기존 로컬은 결과 배치 생성, Snowflake는 서버 쿼리 시간이므로 7개 경로를 동일 조건의 엔진 속도 순위로 해석하지 않는다.
 
 | 경로 | 실행 위치 | 입력 | 주 시간 지표 |
 |---|---|---|---|
@@ -22,10 +24,12 @@ ClickHouse, DuckDB, SQLite, PostgreSQL을 동일한 결정론적 데이터와 �
 | Snowflake Small | FRAME_SWEEP_SMALL | 같은 테이블 | 서버 전체 쿼리 시간 |
 | Snowflake Medium | FRAME_SWEEP_MEDIUM | 같은 테이블 | 서버 전체 쿼리 시간 |
 | Snowflake Large | FRAME_SWEEP_LARGE | 같은 테이블 | 서버 전체 쿼리 시간 |
+| Doris (저장 결과 참조) | 로컬 Docker, 단일 FE·BE | 사전 적재한 공통 10만~1,000만 행 | SQL 요청·전체 fetch·DataFrame 생성·int64 정규화 |
 
 - 행 수: **10만·100만·1,000만·1억·10억**. 작업: 결측치 처리/파생 컬럼, 필터/파생 컬럼, 지역 집계, 조인 후 집계.
 - 5개 크기 × 4개 작업 × 6개 경로 × 30회 = **3,600회**, 120개 조건. 6개 묶음에서 경로와 크기·작업 순서를 무작위화하고 한 번에 한 경로만 측정한다.
-- 모든 크기에 같은 배치 기준을 적용한다. 로컬 결과 배치는 순차 생성·해제하며 전체 결과를 RAM에 누적하지 않는다. pandas는 부분 집계를 합친다. Arrow/DuckDB 4스레드, 최대 배치 25만 행, DuckDB 내부 메모리 한도 8GB다.
+- Doris 참조는 3개 크기 × 4개 작업 × 30회 = **기존 360회**다. 9월 9일 본 실험의 무작위 실행 묶음에 참여한 신규 경로로 표현하지 않는다. Doris 측정의 적재·연결·예열·검증은 시간 밖이고, 4 CPU·8GiB 컨테이너 및 실행일·OS/패키지 차이를 별도로 공개한다.
+- 기존 로컬 두 경로는 모든 크기에 같은 배치 기준을 적용한다. 로컬 결과 배치는 순차 생성·해제하며 전체 결과를 RAM에 누적하지 않는다. pandas는 부분 집계를 합친다. Arrow/DuckDB 4스레드, 최대 배치 25만 행, DuckDB 내부 메모리 한도 8GB다.
 - Snowflake 주 지표는 `QUERY_HISTORY.total_elapsed_time`으로 실행·컴파일·대기를 포함한다. 최초 업로드/COPY와 전체 결과의 Mac 다운로드는 제외하며, client execute 왕복과 서버 구성요소를 별도로 기록한다. **로컬 출력은 pandas 배치이고 원격 출력은 서버 결과이므로 동일한 하드웨어·출력 형식의 순수 엔진 비교는 아니다.**
 - 전용 warehouse 네 개는 본 실험 명세에서도 모두 Standard Gen2, 단일 클러스터, 자동 중지 60초다. 결과 재사용 캐시를 끄고 각 작업을 예열한다. 경로 묶음이 끝나면 해당 전용 warehouse를 중지한다. 캐시 상태가 완전히 같다고 가정하지 않는다.
 - 원본 seed·정수 연산·필요 컬럼·필터 의미를 맞춘다. 각 묶음의 예열에서 전체 출력 행 수와 두 모듈러 체크섬을 공통 기준에 대조하고, 시간 측정 반복에서는 출력 행 수를 검증한다. 모든 반복의 전체 체크섬 검증이라고 주장하지 않는다.
@@ -41,7 +45,7 @@ uv run --no-sync python main.py warehouse-sweep
 분할 파일 수·행 수·연속 ID·원본/파일별 SHA-256을 검증한다. 생성·분할·업로드는 준비 단계다.
 
 완료 산출물은 `results/warehouse-sweep/run-<UTC timestamp>/`의 `report.md`,
-크기별 `mean-sd-<행 수>.png` **5개**(작업별 세로 막대 6개·평균 ± 표본 SD),
+크기별 `mean-sd-<행 수>.png` **5개**(기존 6개 경로와 Doris 참조·평균 ± 표본 SD, 큰 두 크기는 Doris 미측정 표시),
 `summary.csv`, `measurements.jsonl`, `snowflake-components.csv`, `qa.json`이다.
 작은 데이터에서의 고정 비용과 행 수 증가에 따른 warehouse 효과를 함께 해석한다.
 기존 Small 내부 전체 DataFrame 실험과 이전 로컬/원격 다운로드 실험은 별도 결과로 보존한다.
@@ -58,6 +62,21 @@ flowchart LR
     W --> Q[서버 전체 쿼리 시간]
     B --> R[행 수별 6개 평균·SD 비교]
     Q --> R
+```
+
+저장 결과만으로 확장 보고서를 다시 생성하려면 다음 명령을 사용한다. DB 연결·적재·재측정은 수행하지 않는다. 기존의 선별·작성된 보고서 원문을 별도로 보존해 본문과 기존 표 수치를 유지하고, 같은 입력에서 같은 표·차트·감사 자료를 생성한다.
+
+```bash
+uv run --no-sync python main.py warehouse-doris-report
+```
+
+```mermaid
+flowchart LR
+    H[기존 warehouse-sweep 3600회] --> V[입력·작업·출력 검증 기록 대조]
+    D[저장된 Doris 360회] --> V
+    V --> T[기존 양식 표·차트와 측정 범위 표시]
+    B[보존한 보고서 원문] --> T
+    T --> R[확장 보고서와 감사 자료]
 ```
 
 ## 같은 Snowflake Small에서 pandas · DuckDB · SQL 실행
@@ -402,7 +421,7 @@ docker compose stop doris
 - 전처리: 기존 10만·100만·1,000만 행 Parquet의 SHA256·스키마·생성 설정을 확인한다. 4개 작업을 각각 30회, 6개 묶음으로 측정하며 모든 출력 fingerprint를 기존 결과와 비교한다. 새 결과는 `results/doris/frames/run-*/`에 저장한다. `--reference-dir` 기본값은 `results/pandas-duckdb/run-20260907T022808832856Z`다.
 - 전처리 시간에는 SQL 요청부터 전체 결과 수신·pandas DataFrame 생성·int64 정규화까지 포함한다. 연결·적재·워밍업·결과 검증은 제외하며 적재 시간은 별도로 기록한다. SQL cache와 query cache를 끄고 warm-cache·동시성 1로 실행한다. Doris FE/BE를 포함한 컨테이너 기본 한도는 합계 4 CPU·8GiB다.
 - 기존 결과는 2026년 9월, Doris 추가 측정은 10월 6일이다. OS·패키지 버전·호스트 부하와 native/Docker·사전 적재/Parquet 시작 조건의 차이를 함께 기록한다. 과거 결과와의 비교를 동일 시점·동일 실행 경로의 엔진 속도 순위로 해석하지 않는다.
-- 이번 Doris 전처리 비교는 9월 7일 로컬 pandas/DuckDB 결과를 참조했다. 기존 [Snowflake 크기별 본 실험](results/warehouse-sweep/run-20260909T045918099704Z/report.md)은 별도로 보존한다. 해당 실험의 배치 처리·서버 쿼리 시간과 이번 전체 DataFrame 반환 시간은 측정 범위가 달라 수치를 직접 합치지 않았다.
+- 최초 Doris 전처리 비교는 9월 7일 로컬 pandas/DuckDB 결과를 참조했다. 10월 7일에는 같은 저장 결과를 [Snowflake 크기별 본 실험 보고서](results/warehouse-sweep/run-20260909T045918099704Z/report.md)에 측정 범위를 구분한 참조 열·막대로 추가한다. 기존 원자료·통계는 보존하고, 배치 처리·서버 쿼리 시간과 전체 DataFrame 반환 시간을 동등한 측정으로 취급하거나 직접 개선 배율을 계산하지 않는다.
 
 Doris 본 실험 600회가 완료됐고 모든 출력이 과거 검증값과 일치했다. 기존 솔루션은 재측정하지 않았다. 통합 보고서는 검증된 원시 결과에서 통계를 다시 계산하며 표·CSV·차트·실행 환경 정보를 포함한다.
 
@@ -410,6 +429,7 @@ Doris 본 실험 600회가 완료됐고 모든 출력이 과거 검증값과 일
 |---|---:|---|
 | SQL baseline·optimized | 10억 행·4개 쿼리·각 30회·2개 프로파일 | [기존 SQL 보고서에 Doris 추가](results/benchmark-report.md) |
 | 전처리 | 3개 크기·4개 작업·각 30회 | [기존 전처리 보고서에 Doris 추가](results/pandas-duckdb/run-20260907T022808832856Z/report.md) |
+| Snowflake 4개 DW 크기 보고서 확장 | 추가 측정 없음·기존 Doris 전처리 360회 재사용 | [기존 크기별 보고서에 Doris 참조 추가](results/warehouse-sweep/run-20260909T045918099704Z/report.md) |
 
 SQL은 기존 문서의 장·표·세로 막대 차트 형식을, 전처리는 기존 표·박스플롯 형식을 사용한다. 수정 전 보고서와 차트는 `results/doris/original-report-backup/`에 보존했다. `results/doris/comparisons/`의 별도 표·CSV·환경 정보도 검증 자료로 유지한다.
 
@@ -418,6 +438,7 @@ SQL은 기존 문서의 장·표·세로 막대 차트 형식을, 전처리는 �
 ```bash
 uv run scripts/visualize_results.py
 uv run python main.py frames-doris-report
+uv run python main.py warehouse-doris-report
 ```
 
 SQL 원시 결과는 `results/doris-sql/run-20261006-baseline/` 및 `run-20261006-optimized/`, 전처리는 `results/doris/frames/run-20261006T000356880611Z/`에 보존했다. 이번 Doris optimized의 날짜 조건 집계 평균은 3,718.970ms → 411.267ms로 약 9배 개선됐지만 전체 집계·조인은 느려졌다. 과거 SQLite optimized의 미완료 조인은 그대로 누락 표시한다.

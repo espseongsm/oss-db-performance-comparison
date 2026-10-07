@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "reviewed_at": "2026-10-06T23:58:36.217841+00:00",
+  "scope": "All five expanded plots inspected; final repeat-count subtitle change spot-checked on 100K and 1B plots.",
+  "checks": [
+    "Original 2x2 panels and zero-based linear axes retained",
+    "Historical six-path values preserved; added Doris mean and sample SD agree with saved observations",
+    "Doris path visually separated and full-return scope labeled",
+    "Doris100M/1B absent bars explicitly marked unmeasured; no zero values or extrapolation",
+    "Labels, error bars, path names and caveats readable without clipping in inspected PNGs",
+    "Hatching and direct labels distinguish paths in addition to color"
+  ],
+  "sha256": {
+    "mean-sd-100000.png": "a4eb63710a98ab5714487ca5254ed21f6aab356e9dbf1194d00f62703f3615ab",
+    "mean-sd-1000000.png": "29cdff731233fc4cabdd6e1893b1211ed7860d19c5b8ba60e04830102d7bcf13",
+    "mean-sd-10000000.png": "923b0b026d1564b87a74ef5693ea91b97ff8ee1324f52bf91515b3448e9c99ca",
+    "mean-sd-100000000.png": "cd884f24f3563cc8215590da7f4d0dc5434948159e6e3b538a0f59896eb924af",
+    "mean-sd-1000000000.png": "9bb05b7745abbf7ba760e70483dddb0b3f315bed01148ecf8a5455c724964436"
+  },
+  "limits": "Static PNG visual inspection at rendered size; no interactive browser, production-load or cross-engine significance assessment."
+}

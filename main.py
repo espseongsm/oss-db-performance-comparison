@@ -381,6 +381,11 @@ def main() -> int:
         from benchmarks.sweep_benchmark import main as sweep_main
 
         return sweep_main(sys.argv[2:])
+
+    if len(sys.argv) > 1 and sys.argv[1] == "warehouse-doris-report":
+        from benchmarks.warehouse_doris_report import main as doris_report_main
+
+        return doris_report_main(sys.argv[2:])
     if len(sys.argv) > 1 and sys.argv[1] == "warehouse-frames":
         from benchmarks.warehouse_benchmark import main as warehouse_main
 
